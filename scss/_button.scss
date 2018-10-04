@@ -1,0 +1,48 @@
+$padding-x: 1.8rem;
+$padding-y: 0.75rem;
+$i-margin-y: -1* $padding-y;
+$i-padding :$padding-y ;
+$i-margin-left:- $padding-x;
+$i-margin-right: $i-padding;
+.meta-btn {
+    position: relative;
+    padding: $padding-y $padding-x;
+    cursor: pointer;
+    text-decoration: none;
+    border: 1px solid $gray-700;
+    transition: color  0.4s ease-out;
+    color:$gray-700;
+    margin: -1px 1px 1px -1px; //Fix for some kind of padding or magin in Bootstrap to avoid dooble border in button group
+    &:hover, &:active, &:focus{
+        color:$white;
+        &:before{
+            transform: scaleX(1);
+        }
+    }
+
+    &:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: $gray-700;
+        transform: scaleX(0);
+        transform-origin: 0 50%;
+        transition-property: transform;
+        transition-duration: 0.4s;
+        transition-timing-function: ease-out;
+    }
+
+    i {
+        color: $white;
+        background-color: $gray-700;
+        position: relative;
+        z-index: 10;
+        padding: $i-padding;
+        line-height: $line-height-lg;
+        margin: $i-margin-y $i-margin-left $i-margin-y $i-padding;
+    }
+}

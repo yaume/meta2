@@ -1,0 +1,15 @@
+footer{
+    
+    p{
+        margin-bottom: 0;
+        padding: $navbar-padding-y $navbar-padding-x
+    }
+    .copyright{
+        padding: 0.375rem 0;
+    }
+}
+@include media-breakpoint-down(md) {
+    footer{
+        height: 180px;
+    }
+}
