@@ -35,12 +35,10 @@ function modChrome_no($module, &$params, &$attribs)
 }
 function modChrome_menu($module, &$params, &$attribs)
 {
-	echo '<nav class="navbar navbar-expand-lg navbar-light bg-light">';
-	echo '<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainmenu" aria-controls="mainmenu" aria-expanded="false" aria-label="Toggle navigation">
-	<span class="navbar-toggler-icon"></span></button>';
-	echo '<div class="collapse navbar-collapse" id="mainmenu">';
+	echo '<a class="btn btn-light toggler open" type="button" href="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+	<i class="fa fa-bars" aria-hidden="true"></i></a>';
+	echo '<nav class="navbar" id="nav">';
 	echo $module->content;
-	echo '</div>';
 	echo '</nav>';
 }
 function modChrome_footerMenu($module, &$params, &$attribs){

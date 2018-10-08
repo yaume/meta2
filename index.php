@@ -25,15 +25,15 @@ include_once JPATH_THEMES . '/' . $this->template . '/lib/head.php';
     <header>
         <section class="logo">
             <a href="http://www.meta.mc/">
-                <img src="templates/meta/img/meta.png" alt="META MONACO - ART GALLERY">
+                <img src="templates/meta2/img/meta.png" alt="META MONACO - ART GALLERY" class="img-fluid">
             </a>
         </section>
-        <div class="menu">
-            <jdoc:include type="modules" name="position-0" style='menu'/>
-            <div class="header-extra">
-                <jdoc:include type="modules" name="position-1" />
-            </div>
-        </div>
+        
+        <jdoc:include type="modules" name="position-0" style='menu'/>
+        <section class="header-extra">
+            <jdoc:include type="modules" name="position-1" />
+        </section>
+    
         <jdoc:include type="modules" name="position-2" />
     </header>
     <main>
