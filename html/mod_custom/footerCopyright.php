@@ -11,6 +11,6 @@ defined('_JEXEC') or die;
 ?>
 
 
-<div class="copyright text-center text-lg-left<?php echo $moduleclass_sfx; ?>" <?php if ($params->get('backgroundimage')) : ?> style="background-image:url(<?php echo $params->get('backgroundimage'); ?>)"<?php endif; ?> >
+<div class="copyright <?php echo $moduleclass_sfx; ?>" <?php if ($params->get('backgroundimage')) : ?> style="background-image:url(<?php echo $params->get('backgroundimage'); ?>)"<?php endif; ?> >
 	<?php echo $module->content; ?>
 </div>

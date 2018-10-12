@@ -10,6 +10,9 @@ header {
     .logo {
         order: 1;
         width: 50%;
+        text-align: center;
+        margin-right: auto;
+        margin-left:  auto;
     }
 
     .header-extra {
@@ -44,7 +47,8 @@ header {
 
     .toggler {
         order: 0;
-        margin-right: auto;
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
 
         .navbar-toggler-icon {
             background-image: $navbar-light-toggler-icon-bg;
@@ -97,9 +101,6 @@ header {
 }
 
 @include media-breakpoint-down(md) {
-    .toggler {
-        margin: 1.5rem
-    }
 
     .navbar {
         position: fixed;
@@ -142,6 +143,14 @@ header {
     }
 }
 
+@include media-breakpoint-up(sm) {
+    .header {
+        .toggler {
+            margin-right: auto !important;
+        }
+    }
+}
+
 @include media-breakpoint-up(lg) {
     header {
         justify-content: flex-end;
@@ -151,6 +160,7 @@ header {
             {
             order: 0;
             margin-right: auto;
+            margin-left: 1.5rem;
             width: auto;
         }
 

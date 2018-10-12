@@ -42,17 +42,13 @@ function modChrome_menu($module, &$params, &$attribs)
 	echo '</nav>';
 }
 function modChrome_footerMenu($module, &$params, &$attribs){
-	echo '<nav class="navbar col-lg-6 justify-content-center navbar-expand py-0 order-1 navbar-light bg-light">';
+	echo '<nav class="footer-navbar">';
 	echo $module->content;
 	echo '</nav>';
 }
 function modChrome_footerCopyright($module, &$params, &$attribs){
-	echo'<div class="col-lg-3 order-2 order-lg-0">';
 	echo $module->content;
-	echo '</div>';
 }
 function modChrome_footerSocial($module, &$params, &$attribs){
-	echo'<div class="col-lg-3 order-0 order-lg-2">';
 	echo $module->content;
-	echo '</div>';
 }

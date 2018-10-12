@@ -18,7 +18,7 @@ if ($tagId = $params->get('tag_id', ''))
 
 // The menu class is deprecated. Use nav instead
 ?>
-<ul class="navbar-nav text-center<?php echo $class_sfx; ?>"<?php echo $id; ?>>
+<ul class="navbar-nav <?php echo $class_sfx; ?>"<?php echo $id; ?>>
 <?php foreach ($list as $i => &$item)
 {
 	$class = 'nav-item py-0 item-' . $item->id;

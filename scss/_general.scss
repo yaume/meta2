@@ -21,7 +21,7 @@ body {
 body {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 81px auto 129px;
+    grid-template-rows: 80px auto 50px;
     grid-template-areas:"header"
                         "main"
                         "footer";
@@ -44,15 +44,16 @@ footer {
 
 @include media-breakpoint-up(lg) {
     body {
-        grid-template-columns: repeat(15, 1fr);
+       /*  grid-template-columns: repeat(15, 1fr);
     grid-template-rows: 81px auto 129px;
     grid-template-areas: ". header header header header header header header header header header header header header ."
         ". main main main main main main main main main main main main main ."
-        ". footer footer footer footer footer footer footer footer footer footer footer footer footer .";
-        &.home{
+        ". footer footer footer footer footer footer footer footer footer footer footer footer footer ."; */
+        /* &.home{
             grid-template-areas: ". header header header header header header header header header header header header header ."
         "main main main main main main main main main main main main main main main"
         ". footer footer footer footer footer footer footer footer footer footer footer footer footer .";
-        }
+        } */
+        grid-template-rows: 80px auto 50px;
     }
 }
