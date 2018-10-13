@@ -21,11 +21,11 @@ body {
 body {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 80px auto 50px;
+    grid-template-rows: 80px auto minmax(120px, 150px);
     grid-template-areas:"header"
                         "main"
                         "footer";
-
+    grid-gap: 1rem;
     
 }
 

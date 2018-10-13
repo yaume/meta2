@@ -1,0 +1,81 @@
+body.home {
+        & .dark {
+            p,h3 {
+                color: $white;
+            }
+
+            .meta-btn {
+                border: 1px solid $white;
+                color: $white;
+
+                &:hover,
+                &:active,
+                &:focus {
+                    color: $black;
+                }
+
+                &:before {
+                    background-color: $white;
+                }
+
+                i {
+                    color: $black;
+                    background-color: $white;
+                }
+            }
+        }
+    background: url(../img/home-324.jpg) no-repeat center center fixed;
+    background-size: cover;
+
+    @media screen and (orientation: portrait) {
+        @include media-breakpoint-up(sm) {
+            background: url(../img/home-432.jpg) no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        @include media-breakpoint-up(md) {
+            background: url(../img/home-558.jpg) no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        @include media-breakpoint-up(lg) {
+            background: url(../img/home-665.jpg) no-repeat center center fixed;
+            background-size: cover;
+        }
+    }
+
+    @media screen and (orientation: landscape) {
+        background: url(../img/home-576.jpg) no-repeat center center fixed;
+        background-size: cover;
+
+        @include media-breakpoint-up(sm) {
+            background: url(../img/home-768.jpg) no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        @include media-breakpoint-up(md) {
+            background: url(../img/home-992.jpg) no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        @include media-breakpoint-up(lg) {
+            background: url(../img/home-1200.jpg) no-repeat center center fixed;
+            background-size: cover;
+        }
+        @include media-breakpoint-up(xl) {
+            background: url(../img/home-2560.jpg) no-repeat center center fixed;
+            background-size: cover;
+        }
+    }
+
+    main {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+
+        section {
+            align-self: center;
+                align-self: flex-end;
+        }
+    }
+}

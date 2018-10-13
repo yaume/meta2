@@ -9,10 +9,10 @@ $i-margin-right: $i-padding;
     padding: $padding-y $padding-x;
     cursor: pointer;
     text-decoration: none;
-    border: 1px solid $gray-700;
+    border: 1px solid $black;
     transition: color  0.4s ease-out;
-    color:$gray-700;
-    margin: -1px 1px 1px -1px; //Fix for some kind of padding or magin in Bootstrap to avoid dooble border in button group
+    color:$black;
+    margin: 1px 1px 1px -1px; //Fix for some kind of padding or magin in Bootstrap to avoid double border in button group
     &:hover, &:active, &:focus{
         color:$white;
         &:before{
@@ -28,7 +28,7 @@ $i-margin-right: $i-padding;
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: $gray-700;
+        background-color: $black;
         transform: scaleX(0);
         transform-origin: 0 50%;
         transition-property: transform;
@@ -38,7 +38,7 @@ $i-margin-right: $i-padding;
 
     i {
         color: $white;
-        background-color: $gray-700;
+        background-color: $black;
         position: relative;
         z-index: 10;
         padding: $i-padding;
