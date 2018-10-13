@@ -1,9 +1,16 @@
 body.home {
+    h1{
+        font-size:$font-size-base * 1.75;
+    }
         & .dark {
-            p,h3 {
+            p,h1,a {
                 color: $white;
+                text-transform: uppercase;
+                margin-bottom:1rem;
+                &:hover{
+                    text-decoration: none;
+                }
             }
-
             .meta-btn {
                 border: 1px solid $white;
                 color: $white;
