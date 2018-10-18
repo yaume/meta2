@@ -27,9 +27,13 @@ $beforeDisplayContent = trim(implode("\n", $results));
 
 $results = $dispatcher->trigger('onContentAfterDisplay', array($this->category->extension . '.categories', &$this->category, &$this->params, 0));
 $afterDisplayContent = trim(implode("\n", $results));
-
-?>
-<section class="events<?php echo $this->pageclass_sfx; ?>" itemscope itemtype="https://schema.org/Itemlist">
+// Load the FieldsHelper
+JLoader::register('FieldsHelper', JPATH_ADMINISTRATOR . '/components/com_fields/helpers/fields.php');
+//script to header
+$document = JFactory::getDocument();
+$document->addScriptDeclaration('','application/ld+json')
+;?>
+<section class="events category <?php echo $this->pageclass_sfx; ?>" itemscope itemtype="https://schema.org/Itemlist">
 	<?php if ($this->params->get('show_page_heading')) : ?>
 		<div class="page-header">
 			<h1> <?php echo $this->escape($this->params->get('page_heading')); ?> </h1>
@@ -62,7 +66,10 @@ $afterDisplayContent = trim(implode("\n", $results));
 			<?php echo $afterDisplayContent; ?>
 		</div>
 	<?php endif; ?>
-
+	<?php foreach ($this->item->jcfields as $field) : ?>
+	// Render the field using the fields render method
+	<?php echo $field->label . ':' . $field->value; ?>
+	<?php endforeach ?>
 	<?php if (empty($this->lead_items) && empty($this->link_items) && empty($this->intro_items)) : ?>
 		<?php if ($this->params->get('show_no_articles', 1)) : ?>
 			<p><?php echo JText::_('COM_CONTENT_NO_ARTICLES'); ?></p>
@@ -74,7 +81,7 @@ $afterDisplayContent = trim(implode("\n", $results));
 		<div class="items-leading ">
 			<?php foreach ($this->lead_items as &$item) : ?>
 				<div class="leading-<?php echo $leadingcount; ?><?php echo $item->state == 0 ? ' system-unpublished' : null; ?>"
-					itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+					itemprop=itemListElement" itemscope itemtype="http://schema.org/Event">
 					<?php
 					$this->item = &$item;
 					echo $this->loadTemplate('item');
@@ -95,20 +102,20 @@ $afterDisplayContent = trim(implode("\n", $results));
 			<?php $rowcount = ((int) $key % (int) $this->columns) + 1; ?>
 			<?php if ($rowcount === 1) : ?>
 				<?php $row = $counter / $this->columns; ?>
-				<div class="items-row">
-			<?php endif; ?>
-			<div class="item column-<?php echo $rowcount; ?><?php echo $item->state == 0 ? ' system-unpublished' : null; ?>"
-				itemprop="itemListElement" itemscope itemtype="http://schema.org/Event">
-				<?php
-				$this->item = &$item;
-				echo $this->loadTemplate('item');
-				?>
-			</div>
-			<!-- end item -->
-			<?php $counter++; ?>
-		<!-- end span -->
-			<?php if (($rowcount == $this->columns) or ($counter == $introcount)) : ?>
-				</div><!-- end row -->
+				
+		<?php endif; ?>
+		<div class="item column-<?php echo $rowcount; ?><?php echo $item->state == 0 ? ' system-unpublished' : null; ?>"
+			itemprop="itemListElement" itemscope itemtype="http://schema.org/Event">
+			<?php
+			$this->item = &$item;
+			echo $this->loadTemplate('item');
+			?>
+		</div>
+		<!-- end item -->
+		<?php $counter++; ?>
+	<!-- end span -->
+		<?php if (($rowcount == $this->columns) or ($counter == $introcount)) : ?>
+			<!-- end row -->
 			<?php endif; ?>
 		<?php endforeach; ?>
 	<?php endif; ?>

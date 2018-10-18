@@ -1,0 +1,56 @@
+.category {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1rem 1rem;
+    [class^="leading-"],
+    .item {
+        position: relative;
+        transition: all 1s ease-in-out 1s;
+        overflow: hidden;
+
+        &:hover {
+
+            figcaption,
+            .readmore {
+                opacity: 1;
+            }
+
+            img {
+                opacity: 0.5;
+            }
+        }
+
+        a {
+            color: black;
+            display: block;
+        }
+
+        .readmore {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            opacity: 0;
+            background: transparent;
+            border: 0;
+
+        }
+
+        figure {
+            position: relative;
+            margin: 0;
+        }
+
+        figcaption {
+            position: absolute;
+            top: 1.25rem;
+            left: 1.875rem;
+            opacity: 0;
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .category {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

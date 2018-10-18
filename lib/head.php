@@ -99,7 +99,6 @@ $this->setGenerator($setGeneratorTag);
 //$this->setTitle( $sitename . ' | ' . $title);
 
 // Remove MooTools if set to no.
-if ( !$loadMoo ) {
     unset($doc->_scripts[$this->baseurl.'/media/system/js/mootools-core.js']);
     unset($doc->_scripts[$this->baseurl.'/media/system/js/mootools-more.js']);
     unset($doc->_scripts[$this->baseurl.'/media/system/js/core.js']);
@@ -107,7 +106,6 @@ if ( !$loadMoo ) {
     unset($doc->_scripts[$this->baseurl.'/media/system/js/modal.js']);
     unset($doc->_scripts[$this->baseurl.'/media/system/js/mootools.js']);
     unset($doc->_scripts[$this->baseurl.'/plugins/system/mtupgrade/mootools.js']);
-}
 
 #-------------End Construct Code--------------------------------------#
 // get html head data

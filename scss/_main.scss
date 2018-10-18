@@ -1,0 +1,10 @@
+main{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1rem;
+}
+@include media-breakpoint-up(lg){
+    main{
+        grid-template-columns: 1fr 3fr 1fr;
+    }
+}
