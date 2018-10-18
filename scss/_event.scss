@@ -2,6 +2,7 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 1rem 1rem;
+    
     [class^="leading-"],
     .item {
         position: relative;
@@ -19,7 +20,9 @@
                 opacity: 0.5;
             }
         }
-
+        img{
+            width: 100%;
+        }
         a {
             color: black;
             display: block;
@@ -48,9 +51,11 @@
         }
     }
 }
-
 @include media-breakpoint-up(lg) {
     .category {
         grid-template-columns: repeat(3, 1fr);
+        .items-leading {
+            grid-column: 1/span 3;
+        }
     }
 }

@@ -55,7 +55,7 @@ $document->addScriptDeclaration('
 ,'application/ld+json');
 ?>
 
-<div class="item-page<?php echo $this->pageclass_sfx; ?>" itemscope itemtype="https://schema.org/Event">
+<div class="item-page event<?php echo $this->pageclass_sfx; ?>" itemscope itemtype="https://schema.org/Event">
 	<meta itemprop="inLanguage" content="<?php echo ($this->item->language === '*') ? JFactory::getConfig()->get('language') : $this->item->language; ?>" />
 	<?php if ($this->params->get('show_page_heading')) : ?>
 	<div class="page-header">
@@ -139,10 +139,7 @@ $document->addScriptDeclaration('
 	<?php if (isset ($this->item->toc)) :
 		echo $this->item->toc;
 	endif; ?>
-	<div itemprop="articleBody">
 		<?php echo $this->item->text; ?>
-	</div>
-
 	<?php if ($info == 1 || $info == 2) : ?>
 		<?php if ($useDefList) : ?>
 				<?php // Todo: for Joomla4 joomla.content.info_block.block can be changed to joomla.content.info_block ?>

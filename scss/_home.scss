@@ -2,6 +2,11 @@ body.home {
     h1{
         font-size:$font-size-base * 1.75;
     }
+    p,h1,a {
+        color: $black;
+        text-transform: uppercase;
+        margin-bottom:1rem;
+    }
         & .dark {
             p,h1,a {
                 color: $white;

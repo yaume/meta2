@@ -1,0 +1,26 @@
+.subtitle{
+    font-style: italic;
+    color: $gray-600;
+    em{
+        font-family: Big Caslon,Book Antiqua,Palatino Linotype,Georgia,serif;
+        color: $gray-500;
+    }
+}
+[class*="columns"]{
+    display: grid;
+    grid-gap: 1rem 1rem;
+}
+@include media-breakpoint-up(lg) {
+    .columns2{
+        grid-template-columns: repeat(2,1fr);
+        h1,h2,h3,h4,h5,h6{
+            grid-column: 1 / span 2;
+        }
+    }
+    .columns3{
+        grid-template-columns: repeat(1,1fr);
+        h1,h2,h3,h4,h5,h6{
+            grid-column: 1 / span 3;
+        }
+    }
+}
