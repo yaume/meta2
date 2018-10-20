@@ -1,21 +1,26 @@
 $padding-x: 1.8rem;
 $padding-y: 0.75rem;
 $i-margin-y: -1* $padding-y;
-$i-padding :$padding-y ;
+$i-padding :$padding-y;
 $i-margin-left:- $padding-x;
 $i-margin-right: $i-padding;
+
 .meta-btn {
     position: relative;
     padding: $padding-y $padding-x;
     cursor: pointer;
     text-decoration: none;
     border: 1px solid $black;
-    transition: color  0.4s ease-out;
-    color:$black;
+    transition: color 0.4s ease-out;
+    color: $black;
     margin: 1px 1px 1px -1px; //Fix for some kind of padding or magin in Bootstrap to avoid double border in button group
-    &:hover, &:active, &:focus{
-        color:$white;
-        &:before{
+
+    &:hover,
+    &:active,
+    &:focus {
+        color: $white;
+
+        &:before {
             transform: scaleX(1);
         }
     }
@@ -35,6 +40,7 @@ $i-margin-right: $i-padding;
         transition-duration: 0.4s;
         transition-timing-function: ease-out;
     }
+
     i {
         color: $white;
         background-color: $black;
@@ -43,5 +49,16 @@ $i-margin-right: $i-padding;
         padding: $i-padding;
         line-height: $line-height-lg;
         margin: $i-margin-y $i-margin-left $i-margin-y $i-padding;
+    }
+}
+
+a {
+    &.shopblack {
+        border: 1px solid black;
+        color: black;
+        text-decoration: none;
+        border-radius: 0;
+        font-weight: bold;
+
     }
 }
