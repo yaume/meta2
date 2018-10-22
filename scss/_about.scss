@@ -1,0 +1,42 @@
+.about{
+    display: grid;
+    grid-template-columns: 1fr;
+    figure {
+        margin: 15px 0;
+        padding: 10px 0;
+        img{
+            min-width: 100%;
+            max-width: 100%;
+            height: auto;
+        }
+    }
+}
+.abovefooter{
+    display: grid;
+    text-align: center;
+    .footer_body{
+        text-align: left;
+    }
+}
+.fa-ul {
+    margin: 40px 0 0 0;
+    li {
+        margin: 25px 0 25px 46px;
+    }
+}
+.contact{
+    text-align: left;
+}
+#message-sent, #message-sent-false {
+    display: none;
+}
+@include media-breakpoint-up(lg) {
+    .about{
+
+    }
+    .abovefooter {
+        grid-column-start: 2;
+        grid-template-columns: repeat(3,1fr);
+        grid-gap: 1rem;
+    }
+}

@@ -28,21 +28,35 @@ include_once JPATH_THEMES . '/' . $this->template . '/lib/head.php';
                 <img src="templates/meta2/img/meta.png" alt="META MONACO - ART GALLERY" class="img-fluid">
             </a>
         </section>
-        
-        <jdoc:include type="modules" name="position-0" style='menu'/>
+
+        <jdoc:include type="modules" name="position-0" style='menu' />
         <section class="header-extra">
             <jdoc:include type="modules" name="position-1" />
         </section>
-    
+
         <jdoc:include type="modules" name="position-2" />
     </header>
     <main>
         <jdoc:include type="message" />
         <jdoc:include type="component" />
+        <section class="abovefooter">
+            <section class="footer-left">
+                <jdoc:include type="modules" name="position-11" />
+            </section>
+            <section class="footer-middle">
+                <jdoc:include type="modules" name="position-12" />
+            </section>
+            <section class="footer-right">
+                <jdoc:include type="modules" name="position-13" />
+            </section>
+        </section>
     </main>
+
     <footer>
-        <jdoc:include type="modules" name="position-14" />
-        <jdoc:include type="modules" name="position-15" />
+
+            <jdoc:include type="modules" name="position-14" />
+            <jdoc:include type="modules" name="position-15" />
+
     </footer>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
