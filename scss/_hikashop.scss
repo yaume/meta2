@@ -1,0 +1,9 @@
+.hikashop_products{
+    display: grid;
+    grid-gap: 1rem 1rem;
+}
+@include media-breakpoint-up(lg) {
+    .hikashop_products{
+        grid-template-columns: repeat(3,1fr);
+        }
+}

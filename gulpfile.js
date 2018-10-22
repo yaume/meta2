@@ -2,14 +2,11 @@
 
 var gulp = require('gulp'),
     $ = require('gulp-load-plugins')();
-var    sassdoc = require('sassdoc');
     var sassOptions = {
         errLogToConsole: true,
         outputStyle: 'expanded'
       };
-    var sassdocOptions = {
-        dest: 'css/sassdoc'
-    };
+
     gulp.task('fonts', function(){
         return gulp.src('./node_modules/font-awesome/fonts/**.*')
         .pipe(gulp.dest('fonts'));
@@ -23,8 +20,6 @@ var    sassdoc = require('sassdoc');
         }))
         .pipe($.sourcemaps.write('css/maps'))
         .pipe(gulp.dest('css'))
-        .pipe(sassdoc(sassdocOptions))
-        .resume()
     });
     gulp.task('watch', function(){
         gulp.watch('scss/**/*.scss',gulp.series('css'))
