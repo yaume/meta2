@@ -48,7 +48,6 @@ echo $this->loadTemplate();
 	<?php if($this->params->get('show_vote_product')) { ?>
 	<div id="hikashop_product_vote_mini" class="hikashop_product_vote_mini">
 		<?php
-		echo'<pre>',var_dump($this->params->get('show_product_vote')),'</pre>';
 				$js = '';
 				$this->params->set('vote_type', 'product');
 				$this->params->set('vote_ref_id', isset($this->element->main) ? (int)$this->element->main->product_id : (int)$this->element->product_id );
@@ -207,7 +206,6 @@ if(HIKASHOP_J30) {
 
 	<?php
 	$this->setLayout('show_block_product_files');
-	echo var_dump($this->setLayout('show_block_product_files'));
 	echo $this->loadTemplate();
 ?>
 

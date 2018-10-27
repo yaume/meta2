@@ -17,13 +17,16 @@
             grid-gap: 1rem;
         }
     }
+
     .hikashop_product_quantity_field {
         width: 1.875rem;
         text-align: center;
     }
-    .hikashop_product_quantity_field_change{
-        color:$black;
+
+    .hikashop_product_quantity_field_change {
+        color: $black;
     }
+
     .hikashop_listing_img_title {
         position: relative;
         transition: all 0.75s ease-in-out;
@@ -44,6 +47,8 @@
             background: transparent;
             border: 0;
             color: $black;
+            font-size: 2rem;
+            transform: translate(-2rem, -2rem);
 
         }
 
@@ -57,6 +62,53 @@
             .readmore {
                 opacity: 1;
             }
+        }
+    }
+}
+//cart
+.hikashop_cart_product_image_title {
+    width: 10%;
+}
+.hikashop_cart_product_quantity_value {
+    text-align: center;
+}
+// cart notify
+.image,
+.title {
+    display: none !important;
+}
+
+.text {
+    font-size: 1.5rem !important;
+}
+
+.vex-content {
+    font-family: $font-family-sans-serif !important;
+    border-radius: 0 !important;
+    width: 550px !important;
+    .vex-dialog-button {
+        border: 1px solid !important;
+        margin: 0 !important;
+        font-family: inherit !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.1em !important;
+        font-size: 1rem !important;
+        line-height: 1.5rem !important;
+        padding: 1rem !important;
+        border-radius: 0 !important;
+
+
+        &.vex-dialog-button-primary {
+            background: $white !important;
+            color: $black !important;
+        }
+
+        &.vex-first {
+            float: left !important;
+        }
+
+        &.vex-last {
+            float: right !important;
         }
     }
 }

@@ -9155,6 +9155,9 @@ a.shopblack {
   background: transparent;
   border: 0;
   color: #000;
+  font-size: 2rem;
+  -webkit-transform: translate(-2rem, -2rem);
+          transform: translate(-2rem, -2rem);
 }
 
 .hikashop_products .hikashop_listing_img_title:hover,
@@ -9170,6 +9173,54 @@ a.shopblack {
 .hikashop_products .hikashop_listing_img_title:hover .readmore,
 .hikashop_product_page form .hikashop_listing_img_title:hover .readmore {
   opacity: 1;
+}
+
+.hikashop_cart_product_image_title {
+  width: 10%;
+}
+
+.hikashop_cart_product_quantity_value {
+  text-align: center;
+}
+
+.image,
+.title {
+  display: none !important;
+}
+
+.text {
+  font-size: 1.5rem !important;
+}
+
+.vex-content {
+  font-family: "Muli", sans-serif !important;
+  border-radius: 0 !important;
+  width: 550px !important;
+}
+
+.vex-content .vex-dialog-button {
+  border: 1px solid !important;
+  margin: 0 !important;
+  font-family: inherit !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  font-size: 1rem !important;
+  line-height: 1.5rem !important;
+  padding: 1rem !important;
+  border-radius: 0 !important;
+}
+
+.vex-content .vex-dialog-button.vex-dialog-button-primary {
+  background: #fff !important;
+  color: #000 !important;
+}
+
+.vex-content .vex-dialog-button.vex-first {
+  float: left !important;
+}
+
+.vex-content .vex-dialog-button.vex-last {
+  float: right !important;
 }
 
 @media (min-width: 992px) {

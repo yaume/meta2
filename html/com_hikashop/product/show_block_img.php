@@ -7,7 +7,8 @@
  * @license	GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
  */
 defined('_JEXEC') or die('Restricted access');
-?><?php
+?>
+<?php
 $variant_name = '';
 $variant_main = '_main';
 $display_mode = '';
@@ -44,7 +45,7 @@ if(!$this->config->get('thumbnail')) {
 	$variant_name = isset($this->variant_name) ? $this->variant_name : '';
 
 ?>
-		<!-- <div class="hikashop_product_main_image_thumb" id="hikashop_image_main_thumb_div<?php echo $variant_name;?>" <?php echo $style;?> >
+<!-- <div class="hikashop_product_main_image_thumb" id="hikashop_image_main_thumb_div<?php echo $variant_name;?>" <?php echo $style;?> >
 			<div style="<?php if(!empty($divHeight) && !$this->config->get('image_force_size',true)){ echo 'height:'.($divHeight+20).'px;'; } ?>text-align:center;clear:both;" class="hikashop_product_main_image">
 				<div style="position:relative;text-align:center;clear:both;margin: auto;" class="hikashop_product_main_image_subdiv"> -->
 <?php
@@ -71,18 +72,18 @@ if(!$this->config->get('thumbnail')) {
 		}
 	}
 ?>
-				<!-- </div>
+<!-- </div>
 			</div>
 		</div> -->
 <?php
 	if(empty($this->variant_name) && !empty($img->origin_url)) {
 ?>
-		<meta itemprop="image" content="<?php echo $img->origin_url; ?>"/>
+<meta itemprop="image" content="<?php echo $img->origin_url; ?>" />
 <?php
 	}
 }
 ?>
-	<!-- </div>
+<!-- </div>
 	<div id="hikashop_small_image_div<?php echo $variant_name;?>" class="hikashop_small_image_div"> -->
 <?php
 	if( !empty($this->element->images) && count($this->element->images) > 1) {
@@ -119,12 +120,12 @@ if(!$this->config->get('thumbnail')) {
 		}
 	}
 ?>
-	<!-- </div>
+<!-- </div>
 </div> -->
 <?php
 if(empty($variant_name)) {
 ?>
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 if(!window.localPage)
 	window.localPage = {};
 if(!window.localPage.images)
@@ -168,6 +169,6 @@ window.localPage.openImage = function(id, variant_name, e) {
 	window.localPage.images[id].click();
 	return false;
 };
-</script>
+</script> -->
 <?php
 }
