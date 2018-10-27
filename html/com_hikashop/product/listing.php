@@ -23,7 +23,7 @@ if(!empty($this->tmpl_ajax)) {
 }
 
 if(hikashop_level(2) && hikaInput::get()->getVar('hikashop_front_end_main', 0) && hikaInput::get()->getVar('task') == 'listing' && $this->params->get('show_compare')) { ?>
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 <!--
 var compare_list = {length: 0};
 function setToCompareList(product_id,name,elem) {
@@ -114,7 +114,7 @@ window.Oby.registerAjax('compare.updated', function(evt){
 	return true;
 });
 //-->
-</script>
+</script> -->
 <?php }
 
 ob_start();
@@ -127,7 +127,6 @@ if($this->module) {
 	$title_key = 'showtitle';
 	$titleType = 'h2';
 }
-
 $title = (string)$this->params->get($title_key, '');
 if((!$this->module || hikaInput::get()->getVar('hikashop_front_end_main', 0)) && $title_key == 'show_page_heading' && $title === '') {
 	$params = JComponentHelper::getParams('com_menus');
@@ -265,7 +264,8 @@ if($filter_type !== 3) {
 	$html = ob_get_clean();
 	if(!empty($html)) {
 ?>
-	<div id="<?php echo $this->params->get('main_div_name');?>" class="hikashop_category_information hikashop_products_listing_main"><?php echo $html; ?></div>
+	<div id="<?php echo $this->params->get('main_div_name');?>" class="hikashop_category_information hikashop_products_listing_main"><?php
+echo $html; ?></div>
 <?php
 	}
 } else if(!empty($this->rows) && !empty($this->categories)) {
@@ -355,7 +355,7 @@ if($filter_type !== 3) {
 	$html = ob_get_clean();
 	if(!empty($html)) {
 ?>
-		<div id="<?php echo $this->params->get('main_div_name');?>" class="hikashop_category_information hikashop_products_listing_main hikashop_product_listing_<?php echo $this->element->category_id; ?>"><?php echo $html; ?></div>
+		<div id="<?php echo $this->params->get('main_div_name');?>" class="hikashop_category_information hikashop_products_listing_main hikashop_product_listing_<?php echo $this->element->category_id; ?>"><?php echo '<pre>',var_dump($this->params->get('main_div_name')),'</pre>';  echo $html; ?></div>
 <?php
 	}
 }
