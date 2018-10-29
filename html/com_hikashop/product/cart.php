@@ -10,7 +10,6 @@ defined('_JEXEC') or die('Restricted access');
 ?><?php
 $tmpl = hikaInput::get()->getWord('tmpl', '');
 $module_id = (int)$this->params->get('id', 0);
-
 if(!in_array($tmpl, array('component', 'ajax', 'raw'))) {
 	$events = ($this->cart_type == 'cart') ? '["cart.updated","checkout.cart.updated"]' : '"wishlist.updated"';
 ?>
@@ -138,7 +137,6 @@ if(!empty($small_cart)) {
 				continue;
 			if($group && $row->cart_product_option_parent_id)
 				continue;
-
 			$qty += $row->cart_product_quantity;
 		}
 
@@ -175,7 +173,7 @@ if(!empty($small_cart)) {
 	}
 ?>
 	<a class="hikashop_small_cart_checkout_link" href="<?php echo $link; ?>"<?php echo $extra_data; ?>>
-		<span class="hikashop_small_cart_total_title"><?php echo $text; ?></span>
+		<span class="hikashop_small_cart_total_title"><i class="fa fa-shopping-cart"></i><span class="numcart"><?php echo $qty; ?></span></span>
 	</a>
 <?php
 	if($this->element->cart_type == 'cart' && $small_cart == 1 && $this->params->get('print_cart', 0)) {

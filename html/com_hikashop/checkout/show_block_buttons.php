@@ -26,7 +26,7 @@ defined('_JEXEC') or die('Restricted access');
 ?>
 	</div>
 	<div class="buttons_right">
-		<button id="hikabtn_checkout_next" type="submit" class="<?php echo $this->config->get('css_button','hikabtn'); ?> hikabtn-success hikabtn_checkout_next" onclick="this.form.submit(); this.disabled=true; window.Oby.addClass(this, 'next_button_disabled'); return false;"><?php
+		<button id="hikabtn_checkout_next" type="submit" class="<?php echo $this->config->get('css_button','hikabtn'); ?> meta-btn" onclick="this.form.submit(); this.disabled=true; window.Oby.addClass(this, 'next_button_disabled'); return false;"><?php
 			$steps = count($this->checkoutHelper->checkout_workflow['steps']);
 			$txt = JText::_('HIKA_NEXT');
 			if(($this->step + 1) == $steps) {

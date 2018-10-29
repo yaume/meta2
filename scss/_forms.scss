@@ -1,0 +1,15 @@
+form{
+    display: grid;
+    grid-gap:1rem;
+    fieldset{
+        display: contents;
+    }
+    legend {
+        grid-column: span 2;
+    }
+}
+@include media-breakpoint-up(lg){
+    form{
+        grid-template-columns: 1fr 4fr;
+    }
+}

@@ -8,12 +8,13 @@ $i-margin-right: $i-padding;
 .meta-btn {
     position: relative;
     padding: $padding-y $padding-x;
+    background: transparent;
     cursor: pointer;
     text-decoration: none;
     border: 1px solid $black;
     transition: color 0.4s ease-out;
     color: $black;
-    margin: 1px 1px 1px -1px; //Fix for some kind of padding or magin in Bootstrap to avoid double border in button group
+    margin:-1px; //Fix for some kind of padding or magin in Bootstrap to avoid double border in button group
 
     &:hover,
     &:active,
