@@ -8048,9 +8048,8 @@ footer {
   display: -ms-grid;
   display: grid;
   grid-gap: 1rem 1rem;
-  align-items: center;
-  justify-content: space-between;
-  text-align: center;
+  text-align: justify;
+  margin-bottom: 1rem;
 }
 
 .fa-heart {
@@ -8109,8 +8108,7 @@ form.checkout2 legend {
 }
 
 .about figure {
-  margin: 15px 0;
-  padding: 10px 0;
+  margin: 0;
 }
 
 .about figure img {
@@ -8146,6 +8144,9 @@ form.checkout2 legend {
 }
 
 @media (min-width: 992px) {
+  .about figcaption {
+    margin-bottom: 1rem;
+  }
   .abovefooter {
     -ms-grid-column: 2;
         grid-column-start: 2;

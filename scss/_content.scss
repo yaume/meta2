@@ -9,9 +9,8 @@
 [class*="columnsblock"]{
     display: grid;
     grid-gap: 1rem 1rem;
-    align-items: center;
-    justify-content: space-between;
-    text-align: center;
+    text-align: justify;
+    margin-bottom: 1rem;
 }
 .fa-heart{
     font-size: 2.5rem;

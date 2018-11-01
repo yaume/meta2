@@ -2,8 +2,7 @@
     display: grid;
     grid-template-columns: 1fr;
     figure {
-        margin: 15px 0;
-        padding: 10px 0;
+        margin: 0;
         img{
             min-width: 100%;
             max-width: 100%;
@@ -32,7 +31,9 @@
 }
 @include media-breakpoint-up(lg) {
     .about{
-
+        figcaption{
+            margin-bottom: 1rem;
+        }
     }
     .abovefooter {
         grid-column-start: 2;
