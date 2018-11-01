@@ -8,60 +8,6 @@ Copyright:  Guillaume - (C) 2018 - All rights reserved
 Licenses: GNU/GPL v3 or later http://www.gnu.org/licenses/gpl-3.0.html
 ===================================================================== */
 
-// Define shortcuts for template parameters
-$loadMoo				= $this->params->get('loadMoo');
-$offcanvas				= $this->params->get('offcanvas');
-$setGeneratorTag		= $this->params->get('setGeneratorTag');
-$analytics				= $this->params->get('analytics');
-$customCSS				= $this->params->get('customCSS');
-$defaultWidth			= '';
-$setWidth				= $this->params->get('setWidth');
-$widthUnit				= $this->params->get('widthUnit');
-$topbarTitle			= $this->params->get('topbarTitle');
-$stickyTopMenu			= $this->params->get('stickyTopMenu');
-$googleplus				= $this->params->get('googleplus');
-$googleWebFonts 		= $this->params->get('googleWebFonts');
-$twitter				= $this->params->get('twitter');
-$twitterLink			= $this->params->get('twitterLink');
-$dribbble				= $this->params->get('dribbble');
-$dribbbleLink			= $this->params->get('dribbbleLink');
-$facebook				= $this->params->get('facebook');
-$facebookLink			= $this->params->get('facebookLink');
-$googleplus				= $this->params->get('googleplus');
-$googleplusLink			= $this->params->get('googleplusLink');
-$github					= $this->params->get('github');
-$githubLink				= $this->params->get('githubLink');
-$TopMenuWidth			= $this->params->get('TopMenuWidth');
-$active					= JFactory::getApplication()->getMenu()->getActive();
-//Topmenu
-$topmenu = ($stickyTopMenu?1:0)+ ($TopMenuWidth?1:0);
-$fixed = "";
-$ctg = "";
-if ( $stickyTopMenu == 1 ) { $fixed = "fixed"; }
-if ( $TopMenuWidth == 1 ) { $ctg = "contain-to-grid"; }
-//Offcanvas
-$oc = ($offcanvas?1:0);
-// Do we have social links?
-$social                = ($twitterLink?1:0)+ ($dribbbleLink?1:0)+ ($facebookLink?1:0)+ ($googleplusLink?1:0)+ ($githubLink?1:0);
-
-if ($this->countModules('position-5') == 0)  {$rightwidth = 0;} else {$rightwidth = (int) ($this->params->get('rightwidth'));}
-if ($this->countModules('position-3') == 0)  {$leftwidth = 0;} else {$leftwidth = (int) ($this->params->get('leftwidth'));}
-if ($widthUnit=='rem'){
-    $colcount = $rightwidth + $leftwidth;
-    $coltotal = 12 - $colcount;
-    $mainwidth = 'large-'.$coltotal;
-    $rightWidth = 'large-'.$rightwidth;
-    $leftWidth = 'large-'.$leftwidth;
-    $setWidth = $setWidth*12/$coltotal;
-}
-else{
-$colcount = $rightwidth + $leftwidth;
-$coltotal = 12 - $colcount;
-
-$mainwidth = 'large-'.$coltotal;
-$rightWidth = 'large-'.$rightwidth;
-$leftWidth = 'large-'.$leftwidth;
-}
 // Modules
 $aboveheader = (int) ($this->countModules('position-1-1') > 0);
 $header = (int) ($this->countModules('position-1') > 0);
@@ -92,9 +38,10 @@ $doc = JFactory::getDocument();
 $base = $this->baseurl;
 // Define relative path to the current template directory
 $template = 'templates/'.$this->template;
-
+$menu      = $app->getMenu(); // Load the JMenuSite Object
+$active    = $menu->getActive(); // Load the Active Menu Item as an stdClass Object
 // Change generator tag
-$this->setGenerator($setGeneratorTag);
+$this->setGenerator('');
 
 //$this->setTitle( $sitename . ' | ' . $title);
 

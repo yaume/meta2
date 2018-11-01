@@ -21,11 +21,11 @@ include_once JPATH_THEMES . '/' . $this->template . '/lib/head.php';
 
 </head>
 
-<body class="<?php echo $pageclass ?>">
+<body class="<?php echo $active->alias; ?>">
     <header>
         <section class="logo">
             <a href="http://www.meta.mc/">
-                <img src="templates/meta2/img/meta.png" alt="META MONACO - ART GALLERY" class="img-fluid">
+                <img src="<?php echo $template?>/img/meta.png" alt="META MONACO - ART GALLERY" class="img-fluid">
             </a>
         </section>
 
