@@ -8,7 +8,7 @@
         grid-template-columns: repeat(3, minmax(0, 1fr));
         grid-gap: 1rem;
 
-        .main-img {
+        img:first-child {
             grid-column: span 3;
         }
 
@@ -69,8 +69,13 @@
 .hikashop_cart_product_image_title {
     width: 10%;
 }
-.hikashop_cart_product_quantity_value {
+.cart_product_quantity_value {
+    input{
     text-align: center;
+    }
+}
+.hikashop_checkout_cart a {
+    color: $black;
 }
 // cart notify
 .image,
@@ -112,7 +117,9 @@
         }
     }
 }
-
+.hikashop_products {
+    grid-template-columns: repeat(3, 1fr);
+}
 @include media-breakpoint-up(lg) {
     .hikashop_product_page {
         form {

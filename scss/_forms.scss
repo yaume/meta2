@@ -1,4 +1,4 @@
-form{
+form.checkout2{
     display: grid;
     grid-gap:1rem;
     fieldset{
@@ -9,7 +9,7 @@ form{
     }
 }
 @include media-breakpoint-up(lg){
-    form{
+    form.checkout2{
         grid-template-columns: 1fr 4fr;
     }
 }

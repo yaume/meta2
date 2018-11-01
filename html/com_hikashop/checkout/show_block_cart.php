@@ -245,12 +245,10 @@ defined('_JEXEC') or die('Restricted access');
 <?php
 	}
 ?>
-			<td data-title="<?php echo JText::_('PRODUCT_QUANTITY'); ?>" class="hikashop_cart_product_quantity_value"><?php
-
+			<td data-title="<?php echo JText::_('PRODUCT_QUANTITY'); ?>" class="cart_product_quantity_value"><?php
 		if(empty($this->options['status'])) {
 			if($product->product_parent_id != 0 && isset($product->main_product_quantity_layout))
 				$product->product_quantity_layout = $product->main_product_quantity_layout;
-
 			if($product->product_quantity_layout == 'show_select' || (empty($product->product_quantity_layout) && $this->config->get('product_quantity_display', 'show_default_div') == 'show_select')) {
 				$min_quantity = ($product->product_min_per_order || empty($product->parent_product)) ? $product->product_min_per_order : $product->parent_product->product_min_per_order;
 				$max_quantity = ($product->product_max_per_order || empty($product->parent_product)) ? $product->product_max_per_order : $product->parent_product->product_max_per_order;
@@ -273,9 +271,9 @@ defined('_JEXEC') or die('Restricted access');
 				echo str_replace('id="checkoutcartitem'.$product->cart_product_id.'"', '', $ret);
 			} else {
 ?>
-				<input id="hikashop_checkout_quantity_<?php echo $product->cart_product_id;?>" type="text" name="checkout[cart][item][<?php echo $product->cart_product_id;?>]" class="hikashop_product_quantity_field" data-hk-qty-old="<?php echo $product->cart_product_quantity; ?>" value="<?php echo $product->cart_product_quantity; ?>" onchange="window.hikashop.checkQuantity(this);"/>
+				<input id="hikashop_checkout_quantity_<?php echo $product->cart_product_id;?>" type="text" name="checkout[cart][item][<?php echo $product->cart_product_id;?>]" class="hikashop_product_quantity_field" size="3" data-hk-qty-old="<?php echo $product->cart_product_quantity; ?>" value="<?php echo $product->cart_product_quantity; ?>" onchange="window.hikashop.checkQuantity(this);"/>
 				<div class="hikashop_cart_product_quantity_refresh">
-					<a class="hikashop_no_print" href="#" onclick="var qty_field = document.getElementById('hikashop_checkout_quantity_<?php echo $product->cart_product_id;?>'); if (qty_field && qty_field.value != '<?php echo $product->cart_product_quantity; ?>'){<?php echo $input; ?> return window.checkout.submitCart(<?php echo $this->step; ?>,<?php echo $this->module_position; ?>); } return false;" title="<?php echo JText::_('HIKA_REFRESH'); ?>">
+					<a class="hikashop_no_print btn" href="#" onclick="var qty_field = document.getElementById('hikashop_checkout_quantity_<?php echo $product->cart_product_id;?>'); if (qty_field && qty_field.value != '<?php echo $product->cart_product_quantity; ?>'){<?php echo $input; ?> return window.checkout.submitCart(<?php echo $this->step; ?>,<?php echo $this->module_position; ?>); } return false;" title="<?php echo JText::_('HIKA_REFRESH'); ?>">
 						<i class="fa fa-sync"></i>
 					</a>
 				</div>
@@ -289,8 +287,8 @@ defined('_JEXEC') or die('Restricted access');
 
 ?>
 				<div class="hikashop_cart_product_quantity_delete">
-					<a class="hikashop_no_print" href="<?php echo $delete_url; ?>" onclick="var qty_field = document.getElementById('hikashop_checkout_quantity_<?php echo $product->cart_product_id;?>'); if(qty_field){qty_field.value=0; return window.checkout.submitCart(<?php echo $this->step; ?>,<?php echo $this->module_position; ?>); } return false;" title="<?php echo JText::_('HIKA_DELETE'); ?>">
-						<i class="fa fa-times-circle"></i>
+					<a class="hikashop_no_print btn" href="<?php echo $delete_url; ?>" onclick="var qty_field = document.getElementById('hikashop_checkout_quantity_<?php echo $product->cart_product_id;?>'); if(qty_field){qty_field.value=0; return window.checkout.submitCart(<?php echo $this->step; ?>,<?php echo $this->module_position; ?>); } return false;" title="<?php echo JText::_('HIKA_DELETE'); ?>">
+						<i class="fa fa-trash"></i>
 					</a>
 				</div>
 <?php

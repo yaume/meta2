@@ -34,7 +34,7 @@ defined('_JEXEC') or die('Restricted access');
 </div>
 
 <div id="hikashop_product_left_part" class="hikashop_product_left_part">
-	<?php if(!empty($this->element->extraData->leftBegin)) { echo implode("\r\n",$this->element->extraData->leftBegin); } ?>
+<?php if(!empty($this->element->extraData->leftBegin)) { echo implode("\r\n",$this->element->extraData->leftBegin); } ?>
 	<?php
 $this->row =& $this->element;
 $this->setLayout('show_block_img');
