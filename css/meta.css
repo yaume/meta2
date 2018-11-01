@@ -8195,7 +8195,6 @@ header .header-extra .cart-module .fa-shopping-cart {
   position: relative;
   height: 2rem;
   width: 2rem;
-  margin-bottom: 1rem;
 }
 
 header .header-extra .cart-module .numcart {
@@ -8446,7 +8445,6 @@ body.home h1 {
 body.home p, body.home h1, body.home a {
   color: #000;
   text-transform: uppercase;
-  margin-bottom: 1rem;
 }
 
 body.home .dark p, body.home .dark h1, body.home .dark a {
