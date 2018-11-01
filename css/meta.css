@@ -8193,6 +8193,9 @@ header .header-extra .cart-module .menu-cart {
 header .header-extra .cart-module .fa-shopping-cart {
   color: #495057;
   position: relative;
+  height: 2rem;
+  width: 2rem;
+  margin-bottom: 1rem;
 }
 
 header .header-extra .cart-module .numcart {
