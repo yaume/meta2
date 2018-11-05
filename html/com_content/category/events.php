@@ -66,15 +66,7 @@ $document->addScriptDeclaration('','application/ld+json')
 			<?php echo $afterDisplayContent; ?>
 		</div>
 	<?php endif; ?>
-	<?php foreach ($this->item->jcfields as $field) : ?>
-	// Render the field using the fields render method
-	<?php echo $field->label . ':' . $field->value; ?>
-	<?php endforeach ?>
-	<?php if (empty($this->lead_items) && empty($this->link_items) && empty($this->intro_items)) : ?>
-		<?php if ($this->params->get('show_no_articles', 1)) : ?>
-			<p><?php echo JText::_('COM_CONTENT_NO_ARTICLES'); ?></p>
-		<?php endif; ?>
-	<?php endif; ?>
+	
 
 	<?php $leadingcount = 0; ?>
 	<?php if (!empty($this->lead_items)) : ?>

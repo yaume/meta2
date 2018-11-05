@@ -8052,6 +8052,21 @@ footer {
   margin-bottom: 1rem;
 }
 
+[class*="columnsblock"] figure {
+  overflow: hidden;
+}
+
+[class*="columnsblock"] figure img {
+  min-width: 100%;
+  height: 100%;
+  width: 100%;
+}
+
+[class*="columnsblock"] figure figcaption {
+  text-align: right;
+  font-style: italic;
+}
+
 .fa-heart {
   font-size: 2.5rem;
   color: #dc3545;

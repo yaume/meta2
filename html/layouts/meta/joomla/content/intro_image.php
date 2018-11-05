@@ -9,6 +9,7 @@
 
 defined('JPATH_BASE') or die;
 $params = $displayData->params;
+
 ?>
 <?php $images = json_decode($displayData->images); ?>
 <?php if (isset($images->image_intro) && !empty($images->image_intro)) : ?>
@@ -19,7 +20,7 @@ $params = $displayData->params;
 	<?php echo $displayData->title; ?>
 	</figcaption>
 	<?php $link = JRoute::_(ContentHelperRoute::getArticleRoute($displayData->slug, $displayData->catid,$displayData->language));?>
-	<?php echo JLayoutHelper::render('meta.joomla.content.readmore', array('item' => $this->item, 'params' => $params, 'link' => $link),''); ?>
+	<?php echo JLayoutHelper::render('meta.joomla.content.readmore', array('item' => $displayData->slug, 'params' => $params, 'link' => $link),''); ?>
 	</figure>
 
 <?php endif; ?>
