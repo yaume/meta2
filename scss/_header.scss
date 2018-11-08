@@ -72,6 +72,13 @@ header {
         }
     }
 }
+.navbar-nav{
+    .nav-item {
+        .nav-link {
+           text-transform: uppercase;
+        }
+    }
+}
 
 .search-form {
     display: none;
