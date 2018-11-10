@@ -29,7 +29,7 @@ $doc->addCustomTag('
     <meta name="twitter:title" content="' . $doc->title . '">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@metamonaco">
-    <meta name="twitter:creator" content="Meta Monaco>
+    <meta name="twitter:creator" content="Meta Monaco">
     <meta name="twitter:url" content="' . JURI::current() . '">
     <meta name="twitter:description" content="' . $metadesc . '">
     <meta name="twitter:image" content="' . $timage . '">

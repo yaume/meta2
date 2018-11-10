@@ -8461,7 +8461,7 @@ main {
 }
 
 body.home {
-  background: url(../img/home-324.jpg) no-repeat center center fixed;
+  background: url(../../../images/home/home-324.jpg) no-repeat center 80px fixed;
   background-size: cover;
 }
 
@@ -8504,56 +8504,56 @@ body.home .dark .meta-btn i {
 
 @media screen and (orientation: portrait) and (min-width: 576px) {
   body.home {
-    background: url(../img/home-432.jpg) no-repeat center center fixed;
+    background: url(../../../images/home/home-432.jpg) no-repeat center 80px fixed;
     background-size: cover;
   }
 }
 
 @media screen and (orientation: portrait) and (min-width: 768px) {
   body.home {
-    background: url(../img/home-558.jpg) no-repeat center center fixed;
+    background: url(../../../images/home/home-558.jpg) no-repeat center 80px fixed;
     background-size: cover;
   }
 }
 
 @media screen and (orientation: portrait) and (min-width: 992px) {
   body.home {
-    background: url(../img/home-665.jpg) no-repeat center center fixed;
+    background: url(../../../images/home/home-665.jpg) no-repeat center 80px fixed;
     background-size: cover;
   }
 }
 
 @media screen and (orientation: landscape) {
   body.home {
-    background: url(../img/home-576.jpg) no-repeat center center fixed;
+    background: url(../../../images/home/home-576.jpg) no-repeat center 80px fixed;
     background-size: cover;
   }
 }
 
 @media screen and (orientation: landscape) and (min-width: 576px) {
   body.home {
-    background: url(../img/home-768.jpg) no-repeat center center fixed;
+    background: url(../../../images/home/home-768.jpg) no-repeat center 80px fixed;
     background-size: cover;
   }
 }
 
 @media screen and (orientation: landscape) and (min-width: 768px) {
   body.home {
-    background: url(../img/home-992.jpg) no-repeat center center fixed;
+    background: url(../../../images/home/home-992.jpg) no-repeat center 80px fixed;
     background-size: cover;
   }
 }
 
 @media screen and (orientation: landscape) and (min-width: 992px) {
   body.home {
-    background: url(../img/home-1200.jpg) no-repeat center center fixed;
+    background: url(../../../images/home/home-1200.jpg) no-repeat center 80px fixed;
     background-size: cover;
   }
 }
 
 @media screen and (orientation: landscape) and (min-width: 1200px) {
   body.home {
-    background: url(../img/home-2560.jpg) no-repeat center center fixed;
+    background: url(../../../images/home/home-2560.jpg) no-repeat center 80px fixed;
     background-size: cover;
   }
 }
@@ -8568,6 +8568,18 @@ body.home main section {
   -ms-grid-row-align: center;
       align-self: center;
   align-self: flex-end;
+}
+
+section.mr {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+}
+
+section.ml {
+  position: absolute;
+  top: 50%;
+  left: 5%;
 }
 
 .category {

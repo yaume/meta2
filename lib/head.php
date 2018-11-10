@@ -32,6 +32,7 @@ $app 		= JFactory::getApplication();
 $pageParams  	= $app->getParams();
 $sitename	= $app->getCfg('sitename');
 $title = $this->getTitle();
+// Get page class from menu Page class option
 $pageclass = $pageParams->get( 'pageclass_sfx' );
 // Returns a reference to the global document object
 $doc = JFactory::getDocument();

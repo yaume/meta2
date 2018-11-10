@@ -21,7 +21,7 @@ include_once JPATH_THEMES . '/' . $this->template . '/lib/head.php';
 
 </head>
 
-<body class="<?php echo $active->alias; ?>">
+<body class="<?php echo $active->alias,' ',$pageclass; ?>">
     <header>
         <section class="logo">
             <a href="http://www.meta.mc/">
