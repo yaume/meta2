@@ -8,12 +8,10 @@
  */
 
 defined('JPATH_BASE') or die;
-$params = $displayData->params;
-
+$params  = $displayData->params;
+$alias = $displayData->alias;
 ?>
-<?php $images = json_decode($displayData->images);
-		$alias = $displayData->alias;?>
-<?php if (isset($images->image_intro) && !empty($images->image_intro)) : ?>
+<?php $images = json_decode($displayData->images); ?>
 	<a href="<?php echo JRoute::_(ContentHelperRoute::getArticleRoute($displayData->slug, $displayData->catid, $displayData->language)); ?>" alt="<?php echo $displayData->title;?>">
 	<figure class="item-image">
 	<img srcset="images/random/<?php echo $alias; ?>/<?php echo $alias; ?>-thumbnail-325.jpg 325w,
@@ -32,8 +30,6 @@ $params = $displayData->params;
 	<?php $link = JRoute::_(ContentHelperRoute::getArticleRoute($displayData->slug, $displayData->catid,$displayData->language));?>
 	<?php echo JLayoutHelper::render('meta.joomla.random.readmore', array('item' => $displayData->slug, 'params' => $params, 'link' => $link),''); ?>
 	</figure>
-
-<?php endif; ?>
 
 
 

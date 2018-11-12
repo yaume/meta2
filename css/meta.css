@@ -8597,16 +8597,9 @@ section.ml {
   overflow: hidden;
 }
 
-.category [class^="leading-"]:hover figcaption,
 .category [class^="leading-"]:hover .readmore,
-.category .item:hover figcaption,
 .category .item:hover .readmore {
   opacity: 1;
-}
-
-.category [class^="leading-"]:hover img,
-.category .item:hover img {
-  opacity: 0.5;
 }
 
 .category [class^="leading-"] img,
@@ -8642,6 +8635,14 @@ section.ml {
   top: 1.25rem;
   left: 1.875rem;
   opacity: 0;
+}
+
+.category .item:hover figcaption {
+  opacity: 1;
+}
+
+.category .item:hover img {
+  opacity: 0.5;
 }
 
 @media (min-width: 992px) {

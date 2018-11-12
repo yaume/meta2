@@ -8,18 +8,12 @@
         position: relative;
         transition: all 1s ease-in-out 1s;
         overflow: hidden;
-
         &:hover {
-
-            figcaption,
             .readmore {
                 opacity: 1;
             }
-
-            img {
-                opacity: 0.5;
-            }
         }
+    
         img{
             width: 100%;
         }
@@ -48,6 +42,18 @@
             top: 1.25rem;
             left: 1.875rem;
             opacity: 0;
+        }
+    }
+    .item{
+        &:hover {
+
+            figcaption{
+                opacity: 1;
+            }
+
+            img {
+                opacity: 0.5;
+            }
         }
     }
 }
