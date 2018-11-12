@@ -8645,6 +8645,12 @@ section.ml {
   opacity: 0.5;
 }
 
+.deco {
+  display: block;
+  margin: 0 auto 1rem;
+  width: 50%;
+}
+
 @media (min-width: 992px) {
   .category {
     -ms-grid-columns: (1fr)[3];
@@ -8654,6 +8660,9 @@ section.ml {
     -ms-grid-column: 1;
     -ms-grid-column-span: 3;
     grid-column: 1/span 3;
+  }
+  .deco {
+    width: inherit;
   }
 }
 
@@ -8714,6 +8723,7 @@ a.shopblack {
   text-decoration: none;
   border-radius: 0;
   font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .hikashop_products,
