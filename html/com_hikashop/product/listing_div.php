@@ -90,8 +90,8 @@ if(!empty($this->rows)) {
 		echo $this->loadTemplate();
 	 } else {
 	// 	$width = (int)(100 / $columns) - 1;
-	// 	$current_column = 1;
-	// 	$current_row = 1;
+		$current_column = 1;
+		$current_row = 1;
 
 	// 	switch($columns) {
 	// 		case 12:

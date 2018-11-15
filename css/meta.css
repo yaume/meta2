@@ -8795,8 +8795,8 @@ a.shopblack {
           transform: translate(-2rem, -2rem);
 }
 
-.hikashop_products .hikashop_listing_img_title:hover,
-.hikashop_product_page form .hikashop_listing_img_title:hover {
+.hikashop_products .hikashop_listing_img_title:hover img,
+.hikashop_product_page form .hikashop_listing_img_title:hover img {
   opacity: 0.5;
 }
 

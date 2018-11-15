@@ -53,7 +53,9 @@
         }
 
         &:hover {
-            opacity: 0.5;
+            img{
+                opacity: 0.5;
+            }  
 
             .hikashop_product_name {
                 opacity: 1;

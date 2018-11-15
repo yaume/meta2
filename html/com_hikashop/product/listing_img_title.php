@@ -18,30 +18,21 @@ if(!empty($this->row->extraData->top)) { echo implode("\r\n",$this->row->extraDa
 
 ?>
 <div class="hikashop_listing_img_title" id="div_<?php echo $mainDivName.'_'.$this->row->product_id;  ?>">
-	<?php
-if($this->config->get('thumbnail', 1)) {
-?>
+	<!-- <?php
+// if($this->config->get('thumbnail', 1)) {
+?> -->
 	<?php if($haveLink) { ?>
 	<a href="<?php echo $link;?>" title="<?php echo $this->escape($this->row->product_name); ?>">
 		<?php } ?>
-		<!-- PRODUCT IMG -->
-		<!-- <div class="hikashop_product_image">
-			<div class="hikashop_product_image_subdiv"> -->
 			<figure>
 				<?php
-	$img = $this->image->getThumbnail(
-		@$this->row->file_path,
-		array('width' => $this->image->main_thumbnail_x, 'height' => $this->image->main_thumbnail_y),
-		array('default' => true,'forcesize'=>$this->config->get('image_force_size',true),'scale'=>$this->config->get('image_scale_mode','inside'))
-	);
-	if($img->success) {
-		echo '<img class="hikashop_product_listing_image img-fluid" title="'.$this->escape(@$this->row->file_description).'" alt="'.$this->escape(@$this->row->file_name).'" src="'.$img->url.'"/>';
-	}
+	$img = 'images/hikashop/'.$this->row->product_code.'/'.$this->row->product_code.'-1064.jpg';
+		echo '<img class="hikashop_product_listing_image img-fluid" title="'.$this->escape(@$this->row->file_description).'" alt="'.$this->escape(@$this->row->file_name).'" src="'.$img.'"/>';
+	//Display product badge
 	if($this->params->get('display_badges', 1)) {
 		$this->classbadge->placeBadges($this->image, $this->row->badges, -10, 0);
 	}
 ?>
-	<!-- PRODUCT NAME -->
 				<figcaption class="hikashop_product_name">
 
 					<?php echo $this->row->product_name; ?>
@@ -58,7 +49,7 @@ if($this->config->get('thumbnail', 1)) {
 <!-- </div>
 </div> -->
 <!-- EO PRODUCT IMG -->
-<?php } ?>
+<!-- <?php //} ?> -->
 
 <!-- PRODUCT PRICE -->
 <?php
