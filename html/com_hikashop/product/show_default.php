@@ -8,7 +8,7 @@
  */
 defined('_JEXEC') or die('Restricted access');
 ?>
-<div id="hikashop_product_top_part" class="hikashop_product_top_part">
+<div id="hikashop_product_top_part" class="meta_monaco_product_top_part">
 	<?php if(!empty($this->element->extraData->topBegin)) { echo implode("\r\n",$this->element->extraData->topBegin); } ?>
 	<h1>
 		<span id="hikashop_product_name_main" class="hikashop_product_name_main" itemprop="name">

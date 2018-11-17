@@ -56,7 +56,7 @@ if(!isset($this->quantityLayout)) {
 switch($quantityLayout) {
 	case 'show_none':
 ?>
-		<div class="hikashop_product_quantity_div hikashop_product_quantity_add_to_cart_div"><?php
+		<div class="meta_monaco_product_quantity_div meta_monaco_product_quantity_add_to_cart_div"><?php
 			echo $html;
 		?></div>
 <?php
@@ -64,14 +64,14 @@ switch($quantityLayout) {
 
 	case 'show_regrouped':
 ?>
-		<div class="input-append hikashop_product_quantity_div hikashop_product_quantity_input_div_regrouped">
-			<input id="<?php echo $id; ?>" type="text" onfocus="this.select()" value="<?php echo $current_quantity; ?>" class="hikashop_product_quantity_field" name="<?php echo $name; ?>" data-hk-qty-min="<?php echo $min_quantity; ?>" data-hk-qty-max="<?php echo $max_quantity; ?>" onchange="window.hikashop.checkQuantity(this);" />
-			<a class="hikashop_product_quantity_field_change_plus hikashop_product_quantity_field_change btn" href="#" data-hk-qty-mod="1" onclick="return window.hikashop.updateQuantity(this, '<?php echo $id; ?>');">+</a>
-			<a class="hikashop_product_quantity_field_change_minus hikashop_product_quantity_field_change btn" href="#" data-hk-qty-mod="-1" onclick="return window.hikashop.updateQuantity(this, '<?php echo $id; ?>');">&ndash;</a>
+		<div class="input-append meta_monaco_product_quantity_div meta_monaco_product_quantity_input_div_regrouped">
+			<input id="<?php echo $id; ?>" type="text" onfocus="this.select()" value="<?php echo $current_quantity; ?>" class="meta_monaco_product_quantity_field" name="<?php echo $name; ?>" data-hk-qty-min="<?php echo $min_quantity; ?>" data-hk-qty-max="<?php echo $max_quantity; ?>" onchange="window.hikashop.checkQuantity(this);" />
+			<a class="meta_monaco_product_quantity_field_change_plus meta_monaco_product_quantity_field_change btn" href="#" data-hk-qty-mod="1" onclick="return window.hikashop.updateQuantity(this, '<?php echo $id; ?>');">+</a>
+			<a class="meta_monaco_product_quantity_field_change_minus meta_monaco_product_quantity_field_change btn" href="#" data-hk-qty-mod="-1" onclick="return window.hikashop.updateQuantity(this, '<?php echo $id; ?>');">&ndash;</a>
 		
 		
 		</div>
-		<div class="hikashop_product_quantity_div hikashop_product_quantity_add_to_cart_div hikashop_product_quantity_add_to_cart_div_regrouped"><?php
+		<div class="meta_monaco_product_quantity_div meta_monaco_product_quantity_add_to_cart_div meta_monaco_product_quantity_add_to_cart_div_regrouped"><?php
 			echo $html;
 		?></div>
 <?php
@@ -83,7 +83,7 @@ switch($quantityLayout) {
 			$max_quantity = (int)$increment * 15;
 		}
 ?>
-		<div class="hikashop_product_quantity_div hikashop_product_quantity_input_div_select"><?php
+		<div class="meta_monaco_product_quantity_div meta_monaco_product_quantity_input_div_select"><?php
 			$r = range($min_quantity, $max_quantity, $increment);
 			if(!in_array($max_quantity, $r))
 				$r[] = $max_quantity;
@@ -91,9 +91,9 @@ switch($quantityLayout) {
 			ksort($values);
 			echo JHTML::_('select.genericlist', $values, '', 'onchange="document.getElementById(\''.$id.'\').value = this.value;"', 'value', 'text', $current_quantity, $id.'_select');
 			?>
-			<input id="<?php echo $id; ?>" type="hidden" value="<?php echo $current_quantity; ?>" class="hikashop_product_quantity_field" name="<?php echo $name; ?>" data-hk-qty-min="<?php echo $min_quantity; ?>" data-hk-qty-max="<?php echo $max_quantity; ?>" onchange="window.hikashop.checkQuantity(this);" />
+			<input id="<?php echo $id; ?>" type="hidden" value="<?php echo $current_quantity; ?>" class="meta_monaco_product_quantity_field" name="<?php echo $name; ?>" data-hk-qty-min="<?php echo $min_quantity; ?>" data-hk-qty-max="<?php echo $max_quantity; ?>" onchange="window.hikashop.checkQuantity(this);" />
 		</div>
-		<div class="hikashop_product_quantity_div hikashop_product_quantity_add_to_cart_div hikashop_product_quantity_add_to_cart_div_select"><?php
+		<div class="meta_monaco_product_quantity_div meta_monaco_product_quantity_add_to_cart_div meta_monaco_product_quantity_add_to_cart_div_select"><?php
 			echo $html;
 		?></div>
 <?php
@@ -105,7 +105,7 @@ switch($quantityLayout) {
 			$max_quantity = (int)$increment * 15;
 		}
 ?>
-		<div class="hikashop_product_quantity_div hikashop_product_quantity_input_div_select"><?php
+		<div class="meta_monaco_product_quantity_div meta_monaco_product_quantity_input_div_select"><?php
 				$values = array();
 				if(!isset($this->row->all_prices) && isset($this->row->prices))
 					$this->row->all_prices =& $this->row->prices;
@@ -124,9 +124,9 @@ switch($quantityLayout) {
 				ksort($values);
 				echo JHTML::_('select.genericlist', $values, '', 'onchange="document.getElementById(\''.$id.'\').value = this.value;"', 'value', 'text', $current_quantity);
 			?>
-			<input id="<?php echo $id; ?>" type="hidden" value="<?php echo $current_quantity; ?>" class="hikashop_product_quantity_field" name="<?php echo $name; ?>" data-hk-qty-min="<?php echo $min_quantity; ?>" data-hk-qty-max="<?php echo $max_quantity; ?>" onchange="window.hikashop.checkQuantity(this);" />
+			<input id="<?php echo $id; ?>" type="hidden" value="<?php echo $current_quantity; ?>" class="meta_monaco_product_quantity_field" name="<?php echo $name; ?>" data-hk-qty-min="<?php echo $min_quantity; ?>" data-hk-qty-max="<?php echo $max_quantity; ?>" onchange="window.hikashop.checkQuantity(this);" />
 		</div>
-		<div class="hikashop_product_quantity_div hikashop_product_quantity_add_to_cart_div hikashop_product_quantity_add_to_cart_div_select"><?php
+		<div class="meta_monaco_product_quantity_div meta_monaco_product_quantity_add_to_cart_div meta_monaco_product_quantity_add_to_cart_div_select"><?php
 			echo $html;
 		?></div>
 <?php
@@ -134,8 +134,8 @@ switch($quantityLayout) {
 
 	case 'show_simple':
 ?>
-		<input id="<?php echo $id; ?>" type="hidden" value="<?php echo $current_quantity; ?>" class="hikashop_product_quantity_field" name="<?php echo $name; ?>" data-hk-qty-min="<?php echo $min_quantity; ?>" data-hk-qty-max="<?php echo $max_quantity; ?>" onchange="window.hikashop.checkQuantity(this);" />
-		<div class="hikashop_product_quantity_div hikashop_product_quantity_add_to_cart_div hikashop_product_quantity_add_to_cart_div_simple"><?php
+		<input id="<?php echo $id; ?>" type="hidden" value="<?php echo $current_quantity; ?>" class="meta_monaco_product_quantity_field" name="<?php echo $name; ?>" data-hk-qty-min="<?php echo $min_quantity; ?>" data-hk-qty-max="<?php echo $max_quantity; ?>" onchange="window.hikashop.checkQuantity(this);" />
+		<div class="meta_monaco_product_quantity_div meta_monaco_product_quantity_add_to_cart_div meta_monaco_product_quantity_add_to_cart_div_simple"><?php
 			echo $html;
 		?></div>
 <?php
@@ -143,16 +143,16 @@ switch($quantityLayout) {
 
 	case 'show_leftright':
 ?>
-		<div class="input-prepend input-append hikashop_product_quantity_div hikashop_product_quantity_change_div_leftright">
+		<div class="input-prepend input-append meta_monaco_product_quantity_div meta_monaco_product_quantity_change_div_leftright">
 			<span class="add-on">
-				<a class="hikashop_product_quantity_field_change_minus hikashop_product_quantity_field_change" href="#" data-hk-qty-mod="-1" onclick="return window.hikashop.updateQuantity(this,'<?php echo $id; ?>');">&ndash;</a>
+				<a class="meta_monaco_product_quantity_field_change_minus meta_monaco_product_quantity_field_change" href="#" data-hk-qty-mod="-1" onclick="return window.hikashop.updateQuantity(this,'<?php echo $id; ?>');">&ndash;</a>
 			</span>
-			<input id="<?php echo $id; ?>" type="text" value="<?php echo $current_quantity; ?>" onfocus="this.select()" class="hikashop_product_quantity_field" name="<?php echo $name; ?>" data-hk-qty-min="<?php echo $min_quantity; ?>" data-hk-qty-max="<?php echo $max_quantity; ?>" onchange="window.hikashop.checkQuantity(this);" />
+			<input id="<?php echo $id; ?>" type="text" value="<?php echo $current_quantity; ?>" onfocus="this.select()" class="meta_monaco_product_quantity_field" name="<?php echo $name; ?>" data-hk-qty-min="<?php echo $min_quantity; ?>" data-hk-qty-max="<?php echo $max_quantity; ?>" onchange="window.hikashop.checkQuantity(this);" />
 			<span class="add-on">
-				<a class="hikashop_product_quantity_field_change_plus hikashop_product_quantity_field_change" href="#" data-hk-qty-mod="1" onclick="return window.hikashop.updateQuantity(this,'<?php echo $id; ?>');">+</a>
+				<a class="meta_monaco_product_quantity_field_change_plus meta_monaco_product_quantity_field_change" href="#" data-hk-qty-mod="1" onclick="return window.hikashop.updateQuantity(this,'<?php echo $id; ?>');">+</a>
 			</span>
 		</div>
-		<div class="hikashop_product_quantity_div hikashop_product_quantity_add_to_cart_div hikashop_product_quantity_add_to_cart_div_leftright"><?php
+		<div class="meta_monaco_product_quantity_div meta_monaco_product_quantity_add_to_cart_div meta_monaco_product_quantity_add_to_cart_div_leftright"><?php
 			echo $html;
 		?></div>
 <?php
@@ -160,10 +160,10 @@ switch($quantityLayout) {
 
 	case 'show_simplified':
 ?>
-		<div class="hikashop_product_quantity_div hikashop_product_quantity_input_div_simplified">
-			<input id="<?php echo $id; ?>" type="text" value="<?php echo $current_quantity; ?>" onfocus="this.select()" class="hikashop_product_quantity_field" name="<?php echo $name; ?>" data-hk-qty-min="<?php echo $min_quantity; ?>" data-hk-qty-max="<?php echo $max_quantity; ?>" onchange="window.hikashop.checkQuantity(this);" />
+		<div class="meta_monaco_product_quantity_div meta_monaco_product_quantity_input_div_simplified">
+			<input id="<?php echo $id; ?>" type="text" value="<?php echo $current_quantity; ?>" onfocus="this.select()" class="meta_monaco_product_quantity_field" name="<?php echo $name; ?>" data-hk-qty-min="<?php echo $min_quantity; ?>" data-hk-qty-max="<?php echo $max_quantity; ?>" onchange="window.hikashop.checkQuantity(this);" />
 		</div>
-		<div class="hikashop_product_quantity_div hikashop_product_quantity_add_to_cart_div hikashop_product_quantity_add_to_cart_div_simplified"><?php
+		<div class="meta_monaco_product_quantity_div meta_monaco_product_quantity_add_to_cart_div meta_monaco_product_quantity_add_to_cart_div_simplified"><?php
 			echo $html;
 		?></div>
 <?php

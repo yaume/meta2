@@ -8,6 +8,7 @@
         position: relative;
         transition: all 1s ease-in-out 1s;
         overflow: hidden;
+        background: $black;
         &:hover {
             .readmore {
                 opacity: 1;
@@ -18,7 +19,7 @@
             width: 100%;
         }
         a {
-            color: black;
+            color: $white;
             display: block;
         }
 
@@ -29,6 +30,7 @@
             opacity: 0;
             background: transparent;
             border: 0;
+            color: $white;
 
         }
 
@@ -64,6 +66,7 @@
 }
 @include media-breakpoint-up(lg) {
     .category {
+        grid-column-start: 2;
         grid-template-columns: repeat(3, 1fr);
         .items-leading {
             grid-column: 1/span 3;

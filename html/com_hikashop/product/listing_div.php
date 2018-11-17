@@ -59,7 +59,7 @@ if(in_array($pagination, array('top', 'both')) && $this->params->get('show_limit
 	$this->pagination->form = '_top';
 ?>
 <form action="<?php echo hikashop_currentURL(); ?>" method="post" name="adminForm_<?php echo $mainDivName . $this->category_selected; ?>_top">
-	<div class="hikashop_products_pagination hikashop_products_pagination_top">
+	<div class="meta_monaco_products_pagination meta_monaco_products_pagination_top">
 		<?php echo $this->pagination->getListFooter($this->params->get('limit')); ?>
 		<span class="hikashop_results_counter"><?php echo $this->pagination->getResultsCounter(); ?></span>
 	</div>
@@ -74,7 +74,7 @@ $attributes = ($columns > 1 && $this->params->get('consistencyheight', 1)) ? ' d
 
 if(empty($this->tmpl_ajax)) {
 ?>
-<div class="hikashop_products"<?php echo $attributes; ?>>
+<div class="meta_monaco_products category"<?php echo $attributes; ?>>
 <?php
 }
 
@@ -89,48 +89,15 @@ if(!empty($this->rows)) {
 		$this->setLayout('carousel');
 		echo $this->loadTemplate();
 	 } else {
-	// 	$width = (int)(100 / $columns) - 1;
+
 		$current_column = 1;
 		$current_row = 1;
 
-	// 	switch($columns) {
-	// 		case 12:
-	// 		case 6:
-	// 		case 4:
-	// 		case 3:
-	// 		case 2:
-	// 		case 1:
-	// 			$row_fluid = 12;
-	// 			$span = $row_fluid / $columns;
-	// 			break;
-	// 		case 10:
-	// 		case 8:
-	// 		case 7:
-	// 			$row_fluid = $columns;
-	// 			$span = 1;
-	// 			break;
-	// 		case 5:
-	// 			$row_fluid = 10;
-	// 			$span = 2;
-	// 			break;
-	// 		case 9: // special case
-	// 			$row_fluid = 10;
-	// 			$span = 1;
-	// 			break;
-	// 	}
-
-	// 	if($row_fluid == 12)
-	// 		echo '<div class="hk-row-fluid">';
-	// 	else
-	// 		echo '<div class="hk-row-fluid hk-row-'.$row_fluid.'">';
 
 		$itemLayoutType = $this->params->get('div_item_layout_type');
 
 		foreach($this->rows as $row) {
 ?>
-		<!-- <div class="hkc-md-<?php echo (int)$span; ?> hikashop_product hikashop_product_column_<?php echo $current_column; ?> hikashop_product_row_<?php echo $current_row; ?>">
-			<div class="hikashop_container">
-				<div class="hikashop_subcontainer <?php echo $this->borderClass; ?>"> -->
 <?php
 
 			$this->quantityLayout = $this->getProductQuantityLayout($row);
@@ -140,9 +107,7 @@ if(!empty($this->rows)) {
 			echo $this->loadTemplate();
 			unset($this->row);
 ?>
-				<!-- </div>
-			</div>
-		</div> -->
+
 <?php
 
 			if($current_column >= $columns) {
@@ -311,7 +276,7 @@ if(in_array($pagination, array('bottom', 'both')) && $this->params->get('show_li
 	$this->pagination->form = '_bottom';
 ?>
 <form action="<?php echo hikashop_currentURL(); ?>" method="post" name="adminForm_<?php echo $mainDivName . $this->category_selected; ?>_bottom">
-	<div class="hikashop_products_pagination hikashop_products_pagination_bottom">
+	<div class="meta_monaco_products_pagination meta_monaco_products_pagination_bottom">
 		<?php echo $this->pagination->getListFooter($this->params->get('limit')); ?>
 		<span class="hikashop_results_counter"><?php echo $this->pagination->getResultsCounter(); ?></span>
 	</div>

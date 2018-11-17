@@ -1,0 +1,2 @@
+To avoid loading Font Awesome 5 by Hikashop
+ Open hikashop_config table via your phpmyadmin and add in that table an entry with the namekey font-awesome and the value "no" 

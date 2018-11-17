@@ -1,7 +1,7 @@
 <?php
 /**
  * @package	HikaShop for Joomla!
- * @version	3.5.1
+ * @version	4.0.0
  * @author	hikashop.com
  * @copyright	(C) 2010-2018 HIKARI SOFTWARE. All rights reserved.
  * @license	GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
@@ -22,106 +22,8 @@ if(!empty($this->tmpl_ajax)) {
 	return;
 }
 
-if(hikashop_level(2) && hikaInput::get()->getVar('hikashop_front_end_main', 0) && hikaInput::get()->getVar('task') == 'listing' && $this->params->get('show_compare')) { ?>
-<!-- <script type="text/javascript">
-<!--
-var compare_list = {length: 0};
-function setToCompareList(product_id,name,elem) {
-	var compareBtn = document.getElementById('hikashop_compare_button');
-	if(compare_list[product_id]) {
-		var old = compare_list[product_id];
-		compare_list[product_id] = null;
-		compare_list.length--;
-		if( elem == null ) elem = old.elem;
-		var nn = elem.nodeName.toLowerCase();
-		if( nn == 'a' ) {
-			elem.innerHTML = "<?php echo JText::_('ADD_TO_COMPARE_LIST', true);?>";
-		} else if( nn == 'input' ) {
-			if(elem.type.toLowerCase()=='submit')
-				elem.value = "<?php echo JText::_('ADD_TO_COMPARE_LIST', true);?>";
-			else
-				elem.checked = false;
-		}
-	} else {
-		if(compare_list.length < <?php echo (int)$this->config->get('compare_limit', 5); ?> ) {
-			compare_list[product_id] = {name: name, elem: elem};
-			compare_list.length++;
-			var nn = elem.nodeName.toLowerCase();
-			if( nn == 'a' ) {
-				elem.innerHTML = "<?php echo JText::_('REMOVE_FROM_COMPARE_LIST', true);?>";
-			} else if( nn == 'input' ) {
-				if(elem.type.toLowerCase()=='submit')
-					elem.value = "<?php echo JText::_('REMOVE_FROM_COMPARE_LIST', true);?>";
-				else
-					elem.checked = true;
-			}
-		} else {
-			alert("<?php echo JText::_('COMPARE_LIMIT_REACHED', true);?>");
-			elem.checked = false;
-		}
-	}
-	compareBtn.style.display = (compare_list.length == 0) ? 'none' : '';
-	return false;
-}
-function compareProducts() {
-	var url = '';
-	for(var k in compare_list) {
-		if(!compare_list.hasOwnProperty(k))
-			continue;
-		if( url != '' ) url += '&';
-		url += 'cid[]=' + k;
-	}
-	window.location = "<?php
-		$u = hikashop_completeLink('product&task=compare'.$this->itemid, false, true);
-		if( strpos($u,'?')  === false ) {
-			echo $u.'?';
-		} else {
-			echo $u.'&';
-		}
-	?>" + url;
-	return false;
-}
-window.hikashop.ready(function(){
-try{
-	document.querySelectorAll('input.hikashop_compare_checkbox').forEach(function(el){
-		el.checked = false;
-	});
-}catch(e){}
-});
-window.Oby.registerAjax('compare.updated', function(evt){
-	var d = document, w = window, o = w.Oby,
-		btn = d.getElementById('hikashop_compare_button');
-	if(!btn) return;
-	btn.style.display = (evt.size == 0) ? 'none': '';
-	if(evt.added && (evt.size == 0 || evt.size < <?php echo (int)$this->config->get('compare_limit', 5); ?>))
-		return true;
-	if(!evt.added && evt.size >= <?php echo (int)$this->config->get('compare_limit', 5); ?>)
-		return true;
-	var elems = d.querySelectorAll('[data-addToCompare]'), v = null;
-	if(!elems) return true;
-	elems.forEach(function(e){
-		if(!evt.added) {
-			e.removeAttribute('disabled');
-			o.removeClass(e,'disabled');
-			return;
-		}
-		v = e.getAttribute('data-addToCompare');
-		if(evt.list.hasOwnProperty(v))
-			return;
-		e.setAttribute('disabled', 'disabled');
-		o.addClass(e,'disabled');
-	});
-	return true;
-});
-//-->
-</script> -->
-<?php }
-
 ob_start();
 $title_key = 'show_page_heading';
-if(!HIKASHOP_J16) {
-	$title_key = 'show_page_title';
-}
 $titleType = 'h1';
 if($this->module) {
 	$title_key = 'showtitle';
@@ -238,7 +140,7 @@ if($filter_type !== 3) {
 		if(!empty($htmlFilter) && $ctrl == 'category')
 			echo $htmlFilter;
 ?>
-	<div class="hikashop_products_listing">
+
 <?php
 		if(hikaInput::get()->getVar('hikashop_front_end_main',0) && hikaInput::get()->getVar('task') == 'listing' && $this->params->get('show_compare')) {
 			$css_button = $this->config->get('css_button', 'hikabtn');
@@ -253,7 +155,7 @@ if($filter_type !== 3) {
 		}
 		echo $html;
 ?>
-	</div>
+
 <?php
 	} elseif(( !$this->module || hikaInput::get()->getVar('hikashop_front_end_main',0) ) && ($ctrl == 'product'  || $ctrl == 'category') && $task == 'listing' && !empty($this->filters) && count($this->filters) && !empty($this->filter_set)) {
 		if(!empty($htmlFilter))
@@ -264,8 +166,8 @@ if($filter_type !== 3) {
 	$html = ob_get_clean();
 	if(!empty($html)) {
 ?>
-	<div id="<?php echo $this->params->get('main_div_name');?>" class="hikashop_category_information hikashop_products_listing_main"><?php
-echo $html; ?></div>
+	<?php
+echo $html; ?>
 <?php
 	}
 } else if(!empty($this->rows) && !empty($this->categories)) {
@@ -285,7 +187,7 @@ echo $html; ?></div>
 		$this->pagination->form = '_top';
 ?>
 	<form action="<?php echo hikashop_currentURL(); ?>" method="post" name="adminForm_<?php echo $this->params->get('main_div_name').$this->category_selected;?>_top">
-		<div class="hikashop_products_pagination hikashop_products_pagination_top">
+		<div class="meta_monaco_products_pagination meta_monaco_products_pagination_top">
 		<?php echo $this->pagination->getListFooter($this->params->get('limit')); ?>
 		<span class="hikashop_results_counter"><?php echo $this->pagination->getResultsCounter(); ?></span>
 		</div>
@@ -316,7 +218,7 @@ echo $html; ?></div>
 				echo $htmlFilter;
 ?>
 	<h2><?php echo $category['category']->category_name; ?></h2>
-	<div class="hikashop_products_listing">
+	
 <?php
 		if(hikaInput::get()->getVar('hikashop_front_end_main',0) && hikaInput::get()->getVar('task') == 'listing' && $this->params->get('show_compare')) {
 			$css_button = $this->config->get('css_button', 'hikabtn');
@@ -331,7 +233,7 @@ echo $html; ?></div>
 		}
 		echo $html;
 ?>
-	</div>
+	
 <?php
 		}
 	}
@@ -342,7 +244,7 @@ echo $html; ?></div>
 		$this->pagination->form = '_bottom';
 ?>
 	<form action="<?php echo hikashop_currentURL(); ?>" method="post" name="adminForm_<?php echo $this->params->get('main_div_name').$this->category_selected;?>_bottom">
-		<div class="hikashop_products_pagination hikashop_products_pagination_bottom">
+		<div class="meta_monaco_products_pagination meta_monaco_products_pagination_bottom">
 		<?php echo $this->pagination->getListFooter($this->params->get('limit')); ?>
 		<span class="hikashop_results_counter"><?php echo $this->pagination->getResultsCounter(); ?></span>
 		</div>
@@ -355,7 +257,7 @@ echo $html; ?></div>
 	$html = ob_get_clean();
 	if(!empty($html)) {
 ?>
-		<div id="<?php echo $this->params->get('main_div_name');?>" class="hikashop_category_information hikashop_products_listing_main hikashop_product_listing_<?php echo $this->element->category_id; ?>"><?php echo '<pre>',var_dump($this->params->get('main_div_name')),'</pre>';  echo $html; ?></div>
+		<div id="<?php echo $this->params->get('main_div_name');?>" class="hikashop_category_information meta_monaco_products_listing_main hikashop_product_listing_<?php echo $this->element->category_id; ?>"><?php echo '<pre>',var_dump($this->params->get('main_div_name')),'</pre>';  echo $html; ?></div>
 <?php
 	}
 }

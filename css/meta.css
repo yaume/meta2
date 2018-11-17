@@ -8015,6 +8015,7 @@ footer {
   -ms-grid-row: 5;
   -ms-grid-column: 1;
   grid-area: footer;
+  font-size: 75%;
 }
 
 @media (min-width: 992px) {
@@ -8079,6 +8080,10 @@ figure figcaption {
 @media (min-width: 992px) {
   html {
     font-size: 1.44rem;
+  }
+  #system-message-container, .item-page {
+    -ms-grid-column: 2;
+        grid-column-start: 2;
   }
   .columnsblock2 {
     -ms-grid-columns: (1fr)[2];
@@ -8595,6 +8600,7 @@ section.ml {
   position: relative;
   transition: all 1s ease-in-out 1s;
   overflow: hidden;
+  background: #000;
 }
 
 .category [class^="leading-"]:hover .readmore,
@@ -8609,7 +8615,7 @@ section.ml {
 
 .category [class^="leading-"] a,
 .category .item a {
-  color: black;
+  color: #fff;
   display: block;
 }
 
@@ -8621,6 +8627,7 @@ section.ml {
   opacity: 0;
   background: transparent;
   border: 0;
+  color: #fff;
 }
 
 .category [class^="leading-"] figure,
@@ -8653,6 +8660,8 @@ section.ml {
 
 @media (min-width: 992px) {
   .category {
+    -ms-grid-column: 2;
+        grid-column-start: 2;
     -ms-grid-columns: (1fr)[3];
         grid-template-columns: repeat(3, 1fr);
   }
@@ -8726,15 +8735,16 @@ a.shopblack {
   margin-bottom: 1rem;
 }
 
-.hikashop_products,
-.hikashop_product_page form {
+.meta_monaco_products,
+.meta_monaco_product_page form {
   display: -ms-grid;
   display: grid;
   grid-gap: 1rem 1rem;
+  align-items: start;
 }
 
-.hikashop_products .hikashop_product_left_part,
-.hikashop_product_page form .hikashop_product_left_part {
+.meta_monaco_products .meta_monaco_product_left_part,
+.meta_monaco_product_page form .meta_monaco_product_left_part {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (minmax(0, 1fr))[3];
@@ -8742,38 +8752,38 @@ a.shopblack {
   grid-gap: 1rem;
 }
 
-.hikashop_products .hikashop_product_left_part img:first-child,
-.hikashop_product_page form .hikashop_product_left_part img:first-child {
+.meta_monaco_products .meta_monaco_product_left_part img:first-child,
+.meta_monaco_product_page form .meta_monaco_product_left_part img:first-child {
   -ms-grid-column-span: 3;
   grid-column: span 3;
 }
 
-.hikashop_products .hikashop_product_left_part .hikashop_product_right_part,
-.hikashop_product_page form .hikashop_product_left_part .hikashop_product_right_part {
+.meta_monaco_products .meta_monaco_product_left_part .meta_monaco_product_right_part,
+.meta_monaco_product_page form .meta_monaco_product_left_part .meta_monaco_product_right_part {
   display: -ms-grid;
   display: grid;
   grid-gap: 1rem;
 }
 
-.hikashop_products .hikashop_product_quantity_field,
-.hikashop_product_page form .hikashop_product_quantity_field {
+.meta_monaco_products .meta_monaco_product_quantity_field,
+.meta_monaco_product_page form .meta_monaco_product_quantity_field {
   width: 1.875rem;
   text-align: center;
 }
 
-.hikashop_products .hikashop_product_quantity_field_change,
-.hikashop_product_page form .hikashop_product_quantity_field_change {
+.meta_monaco_products .meta_monaco_product_quantity_field_change,
+.meta_monaco_product_page form .meta_monaco_product_quantity_field_change {
   color: #000;
 }
 
-.hikashop_products .hikashop_listing_img_title,
-.hikashop_product_page form .hikashop_listing_img_title {
+.meta_monaco_products .meta_monaco_listing_img_title,
+.meta_monaco_product_page form .meta_monaco_listing_img_title {
   position: relative;
   transition: all 0.75s ease-in-out;
 }
 
-.hikashop_products .hikashop_listing_img_title .hikashop_product_name,
-.hikashop_product_page form .hikashop_listing_img_title .hikashop_product_name {
+.meta_monaco_products .meta_monaco_listing_img_title .meta_monaco_product_name,
+.meta_monaco_product_page form .meta_monaco_listing_img_title .meta_monaco_product_name {
   position: absolute;
   top: 1.25rem;
   left: 1.875rem;
@@ -8781,8 +8791,8 @@ a.shopblack {
   color: #000;
 }
 
-.hikashop_products .hikashop_listing_img_title .readmore,
-.hikashop_product_page form .hikashop_listing_img_title .readmore {
+.meta_monaco_products .meta_monaco_listing_img_title .readmore,
+.meta_monaco_product_page form .meta_monaco_listing_img_title .readmore {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -8795,22 +8805,22 @@ a.shopblack {
           transform: translate(-2rem, -2rem);
 }
 
-.hikashop_products .hikashop_listing_img_title:hover img,
-.hikashop_product_page form .hikashop_listing_img_title:hover img {
+.meta_monaco_products .meta_monaco_listing_img_title:hover img,
+.meta_monaco_product_page form .meta_monaco_listing_img_title:hover img {
   opacity: 0.5;
 }
 
-.hikashop_products .hikashop_listing_img_title:hover .hikashop_product_name,
-.hikashop_product_page form .hikashop_listing_img_title:hover .hikashop_product_name {
+.meta_monaco_products .meta_monaco_listing_img_title:hover .meta_monaco_product_name,
+.meta_monaco_product_page form .meta_monaco_listing_img_title:hover .meta_monaco_product_name {
   opacity: 1;
 }
 
-.hikashop_products .hikashop_listing_img_title:hover .readmore,
-.hikashop_product_page form .hikashop_listing_img_title:hover .readmore {
+.meta_monaco_products .meta_monaco_listing_img_title:hover .readmore,
+.meta_monaco_product_page form .meta_monaco_listing_img_title:hover .readmore {
   opacity: 1;
 }
 
-.hikashop_cart_product_image_title {
+.meta_monaco_cart_product_image_title {
   width: 10%;
 }
 
@@ -8818,7 +8828,7 @@ a.shopblack {
   text-align: center;
 }
 
-.hikashop_checkout_cart a {
+.meta_monaco_checkout_cart a {
   color: #000;
 }
 
@@ -8862,23 +8872,24 @@ a.shopblack {
   float: right !important;
 }
 
-.hikashop_products {
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
-}
-
 @media (min-width: 992px) {
-  .hikashop_product_page form {
-    -ms-grid-columns: 2fr 1fr;
-        grid-template-columns: 2fr 1fr;
+  .meta_monaco_product_page {
+    -ms-grid-column: 2;
+        grid-column-start: 2;
   }
-  .hikashop_product_page .hikashop_product_top_part {
+  .meta_monaco_product_page form {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+  .meta_monaco_product_page .meta_monaco_product_top_part {
     -ms-grid-column-span: 2;
     grid-column: span 2;
   }
-  .hikashop_products {
+  .meta_monaco_products {
     -ms-grid-columns: (1fr)[3];
         grid-template-columns: repeat(3, 1fr);
+    -ms-grid-column: 2;
+        grid-column-start: 2;
   }
 }
 

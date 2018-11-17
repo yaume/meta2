@@ -15,11 +15,11 @@ if(!empty($this->canonical)) {
 $classes = array();
 if(!empty($this->categories)) {
 	foreach($this->categories as $category) {
-		$classes[] = 'hikashop_product_of_category_'.$category->category_id;
+		$classes[] = 'meta_monaco_product_of_category_'.$category->category_id;
 	}
 }
 ?>
-<div itemscope itemtype="https://schema.org/Product" id="hikashop_product_<?php echo preg_replace('#[^a-z0-9]#i','_',@$this->element->product_code); ?>_page" class="hikashop_product_page <?php echo implode(' ',$classes); ?>">
+<div itemscope itemtype="https://schema.org/Product" id="meta_monaco_product_<?php echo preg_replace('#[^a-z0-9]#i','_',@$this->element->product_code); ?>_page" class="meta_monaco_product_page <?php echo implode(' ',$classes); ?>">
 <?php
 $app = JFactory::getApplication();
 if(empty($this->element)) {
@@ -37,12 +37,11 @@ if(empty($this->element)) {
 }
 
 if(!empty($this->links->previous))
-	echo '<a title="'.JText::_('PREVIOUS_PRODUCT').'" href="'.$this->links->previous.'"><span class="hikashop_previous_product"></span></a>';
+	echo '<a title="'.JText::_('PREVIOUS_PRODUCT').'" href="'.$this->links->previous.'"><span class="meta_monaco_previous_product"></span></a>';
 if(!empty($this->links->next))
-	echo '<a title="'.JText::_('NEXT_PRODUCT').'" href="'.$this->links->next.'"><span class="hikashop_next_product"></span></a>';
+	echo '<a title="'.JText::_('NEXT_PRODUCT').'" href="'.$this->links->next.'"><span class="meta_monaco_next_product"></span></a>';
 
 ?>
-	<div class='clear_both'></div>
 <script type="text/javascript">
 function hikashop_product_form_check() {
 	var d = document, el = d.getElementById('hikashop_product_quantity_main');
