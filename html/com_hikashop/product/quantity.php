@@ -89,8 +89,8 @@ $stock_class = ($stock != 0) ? "" : " hikashop_product_no_stock";
 <?php
 	if(!empty($this->row->product_stock_message))
 		echo JText::_($this->row->product_stock_message);
-	elseif($stock > 0)
-		echo (($stock == 1 && JText::_('X_ITEM_IN_STOCK') != 'X_ITEM_IN_STOCK') ? JText::sprintf('X_ITEM_IN_STOCK', $stock) : JText::sprintf('X_ITEMS_IN_STOCK', $stock));
+	// elseif($stock > 0)
+		// echo (($stock == 1 && JText::_('X_ITEM_IN_STOCK') != 'X_ITEM_IN_STOCK') ? JText::sprintf('X_ITEM_IN_STOCK', $stock) : JText::sprintf('X_ITEMS_IN_STOCK', $stock));
 	elseif(!$in_stock)
 		echo JText::_('NO_STOCK');
 ?>

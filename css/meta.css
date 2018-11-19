@@ -776,36 +776,36 @@ fieldset:disabled a.btn {
 
 .btn-danger {
   color: #fff;
-  background-color: #dc3545;
-  border-color: #dc3545;
+  background-color: #e40000;
+  border-color: #e40000;
 }
 
 .btn-danger:hover {
   color: #fff;
-  background-color: #c82333;
-  border-color: #bd2130;
+  background-color: #be0000;
+  border-color: #b10000;
 }
 
 .btn-danger:focus, .btn-danger.focus {
-  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(228, 0, 0, 0.5);
 }
 
 .btn-danger.disabled, .btn-danger:disabled {
   color: #fff;
-  background-color: #dc3545;
-  border-color: #dc3545;
+  background-color: #e40000;
+  border-color: #e40000;
 }
 
 .btn-danger:not(:disabled):not(.disabled):active, .btn-danger:not(:disabled):not(.disabled).active,
 .show > .btn-danger.dropdown-toggle {
   color: #fff;
-  background-color: #bd2130;
-  border-color: #b21f2d;
+  background-color: #b10000;
+  border-color: #a40000;
 }
 
 .btn-danger:not(:disabled):not(.disabled):active:focus, .btn-danger:not(:disabled):not(.disabled).active:focus,
 .show > .btn-danger.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(228, 0, 0, 0.5);
 }
 
 .btn-light {
@@ -1047,37 +1047,37 @@ fieldset:disabled a.btn {
 }
 
 .btn-outline-danger {
-  color: #dc3545;
+  color: #e40000;
   background-color: transparent;
   background-image: none;
-  border-color: #dc3545;
+  border-color: #e40000;
 }
 
 .btn-outline-danger:hover {
   color: #fff;
-  background-color: #dc3545;
-  border-color: #dc3545;
+  background-color: #e40000;
+  border-color: #e40000;
 }
 
 .btn-outline-danger:focus, .btn-outline-danger.focus {
-  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(228, 0, 0, 0.5);
 }
 
 .btn-outline-danger.disabled, .btn-outline-danger:disabled {
-  color: #dc3545;
+  color: #e40000;
   background-color: transparent;
 }
 
 .btn-outline-danger:not(:disabled):not(.disabled):active, .btn-outline-danger:not(:disabled):not(.disabled).active,
 .show > .btn-outline-danger.dropdown-toggle {
   color: #fff;
-  background-color: #dc3545;
-  border-color: #dc3545;
+  background-color: #e40000;
+  border-color: #e40000;
 }
 
 .btn-outline-danger:not(:disabled):not(.disabled):active:focus, .btn-outline-danger:not(:disabled):not(.disabled).active:focus,
 .show > .btn-outline-danger.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(228, 0, 0, 0.5);
 }
 
 .btn-outline-light {
@@ -1465,13 +1465,13 @@ button.bg-warning:focus {
 }
 
 .bg-danger {
-  background-color: #dc3545 !important;
+  background-color: #e40000 !important;
 }
 
 a.bg-danger:hover, a.bg-danger:focus,
 button.bg-danger:hover,
 button.bg-danger:focus {
-  background-color: #bd2130 !important;
+  background-color: #b10000 !important;
 }
 
 .bg-light {
@@ -1563,7 +1563,7 @@ button.bg-dark:focus {
 }
 
 .border-danger {
-  border-color: #dc3545 !important;
+  border-color: #e40000 !important;
 }
 
 .border-light {
@@ -4069,11 +4069,11 @@ a.text-warning:hover, a.text-warning:focus {
 }
 
 .text-danger {
-  color: #dc3545 !important;
+  color: #e40000 !important;
 }
 
 a.text-danger:hover, a.text-danger:focus {
-  color: #bd2130 !important;
+  color: #b10000 !important;
 }
 
 .text-light {
@@ -4341,16 +4341,16 @@ a.text-dark:hover, a.text-dark:focus {
 .table-danger,
 .table-danger > th,
 .table-danger > td {
-  background-color: #f5c6cb;
+  background-color: #f7b8b8;
 }
 
 .table-hover .table-danger:hover {
-  background-color: #f1b0b7;
+  background-color: #f4a1a1;
 }
 
 .table-hover .table-danger:hover > td,
 .table-hover .table-danger:hover > th {
-  background-color: #f1b0b7;
+  background-color: #f4a1a1;
 }
 
 .table-light,
@@ -8070,7 +8070,7 @@ figure figcaption {
 
 .fa-heart {
   font-size: 2.5rem;
-  color: #dc3545;
+  color: #e40000;
 }
 
 .embed-responsive {
@@ -8227,7 +8227,7 @@ header .header-extra .cart-module .fa-shopping-cart {
 
 header .header-extra .cart-module .numcart {
   color: #fff;
-  background: #dc3545;
+  background: #e40000;
   font-size: 0.75rem;
   border-radius: 50%;
   padding: 0 0.25rem;
@@ -8818,6 +8818,23 @@ a.shopblack {
 .meta_monaco_products .meta_monaco_listing_img_title:hover .readmore,
 .meta_monaco_product_page form .meta_monaco_listing_img_title:hover .readmore {
   opacity: 1;
+}
+
+.badge {
+  position: absolute;
+  top: 0rem;
+  right: 0rem;
+}
+
+.badge p {
+  margin-bottom: 0;
+  text-align: center;
+  -webkit-transform: rotate(45deg) translate(3.5rem);
+          transform: rotate(45deg) translate(3.5rem);
+  background: #e40000;
+  width: 12rem;
+  font-family: Big Caslon, Book Antiqua, Palatino Linotype, Georgia, serif;
+  text-transform: uppercase;
 }
 
 .meta_monaco_cart_product_image_title {

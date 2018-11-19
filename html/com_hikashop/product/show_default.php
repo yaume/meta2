@@ -8,10 +8,10 @@
  */
 defined('_JEXEC') or die('Restricted access');
 ?>
-<div id="hikashop_product_top_part" class="meta_monaco_product_top_part">
+<div id="meta_monaco_product_top_part" class="meta_monaco_product_top_part">
 	<?php if(!empty($this->element->extraData->topBegin)) { echo implode("\r\n",$this->element->extraData->topBegin); } ?>
 	<h1>
-		<span id="hikashop_product_name_main" class="hikashop_product_name_main" itemprop="name">
+		<span id="meta_monaco_product_name_main" class="meta_monaco_product_name_main" itemprop="name">
 			<?php
 			if(hikashop_getCID('product_id') != $this->element->product_id && isset($this->element->main->product_name))
 				echo $this->element->main->product_name;
@@ -19,7 +19,7 @@ defined('_JEXEC') or die('Restricted access');
 				echo $this->element->product_name;
 		?></span>
 		<?php if ($this->config->get('show_code')) { ?>
-		<span id="hikashop_product_code_main" class="hikashop_product_code_main" itemprop="sku">
+		<span id="meta_monaco_product_code_main" class="meta_monaco_product_code_main" itemprop="sku">
 			<?php
 			echo $this->element->product_code;
 		?></span>
@@ -33,7 +33,7 @@ defined('_JEXEC') or die('Restricted access');
 ?>
 </div>
 
-<div id="hikashop_product_left_part" class="hikashop_product_left_part">
+<div id="meta_monaco_product_left_part" class="meta_monaco_product_left_part">
 <?php if(!empty($this->element->extraData->leftBegin)) { echo implode("\r\n",$this->element->extraData->leftBegin); } ?>
 	<?php
 $this->row =& $this->element;
@@ -43,10 +43,10 @@ echo $this->loadTemplate();
 	<?php if(!empty($this->element->extraData->leftEnd)) { echo implode("\r\n",$this->element->extraData->leftEnd); } ?>
 </div>
 
-<div id="hikashop_product_right_part" class="hikashop_product_right_part">
+<div id="meta_monaco_product_right_part" class="meta_monaco_product_right_part">
 	<?php if(!empty($this->element->extraData->rightBegin)) { echo implode("\r\n",$this->element->extraData->rightBegin); } ?>
 	<?php if($this->params->get('show_vote_product')) { ?>
-	<div id="hikashop_product_vote_mini" class="hikashop_product_vote_mini">
+	<div id="meta_monaco_product_vote_mini" class="meta_monaco_product_vote_mini">
 		<?php
 				$js = '';
 				$this->params->set('vote_type', 'product');
@@ -56,7 +56,8 @@ echo $this->loadTemplate();
 	</div>
 	<?php	}
 	?>
-	<span id="hikashop_product_price_main" class="hikashop_product_price_main" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+	<h3>Details</h3>
+	<span id="meta_monaco_product_price_main" class="meta_monaco_product_price_main" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
 		<?php
 			$main =& $this->element;
 			if(!empty($this->element->main))
@@ -84,13 +85,13 @@ echo $this->loadTemplate();
 $this->setLayout('show_block_dimensions');
 echo $this->loadTemplate();
 ?>
-	<!-- <br /> -->
+	
 	<?php
 if($this->params->get('characteristic_display') != 'list') {
 	$this->setLayout('show_block_characteristic');
 	echo $this->loadTemplate();
 ?>
-	<!-- <br /> -->
+	
 	<?php } ?>
 
 	<?php
@@ -101,13 +102,13 @@ if(!$this->config->get('ajax_add_to_cart', 1)) {
 
 if(hikashop_level(1) && !empty ($this->element->options)) {
 ?>
-	<div id="hikashop_product_options" class="hikashop_product_options">
+	<div id="meta_monaco_product_options" class="meta_monaco_product_options">
 		<?php
 		$this->setLayout('option');
 		echo $this->loadTemplate();
 	?>
 	</div>
-	<!-- <br /> -->
+	
 	<?php
 	$form = ',\'hikashop_product_form\'';
 	if($this->config->get('redirect_url_after_add_cart', 'stay_if_cart') == 'ask_user') {
@@ -135,14 +136,14 @@ if(!$this->params->get('catalogue') && ($this->config->get('display_add_to_cart_
 $this->formName = $form;
 if($this->params->get('show_price')) {
 ?>
-	<span id="hikashop_product_price_with_options_main" class="hikashop_product_price_with_options_main">
+	<span id="meta_monaco_product_price_with_options_main" class="meta_monaco_product_price_with_options_main">
 	</span>
 	<?php
 }
 
 if(empty($this->element->characteristics) || $this->params->get('characteristic_display') != 'list') {
 ?>
-	<div id="hikashop_product_quantity_main" class="hikashop_product_quantity_main">
+	<div id="meta_monaco_product_quantity_main" class="meta_monaco_product_quantity_main">
 		<?php
 		$this->row =& $this->element;
 		$this->ajax = 'if(hikashopCheckChangeForm(\'item\',\'hikashop_product_form\')){ return hikashopModifyQuantity(\'' . (int)$this->element->product_id . '\',field,1' . $form . ',\'cart\'); } else { return false; }';
@@ -154,7 +155,7 @@ if(empty($this->element->characteristics) || $this->params->get('characteristic_
 }
 ?>
 
-	<div id="hikashop_product_contact_main" class="hikashop_product_contact_main">
+	<div id="meta_monaco_product_contact_main" class="meta_monaco_product_contact_main">
 		<?php
 $contact = (int)$this->config->get('product_contact', 0);
 if(hikashop_level(1) && ($contact == 2 || ($contact == 1 && !empty($this->element->product_contact)))) {
@@ -181,23 +182,23 @@ if(HIKASHOP_J30) {
 	echo $this->loadTemplate();
 }
 ?>
-	<span id="hikashop_product_id_main" class="hikashop_product_id_main">
+	<span id="meta_monaco_product_id_main" class="meta_monaco_product_id_main">
 		<input type="hidden" name="product_id" value="<?php echo (int)$this->element->product_id; ?>" />
 	</span>
 
 	<?php if(!empty($this->element->extraData->rightEnd)) { echo implode("\r\n",$this->element->extraData->rightEnd); } ?>
-	<div id="hikashop_product_description_main" class="hikashop_product_description_main" itemprop="description"><?php
+	<div id="meta_monaco_product_description_main" class="meta_monaco_product_description_main" itemprop="description"><?php
 		echo JHTML::_('content.prepare',preg_replace('#<hr *id="system-readmore" */>#i','',$this->element->product_description));
 	?></div>
 </div>
 
 
-<div id="hikashop_product_bottom_part" class="hikashop_product_bottom_part">
+<div id="meta_monaco_product_bottom_part" class="meta_monaco_product_bottom_part">
 
 	<?php if(!empty($this->element->extraData->bottomBegin)) { echo implode("\r\n",$this->element->extraData->bottomBegin); } ?>
 
 
-	<span id="hikashop_product_url_main" class="hikashop_product_url_main">
+	<span id="meta_monaco_product_url_main" class="meta_monaco_product_url_main">
 		<?php
 		if(!empty($this->element->product_url)) {
 			echo JText::sprintf('MANUFACTURER_URL', '<a href="' . $this->element->product_url . '" target="_blank">' . $this->element->product_url . '</a>');

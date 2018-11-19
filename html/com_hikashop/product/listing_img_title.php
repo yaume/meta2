@@ -26,10 +26,18 @@ if(!empty($this->row->extraData->top)) { echo implode("\r\n",$this->row->extraDa
 	$img = 'images/meta_monaco_products/'.$this->row->product_code.'/'.$this->row->product_code.'-1064.jpg';
 		echo '<img class="meta_monaco_product_listing_image img-fluid" title="'.$this->escape(@$this->row->file_description).'" alt="'.$this->escape(@$this->row->file_name).'" src="'.$img.'"/>';
 	//Display product badge
-	echo var_dump($this->row->badges);
+
 	if($this->params->get('display_badges', 1)) {
-		$this->classbadge->placeBadges($this->image, $this->row->badges, -10, 0);
-	}
+		$badge = $this->row->badges[0];
+		if($badge){
+		// $this->classbadge->placeBadges($this->image, $this->row->badges, -10, 0);
+		?>
+		<div class="badge">
+			<p>
+			<?php echo $badge->badge_name;?>
+		</p>
+	</div>
+	<?php }}
 ?>
 				<figcaption class="meta_monaco_product_name">
 
