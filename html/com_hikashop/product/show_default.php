@@ -57,35 +57,48 @@ echo $this->loadTemplate();
 	<?php	}
 	?>
 	<h3>Details</h3>
-	<span id="meta_monaco_product_price_main" class="meta_monaco_product_price_main" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-		<?php
-			$main =& $this->element;
-			if(!empty($this->element->main))
-				$main =& $this->element->main;
-			if(!empty($main->product_condition)){
-		?>
-		<meta itemprop="itemCondition" itemtype="https://schema.org/OfferItemCondition" content="https://schema.org/<?php echo $main->product_condition; ?>" />
-		<?php
-			}
-			if($this->params->get('show_price') && (empty($this->displayVariants['prices']) || $this->params->get('characteristic_display') != 'list')) {
-				$this->row =& $this->element;
-				$this->setLayout('listing_price');
-				echo $this->loadTemplate();
-		?>
-		<meta itemprop="availability" content="https://schema.org/<?php echo ($this->row->product_quantity != 0) ? 'InStock' : 'OutOfstock' ;?>" />
-		<meta itemprop="priceCurrency" content="<?php echo $this->currency->currency_code; ?>" />
-		<?php
-}
-?>
-	</span>
+	<table class="specs">
 
-	<?php if(!empty($this->element->extraData->rightMiddle)) { echo implode("\r\n",$this->element->extraData->rightMiddle); } ?>
-
-	<?php
-$this->setLayout('show_block_dimensions');
-echo $this->loadTemplate();
-?>
-	
+            <?php if ($this->config->get('show_code')) { ?>
+                <tr>
+                    <td>Product Code:</td>
+                    <td><span id="hikashop_product_code_main" class="hikashop_product_code_main">
+                            <?php echo $this->element->product_code; ?>
+                        </span>
+                    </td>
+                </tr>
+            <?php } ?>
+            <?php if ($this->params->get('show_price')) { ?>
+                <tr>
+                    <td>Price:</td>
+                    <td>
+                        <span id="hikashop_product_price_main" class="hikashop_product_price_main">
+                        <?php
+                        if ($this->params->get('show_price')) {
+                            $this->row = &$this->element;
+                            $this->setLayout('listing_price');
+                            echo $this->loadTemplate();
+                        }
+                        ?>
+                        </span>
+                    </td>
+                </tr>
+            <?php } ?>
+            <tr>
+                <td><?php echo JText::_('MANUFACTURER'), ':'; ?></td>
+                <td><?php $this->setLayout('show_block_dimensions');
+                    echo $this->loadTemplate();
+                    ?>
+                </td>
+            </tr>
+            <tr>
+                <td><?php echo JText::_('TAG'),':'; ?></td>
+                <td><?php if (HIKASHOP_J30) {
+                        $this->setLayout('show_block_tags');
+                        echo $this->loadTemplate();
+                    } ?></td>
+            </tr>
+        </table>	
 	<?php
 if($this->params->get('characteristic_display') != 'list') {
 	$this->setLayout('show_block_characteristic');

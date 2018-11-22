@@ -35,8 +35,8 @@ figure{
 }
 
 @include media-breakpoint-up(lg) {
-    html{font-size: 1.44rem;}
-    #system-message-container, .item-page{
+    html{font-size: 1.125rem;}
+    #system-message-container, .item-page, #hikashop_checkout_form{
     grid-column-start: 2;
     }
     .columnsblock2{

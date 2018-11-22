@@ -3,7 +3,6 @@
     display: grid;
     grid-gap: 1rem 1rem;
     align-items: start;
-
     .meta_monaco_product_left_part {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -54,9 +53,9 @@
         }
 
         &:hover {
-            img{
+            img {
                 opacity: 0.5;
-            }  
+            }
 
             .meta_monaco_product_name {
                 opacity: 1;
@@ -68,12 +67,18 @@
         }
     }
 }
+.table {
+    a {
+        color: $black;
+    }
+}
 //Badges
-.badge{
-        position: absolute;
-        top: 0rem;
-        right: 0rem;
-    p{
+.badge {
+    position: absolute;
+    top: 0rem;
+    right: 0rem;
+
+    p {
         margin-bottom: 0;
         text-align: center;
         transform: rotate(45deg) translate(3.5rem);
@@ -83,18 +88,22 @@
         text-transform: uppercase;
     }
 }
+
 //cart
 .meta_monaco_cart_product_image_title {
     width: 10%;
 }
+
 .cart_product_quantity_value {
-    input{
-    text-align: center;
+    input {
+        text-align: center;
     }
 }
+
 .meta_monaco_checkout_cart a {
     color: $black;
 }
+
 // cart notify
 .image,
 .title {
@@ -105,10 +114,33 @@
     font-size: 1.5rem !important;
 }
 
+.specs {
+    a {
+        color: $black;
+    }
+
+    .meta_monaco_product_price_full {
+        color: $red;
+    }
+
+    td {
+        padding: .5rem 1.125rem .5rem 0;
+    }
+}
+
+.meta_monaco_product_quantity_main {
+    margin-bottom: 1rem;
+}
+
+.meta_monaco_product_quantity_div {
+    margin-bottom: .5rem;
+}
+
 .vex-content {
     font-family: $font-family-sans-serif !important;
     border-radius: 0 !important;
-    width: 550px !important;
+    width: 100% !important;
+
     .vex-dialog-button {
         border: 1px solid !important;
         margin: 0 !important;
@@ -139,6 +171,7 @@
 @include media-breakpoint-up(lg) {
     .meta_monaco_product_page {
         grid-column-start: 2;
+
         form {
             grid-template-columns: 1fr 1fr;
         }
@@ -151,5 +184,9 @@
     .meta_monaco_products {
         grid-template-columns: repeat(3, 1fr);
         grid-column-start: 2;
+    }
+
+    .vex-content {
+        width: 35% !important;
     }
 }

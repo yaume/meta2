@@ -8079,9 +8079,9 @@ figure figcaption {
 
 @media (min-width: 992px) {
   html {
-    font-size: 1.44rem;
+    font-size: 1.125rem;
   }
-  #system-message-container, .item-page {
+  #system-message-container, .item-page, #hikashop_checkout_form {
     -ms-grid-column: 2;
         grid-column-start: 2;
   }
@@ -8204,7 +8204,7 @@ header .header-extra {
   display: flex;
   align-items: center;
   order: 2;
-  margin-left: auto;
+  margin: 0 1.5rem;
 }
 
 header .header-extra .cart-module {
@@ -8221,8 +8221,6 @@ header .header-extra .cart-module .menu-cart {
 header .header-extra .cart-module .fa-shopping-cart {
   color: #495057;
   position: relative;
-  height: 2rem;
-  width: 2rem;
 }
 
 header .header-extra .cart-module .numcart {
@@ -8232,19 +8230,22 @@ header .header-extra .cart-module .numcart {
   border-radius: 50%;
   padding: 0 0.25rem;
   position: absolute;
-  top: -0.25rem;
-  right: -0.5rem;
+  top: -0.5rem;
+  right: -1rem;
 }
 
 header .header-extra .search-button {
   cursor: pointer;
-  margin: 1.5rem;
+  margin: 1.5rem 0 1.5rem 1.5rem;
 }
 
 header .toggler {
   order: 0;
   margin-left: 1.5rem;
   margin-right: 1.5rem;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
 }
 
 header .toggler .navbar-toggler-icon {
@@ -8820,6 +8821,10 @@ a.shopblack {
   opacity: 1;
 }
 
+.table a {
+  color: #000;
+}
+
 .badge {
   position: absolute;
   top: 0rem;
@@ -8858,10 +8863,30 @@ a.shopblack {
   font-size: 1.5rem !important;
 }
 
+.specs a {
+  color: #000;
+}
+
+.specs .meta_monaco_product_price_full {
+  color: #e40000;
+}
+
+.specs td {
+  padding: .5rem 1.125rem .5rem 0;
+}
+
+.meta_monaco_product_quantity_main {
+  margin-bottom: 1rem;
+}
+
+.meta_monaco_product_quantity_div {
+  margin-bottom: .5rem;
+}
+
 .vex-content {
   font-family: "Muli", sans-serif !important;
   border-radius: 0 !important;
-  width: 550px !important;
+  width: 100% !important;
 }
 
 .vex-content .vex-dialog-button {
@@ -8907,6 +8932,9 @@ a.shopblack {
         grid-template-columns: repeat(3, 1fr);
     -ms-grid-column: 2;
         grid-column-start: 2;
+  }
+  .vex-content {
+    width: 35% !important;
   }
 }
 

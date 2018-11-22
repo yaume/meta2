@@ -23,7 +23,7 @@ defined('_JEXEC') or die('Restricted access');
 	if(!empty($this->options['show_cart_image'])) {
 		$row_count++;
 ?>
-			<th id="hikashop_cart_product_image_title" class="hikashop_cart_product_image_title hikashop_cart_title"><?php
+			<th id="hikashop_cart_product_image_title" class="meta_monaco_cart_product_image_title hikashop_cart_title"><?php
 				echo JText::_('CART_PRODUCT_IMAGE');
 			?></th>
 <?php } ?>
@@ -111,7 +111,7 @@ defined('_JEXEC') or die('Restricted access');
 			}
 
 			if($image && !$this->config->get('thumbnail')) {
-				echo '<img src="'.$this->imageHelper->uploadFolder_url . $image->file_path.'" alt="' . $image->file_name . '" style="margin-top:10px;margin-bottom:10px;display:inline-block;vertical-align:middle" />';
+				echo '<img src="'.$this->imageHelper->uploadFolder_url . $image->file_path.'" class="img-fluid" alt="' . $image->file_name . '" style="margin-top:10px;margin-bottom:10px;display:inline-block;vertical-align:middle" />';
 			} else {
 ?>
 				<div class="hikashop_cart_product_image_thumb" ><?php
@@ -274,7 +274,7 @@ defined('_JEXEC') or die('Restricted access');
 				<input id="hikashop_checkout_quantity_<?php echo $product->cart_product_id;?>" type="text" name="checkout[cart][item][<?php echo $product->cart_product_id;?>]" class="hikashop_product_quantity_field" size="3" data-hk-qty-old="<?php echo $product->cart_product_quantity; ?>" value="<?php echo $product->cart_product_quantity; ?>" onchange="window.hikashop.checkQuantity(this);"/>
 				<div class="hikashop_cart_product_quantity_refresh">
 					<a class="hikashop_no_print btn" href="#" onclick="var qty_field = document.getElementById('hikashop_checkout_quantity_<?php echo $product->cart_product_id;?>'); if (qty_field && qty_field.value != '<?php echo $product->cart_product_quantity; ?>'){<?php echo $input; ?> return window.checkout.submitCart(<?php echo $this->step; ?>,<?php echo $this->module_position; ?>); } return false;" title="<?php echo JText::_('HIKA_REFRESH'); ?>">
-						<i class="fa fa-sync"></i>
+						<i class="fa fa-refresh"></i>
 					</a>
 				</div>
 <?php
