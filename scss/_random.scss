@@ -2,6 +2,7 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 1rem 1rem;
+    grid-auto-rows: min-content;
     
     [class^="leading-"],
     .item {
@@ -31,6 +32,7 @@
             background: transparent;
             border: 0;
             color: $white;
+            cursor: pointer;
 
         }
 
@@ -64,6 +66,19 @@
     margin: 0 auto 1rem;
     width:50%; 
 }
+[class^="leading-"]{
+    .readmore{
+        background: url(../img/findoutwhite.png) no-repeat center center !important;
+        height: 25%;
+        width: 25%;
+        background-size: contain !important;
+        top: 50%!important;
+        left: 37.5%!important;
+        i{
+            display: none;
+        }
+    }
+    }
 @include media-breakpoint-up(lg) {
     .category {
         grid-column-start: 2;

@@ -132,19 +132,21 @@ header {
         justify-content: flex-start;
         flex-direction: column;
         z-index: 1000;
+        box-shadow: 2px 0 10px rgba(0,0,0,.25);
 
         .close {
-            margin: 2rem;
-            float: none;
+            margin: 1rem;
+            position: absolute;
+            right: 0;
             align-self: flex-end;
         }
-
         .navbar-nav {
             display: flex;
             flex-direction: column;
             list-style: none;
             margin-bottom: 0;
-            padding-left: 1rem;
+            padding-left: 1rem;    
+            margin-top: .5rem;
 
             .nav-item {
                 .nav-link {

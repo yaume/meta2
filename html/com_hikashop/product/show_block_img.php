@@ -97,7 +97,7 @@ defined('_JEXEC') or die('Restricted access');
 	  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-        <img src="images/meta_monaco_products/<?php echo $image->file_path; ?>" class="img-fluid">
+        <img src="images/meta_monaco_products/<?php echo $this->row->product_code,'/',$this->row->product_code,'-1064.jpg'; ?>" class="img-fluid">
       </div>
 	</div>
 	</div>

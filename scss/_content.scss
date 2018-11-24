@@ -14,10 +14,16 @@ figure{
         height: 100%;
         width: 100%;
     }
-    figcaption{
-        text-align: right;
-        font-style: italic;
+}
+i{
+    &.fa{
+        cursor: pointer;
     }
+}
+figcaption{
+    text-align: right;
+    font-style: italic;
+    font-size: 70%;
 }
 [class*="columnsblock"]{
     display: grid;

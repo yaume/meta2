@@ -88,7 +88,11 @@
         text-transform: uppercase;
     }
 }
-
+button.close {
+    position: absolute;
+    top: 1rem;
+    right: 1.15rem;
+}
 //cart
 .meta_monaco_cart_product_image_title {
     width: 10%;

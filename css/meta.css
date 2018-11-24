@@ -8055,9 +8055,14 @@ figure img {
   width: 100%;
 }
 
-figure figcaption {
+i.fa {
+  cursor: pointer;
+}
+
+figcaption {
   text-align: right;
   font-style: italic;
+  font-size: 70%;
 }
 
 [class*="columnsblock"] {
@@ -8316,10 +8321,12 @@ header .toggler .navbar-toggler-icon {
     justify-content: flex-start;
     flex-direction: column;
     z-index: 1000;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.25);
   }
   .navbar .close {
-    margin: 2rem;
-    float: none;
+    margin: 1rem;
+    position: absolute;
+    right: 0;
     align-self: flex-end;
   }
   .navbar .navbar-nav {
@@ -8328,6 +8335,7 @@ header .toggler .navbar-toggler-icon {
     list-style: none;
     margin-bottom: 0;
     padding-left: 1rem;
+    margin-top: .5rem;
   }
   .navbar .navbar-nav .nav-item .nav-link {
     color: #6c757d;
@@ -8594,6 +8602,8 @@ section.ml {
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
   grid-gap: 1rem 1rem;
+  grid-auto-rows: -webkit-min-content;
+  grid-auto-rows: min-content;
 }
 
 .category [class^="leading-"],
@@ -8629,6 +8639,7 @@ section.ml {
   background: transparent;
   border: 0;
   color: #fff;
+  cursor: pointer;
 }
 
 .category [class^="leading-"] figure,
@@ -8657,6 +8668,19 @@ section.ml {
   display: block;
   margin: 0 auto 1rem;
   width: 50%;
+}
+
+[class^="leading-"] .readmore {
+  background: url(../img/findoutwhite.png) no-repeat center center !important;
+  height: 25%;
+  width: 25%;
+  background-size: contain !important;
+  top: 50% !important;
+  left: 37.5% !important;
+}
+
+[class^="leading-"] .readmore i {
+  display: none;
 }
 
 @media (min-width: 992px) {
@@ -8722,7 +8746,7 @@ section.ml {
   background-color: #000;
   position: relative;
   z-index: 10;
-  padding: 0.75rem;
+  padding: 0.8125rem 0.75rem;
   line-height: 1.5;
   margin: -0.75rem -1.8rem -0.75rem 0.75rem;
 }
@@ -8840,6 +8864,12 @@ a.shopblack {
   width: 12rem;
   font-family: Big Caslon, Book Antiqua, Palatino Linotype, Georgia, serif;
   text-transform: uppercase;
+}
+
+button.close {
+  position: absolute;
+  top: 1rem;
+  right: 1.15rem;
 }
 
 .meta_monaco_cart_product_image_title {

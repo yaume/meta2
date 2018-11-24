@@ -13,9 +13,9 @@ $params = $displayData['params'];
 $item = $displayData['item'];
 $link = $displayData['link'];
 ?>
+<a href="<?php echo $link; ?>" itemprop="url" aria-label="<?php echo JText::_('COM_CONTENT_READ_MORE'); ?> <?php echo htmlspecialchars($item->title, ENT_QUOTES, 'UTF-8'); ?>">
 <button class="readmore">
-		<a href="<?php echo $link; ?>" itemprop="url" aria-label="<?php echo JText::_('COM_CONTENT_READ_MORE'); ?> <?php echo htmlspecialchars($item->title, ENT_QUOTES, 'UTF-8'); ?>">
-			<?php echo '<i class="fa fa-search" aria-hidden="true"></i>'; ?> 
-
-		</a>
-</button>
+		
+			<i class="fa fa-search" aria-hidden="true"></i>
+		
+</button></a>

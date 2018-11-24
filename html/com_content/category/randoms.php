@@ -76,7 +76,7 @@ $document->addScriptDeclaration('','application/ld+json')
 					itemprop="itemListElement" itemscope itemtype="http://schema.org/Event">
 					<?php
 					$this->item = &$item;
-					echo $this->loadTemplate('item');
+					echo $this->loadTemplate('leading');
 					?>
 				</div>
 				<?php $leadingcount++; ?>

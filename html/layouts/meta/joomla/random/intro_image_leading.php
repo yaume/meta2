@@ -11,9 +11,9 @@ defined('JPATH_BASE') or die;
 $params  = $displayData->params;
 $alias = $displayData->alias;
 ?>
-<?php $images = json_decode($displayData->images); ?>
+<?php $images = json_decode($displayData->images);?>
 	<a href="<?php echo JRoute::_(ContentHelperRoute::getArticleRoute($displayData->slug, $displayData->catid, $displayData->language)); ?>" alt="<?php echo $displayData->title;?>">
-	<figure class="item-image">
+	<figure class="item-image-leading">
 	<img srcset="images/random/<?php echo $alias; ?>/<?php echo $alias; ?>-thumbnail-325.jpg 325w,
 				 images/random/<?php echo $alias; ?>/<?php echo $alias; ?>-thumbnail-710.jpg 710w,
 				 images/random/<?php echo $alias; ?>/<?php echo $alias; ?>-thumbnail-975.jpg 975w,
