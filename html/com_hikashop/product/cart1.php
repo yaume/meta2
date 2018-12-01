@@ -39,8 +39,14 @@ if (!empty($small_cart)) $spinner_css="small_spinner small_cart";
 if(empty($this->rows)) {
 	$hidecart = (int)$this->params->get('hide_cart', 0);
 	$desc = trim($this->params->get('msg'));
-	if((empty($desc) && $desc != '0') || $hidecart == 0)
-		$desc = ($this->cart_type == 'cart') ? "<i class=\"fa fa-shopping-cart\"></i>" : JText::_('WISHLIST_EMPTY');
+	if((empty($desc) && $desc != '0') || $hidecart == 0)?>
+	 <div id="meta_cart" class="meta_cart">
+
+            <?php $text = '<i class="fa fa-shopping-cart"></i>';
+			echo $this->cart->displayButton($text, 'checkout', $this->params, $this->url_checkout, 'window.location=\'' . $this->url_checkout . '\';return false;', '', 0, 1, '');?>
+        </div>
+		<?php
+		// $desc = ($this->cart_type == 'cart') ? JText::_('CART_EMPTY') : JText::_('WISHLIST_EMPTY');
 	if($hidecart == 2)
 		$desc = '';
 
@@ -55,7 +61,7 @@ if(empty($this->rows)) {
 
 	if(!in_array($tmpl, array('component', 'ajax', 'raw'))) {
 ?>
-<div id="hikashop_cart_<?php echo $module_id; ?>" class="hikashop_cart">
+<div id="meta_cart_<?php echo $module_id; ?>" class="meta_cart">
 <?php
 	}
 ?>
@@ -63,8 +69,9 @@ if(empty($this->rows)) {
 	<div class="hikashop_checkout_loading_spinner <?php echo $spinner_css ?>"></div>
 <?php
 	if(!empty($desc))
-		echo $desc;
-
+	// $desc= '<i class="fa fa-shopping-cart"></i>';
+	// 	echo $desc;
+	echo $this->notice_html;
 	if(!in_array($tmpl, array('component', 'ajax', 'raw'))) {
 ?>
 </div>

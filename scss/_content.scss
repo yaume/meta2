@@ -27,7 +27,7 @@ figcaption{
 }
 [class*="columnsblock"]{
     display: grid;
-    grid-gap: 1rem 1rem;
+    grid-gap: 1rem 2rem;
     text-align: justify;
     margin-bottom: 1rem;
    
@@ -39,7 +39,15 @@ figcaption{
 .embed-responsive{
     margin-bottom: 1rem;
 }
-
+.cart-is-empty{
+    text-align: center;
+    main{
+        align-items: center;
+    }
+    h1{
+        margin-bottom: 1rem;
+    }
+}
 @include media-breakpoint-up(lg) {
     html{font-size: 1.125rem;}
     #system-message-container, .item-page, #hikashop_checkout_form{

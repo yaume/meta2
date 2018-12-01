@@ -90,8 +90,10 @@
 }
 button.close {
     position: absolute;
-    top: 1rem;
-    right: 1.15rem;
+    top: 0;
+    right: .5rem;
+    opacity: 1;
+    padding: 1rem;
 }
 //cart
 .meta_monaco_cart_product_image_title {
@@ -192,5 +194,9 @@ button.close {
 
     .vex-content {
         width: 35% !important;
+    }
+    .hikashop_checkout_address {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
     }
 }
