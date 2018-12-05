@@ -96,7 +96,7 @@ if(invalid_field)
 	}
 
 	if(!empty($title))
-		echo '<h1>'.JText::_($title).'</h1>';
+		// echo '<h1>'.JText::_($title).'</h1>';
 
 	if($this->options['show_login']) {
 		$classLogin = '';

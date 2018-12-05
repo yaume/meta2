@@ -8,7 +8,7 @@
  */
 defined('_JEXEC') or die('Restricted access');
 ?><div class="hikashop_checkout_buttons">
-	<div class="buttons_left">
+	<div class="float-left">
 <?php
 	$continue_shopping = $this->config->get('continue_shopping','');
 	if(!empty($continue_shopping)) {
@@ -25,7 +25,7 @@ defined('_JEXEC') or die('Restricted access');
 	}
 ?>
 	</div>
-	<div class="buttons_right">
+	<div class="float-right">
 		<button id="hikabtn_checkout_next" type="submit" class="<?php echo $this->config->get('css_button','hikabtn'); ?> meta-btn" onclick="this.form.submit(); this.disabled=true; window.Oby.addClass(this, 'next_button_disabled'); return false;"><?php
 			$steps = count($this->checkoutHelper->checkout_workflow['steps']);
 			$txt = JText::_('HIKA_NEXT');

@@ -8081,19 +8081,6 @@ figcaption {
   }
 }
 
-form.checkout2 {
-  display: grid;
-  grid-gap: 1rem;
-}
-
-form.checkout2 fieldset {
-  display: contents;
-}
-
-form.checkout2 legend {
-  grid-column: span 2;
-}
-
 select {
   border-radius: 0;
   -webkit-appearance: none;
@@ -8119,12 +8106,6 @@ input[type="checkbox"]:checked + label:before {
 .hkform-horizontal select {
   display: block;
   width: 100%;
-}
-
-@media (min-width: 992px) {
-  form.checkout2 {
-    grid-template-columns: 1fr 4fr;
-  }
 }
 
 .about {
@@ -8676,14 +8657,14 @@ section.ml {
 
 .meta-btn {
   position: relative;
-  padding: 0.75rem 1.8rem;
+  padding: 0.75rem 1.85rem;
   background: transparent;
   cursor: pointer;
   text-decoration: none;
   border: 1px solid #000;
   transition: color 0.4s ease-out;
   color: #000;
-  margin: -1px;
+  margin: -2px;
 }
 
 .meta-btn:hover, .meta-btn:active, .meta-btn:focus {
@@ -8717,7 +8698,7 @@ section.ml {
   z-index: 10;
   padding: 0.8125rem 0.75rem;
   line-height: 1.5;
-  margin: -0.75rem -1.8rem -0.75rem 0.75rem;
+  margin: -0.75rem -1.85rem -0.75rem 0.75rem;
 }
 
 a.shopblack {
@@ -8727,6 +8708,16 @@ a.shopblack {
   border-radius: 0;
   font-size: 1.5rem;
   margin-bottom: 1rem;
+}
+
+.hikashop_view_files_title,
+.hikashop_view_files_wrapper,
+.hikashop_view_files_border {
+  display: contents;
+}
+
+.hikashop_field_required_label {
+  color: #e40000;
 }
 
 .meta_monaco_products,
@@ -8908,6 +8899,12 @@ button.close {
   float: right !important;
 }
 
+.hikashop_checkout_address {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
 @media (min-width: 992px) {
   .meta_monaco_product_page {
     grid-column-start: 2;
@@ -8923,11 +8920,10 @@ button.close {
     grid-column-start: 2;
   }
   .vex-content {
-    width: 35% !important;
+    width: 50% !important;
   }
-  .hikashop_checkout_address {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+  .hikashop_checkout_address fieldset {
+    flex: 0 0 50%;
   }
 }
 

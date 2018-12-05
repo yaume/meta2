@@ -1,13 +1,13 @@
-form.checkout2{
-    display: grid;
-    grid-gap:1rem;
-    fieldset{
-        display: contents;
-    }
-    legend {
-        grid-column: span 2;
-    }
-}
+// form.checkout2{
+//     display: grid;
+//     grid-gap:1rem;
+//     fieldset{
+//         display: contents;
+//     }
+//     legend {
+//         grid-column: span 2;
+//     }
+// }
     select {
         border-radius: 0;
         -webkit-appearance: none;
@@ -38,7 +38,7 @@ form.checkout2{
         width: 100%;
     }
 @include media-breakpoint-up(lg){
-    form.checkout2{
-        grid-template-columns: 1fr 4fr;
-    }
+    // form.checkout2{
+    //     grid-template-columns: 1fr 4fr;
+    // }
 }

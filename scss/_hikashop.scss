@@ -1,8 +1,18 @@
+// Dev
+.hikashop_view_files_title,
+.hikashop_view_files_wrapper,
+.hikashop_view_files_border {
+    display: contents
+}
+.hikashop_field_required_label{
+    color: $red;
+}
 .meta_monaco_products,
 .meta_monaco_product_page form {
     display: grid;
     grid-gap: 1rem 1rem;
     align-items: start;
+
     .meta_monaco_product_left_part {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -67,11 +77,13 @@
         }
     }
 }
+
 .table {
     a {
         color: $black;
     }
 }
+
 //Badges
 .badge {
     position: absolute;
@@ -88,6 +100,7 @@
         text-transform: uppercase;
     }
 }
+
 button.close {
     position: absolute;
     top: 0;
@@ -95,6 +108,7 @@ button.close {
     opacity: 1;
     padding: 1rem;
 }
+
 //cart
 .meta_monaco_cart_product_image_title {
     width: 10%;
@@ -174,6 +188,12 @@ button.close {
     }
 }
 
+.hikashop_checkout_address {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
 @include media-breakpoint-up(lg) {
     .meta_monaco_product_page {
         grid-column-start: 2;
@@ -193,10 +213,13 @@ button.close {
     }
 
     .vex-content {
-        width: 35% !important;
+        width: 50% !important;
     }
     .hikashop_checkout_address {
-        display: grid;
-        grid-template-columns: repeat(2,1fr);
+        fieldset {
+            flex: 0 0 50%;
+        }
     }
+
 }
+

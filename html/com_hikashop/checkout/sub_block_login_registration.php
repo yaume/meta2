@@ -28,7 +28,7 @@ if(!empty($this->options['registration_registration'])) {
 }
 ?>
 	
-	<label id="emailmsg" for="register_email" class="<?php echo $labelcolumnclass;?> hkcontrol-label" title=""><?php echo JText::_('HIKA_EMAIL'); ?>*</label>
+	<label id="emailmsg" for="register_email" class="<?php echo $labelcolumnclass;?> hkcontrol-label" title=""><?php echo JText::_('HIKA_EMAIL'); ?><span class="hikashop_field_required_label">*</span></label>
 	
 	<input <?php if($this->config->get('show_email_confirmation_field',0)){echo ' autocomplete="off"';} ?> type="text" name="data[register][email]" id="register_email" value="<?php echo $this->escape($this->mainUser->get( 'email' ));?>" class="hkform-control validate-email" maxlength="100" size="30" />
 
