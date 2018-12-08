@@ -1,4 +1,4 @@
-body.home {
+body.look {
     h1{
         font-size:$font-size-base * 1.75;
     }
@@ -35,50 +35,51 @@ body.home {
                 }
             }
         }
-    background: url(../../../images/home/home-324.jpg) no-repeat center 80px fixed;
+        main{
+    background: url(../../../images/look/look-324.jpg) no-repeat center 80px fixed;
     background-size: cover;
 
     @media screen and (orientation: portrait) {
         @include media-breakpoint-up(sm) {
-            background: url(../../../images/home/home-432.jpg) no-repeat center 80px fixed;
+            background: url(../../../images/look/look-432.jpg) no-repeat center 80px fixed;
             background-size: cover;
         }
 
         @include media-breakpoint-up(md) {
-            background: url(../../../images/home/home-558.jpg) no-repeat center 80px fixed;
+            background: url(../../../images/look/look-558.jpg) no-repeat center 80px fixed;
             background-size: cover;
         }
 
         @include media-breakpoint-up(lg) {
-            background: url(../../../images/home/home-665.jpg) no-repeat center 80px fixed;
+            background: url(../../../images/look/look-665.jpg) no-repeat center 80px fixed;
             background-size: cover;
         }
     }
 
     @media screen and (orientation: landscape) {
-        background: url(../../../images/home/home-576.jpg) no-repeat center 80px fixed;
+        background: url(../../../images/look/look-576.jpg) no-repeat center 80px fixed;
         background-size: cover;
 
         @include media-breakpoint-up(sm) {
-            background: url(../../../images/home/home-768.jpg) no-repeat center 80px fixed;
+            background: url(../../../images/look/look-768.jpg) no-repeat center 80px fixed;
             background-size: cover;
         }
 
         @include media-breakpoint-up(md) {
-            background: url(../../../images/home/home-992.jpg) no-repeat center 80px fixed;
+            background: url(../../../images/look/look-992.jpg) no-repeat center 80px fixed;
             background-size: cover;
         }
 
         @include media-breakpoint-up(lg) {
-            background: url(../../../images/home/home-1200.jpg) no-repeat center 80px fixed;
+            background: url(../../../images/look/look-1200.jpg) no-repeat center 80px fixed;
             background-size: cover;
         }
         @include media-breakpoint-up(xl) {
-            background: url(../../../images/home/home-2560.jpg) no-repeat center 80px fixed;
+            background: url(../../../images/look/look-2560.jpg) no-repeat center 80px fixed;
             background-size: cover;
         }
     }
-
+        }
     main {
         display: flex;
         justify-content: center;

@@ -8437,111 +8437,111 @@ main {
   }
 }
 
-body.home {
-  background: url(../../../images/home/home-324.jpg) no-repeat center 80px fixed;
-  background-size: cover;
-}
-
-body.home h1 {
+body.look h1 {
   font-size: 1.75rem;
 }
 
-body.home p, body.home h1, body.home a {
+body.look p, body.look h1, body.look a {
   color: #000;
   text-transform: uppercase;
 }
 
-body.home .dark p, body.home .dark h1, body.home .dark a {
+body.look .dark p, body.look .dark h1, body.look .dark a {
   color: #fff;
   text-transform: uppercase;
   margin-bottom: 1rem;
 }
 
-body.home .dark p:hover, body.home .dark h1:hover, body.home .dark a:hover {
+body.look .dark p:hover, body.look .dark h1:hover, body.look .dark a:hover {
   text-decoration: none;
 }
 
-body.home .dark .meta-btn {
+body.look .dark .meta-btn {
   border: 1px solid #fff;
   color: #fff;
 }
 
-body.home .dark .meta-btn:hover, body.home .dark .meta-btn:active, body.home .dark .meta-btn:focus {
+body.look .dark .meta-btn:hover, body.look .dark .meta-btn:active, body.look .dark .meta-btn:focus {
   color: #000;
 }
 
-body.home .dark .meta-btn:before {
+body.look .dark .meta-btn:before {
   background-color: #fff;
 }
 
-body.home .dark .meta-btn i {
+body.look .dark .meta-btn i {
   color: #000;
   background-color: #fff;
+}
+
+body.look main {
+  background: url(../../../images/look/look-324.jpg) no-repeat center 80px fixed;
+  background-size: cover;
 }
 
 @media screen and (orientation: portrait) and (min-width: 576px) {
-  body.home {
-    background: url(../../../images/home/home-432.jpg) no-repeat center 80px fixed;
+  body.look main {
+    background: url(../../../images/look/look-432.jpg) no-repeat center 80px fixed;
     background-size: cover;
   }
 }
 
 @media screen and (orientation: portrait) and (min-width: 768px) {
-  body.home {
-    background: url(../../../images/home/home-558.jpg) no-repeat center 80px fixed;
+  body.look main {
+    background: url(../../../images/look/look-558.jpg) no-repeat center 80px fixed;
     background-size: cover;
   }
 }
 
 @media screen and (orientation: portrait) and (min-width: 992px) {
-  body.home {
-    background: url(../../../images/home/home-665.jpg) no-repeat center 80px fixed;
+  body.look main {
+    background: url(../../../images/look/look-665.jpg) no-repeat center 80px fixed;
     background-size: cover;
   }
 }
 
 @media screen and (orientation: landscape) {
-  body.home {
-    background: url(../../../images/home/home-576.jpg) no-repeat center 80px fixed;
+  body.look main {
+    background: url(../../../images/look/look-576.jpg) no-repeat center 80px fixed;
     background-size: cover;
   }
 }
 
 @media screen and (orientation: landscape) and (min-width: 576px) {
-  body.home {
-    background: url(../../../images/home/home-768.jpg) no-repeat center 80px fixed;
+  body.look main {
+    background: url(../../../images/look/look-768.jpg) no-repeat center 80px fixed;
     background-size: cover;
   }
 }
 
 @media screen and (orientation: landscape) and (min-width: 768px) {
-  body.home {
-    background: url(../../../images/home/home-992.jpg) no-repeat center 80px fixed;
+  body.look main {
+    background: url(../../../images/look/look-992.jpg) no-repeat center 80px fixed;
     background-size: cover;
   }
 }
 
 @media screen and (orientation: landscape) and (min-width: 992px) {
-  body.home {
-    background: url(../../../images/home/home-1200.jpg) no-repeat center 80px fixed;
+  body.look main {
+    background: url(../../../images/look/look-1200.jpg) no-repeat center 80px fixed;
     background-size: cover;
   }
 }
 
 @media screen and (orientation: landscape) and (min-width: 1200px) {
-  body.home {
-    background: url(../../../images/home/home-2560.jpg) no-repeat center 80px fixed;
+  body.look main {
+    background: url(../../../images/look/look-2560.jpg) no-repeat center 80px fixed;
     background-size: cover;
   }
 }
 
-body.home main {
+body.look main {
   display: flex;
   justify-content: center;
   text-align: center;
 }
 
-body.home main section {
+body.look main section {
   align-self: center;
   align-self: flex-end;
 }
