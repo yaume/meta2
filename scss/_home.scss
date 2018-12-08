@@ -1,105 +1,135 @@
 body.look {
-    h1{
-        font-size:$font-size-base * 1.75;
+    h1 {
+        font-size: $font-size-base * 1.75;
     }
-    p,h1,a {
+
+    img {
+        display: block;
+        width: 100%;
+        min-width: 100%;
+         
+    }
+    picture{
+        z-index: 0;
+    }
+    p,
+    h1,
+    a {
         color: $black;
         text-transform: uppercase;
+        z-index: 1;
     }
-        & .dark {
-            p,h1,a {
-                color: $white;
-                text-transform: uppercase;
-                margin-bottom:1rem;
-                &:hover{
-                    text-decoration: none;
-                }
-            }
-            .meta-btn {
-                border: 1px solid $white;
-                color: $white;
 
-                &:hover,
-                &:active,
-                &:focus {
-                    color: $black;
-                }
+    & .dark {
 
-                &:before {
-                    background-color: $white;
-                }
+        p,
+        h1,
+        a {
+            color: $white;
+            margin-bottom: 1rem;
 
-                i {
-                    color: $black;
-                    background-color: $white;
-                }
+            &:hover {
+                text-decoration: none;
             }
         }
-        main{
-    background: url(../../../images/look/look-324.jpg) no-repeat center 80px fixed;
-    background-size: cover;
 
-    @media screen and (orientation: portrait) {
-        @include media-breakpoint-up(sm) {
-            background: url(../../../images/look/look-432.jpg) no-repeat center 80px fixed;
-            background-size: cover;
-        }
+        .meta-btn {
+            border: 1px solid $white;
+            color: $white;
 
-        @include media-breakpoint-up(md) {
-            background: url(../../../images/look/look-558.jpg) no-repeat center 80px fixed;
-            background-size: cover;
-        }
+            &:hover,
+            &:active,
+            &:focus {
+                color: $black;
+            }
 
-        @include media-breakpoint-up(lg) {
-            background: url(../../../images/look/look-665.jpg) no-repeat center 80px fixed;
-            background-size: cover;
+            &:before {
+                background-color: $white;
+            }
+
+            i {
+                color: $black;
+                background-color: $white;
+            }
         }
     }
 
-    @media screen and (orientation: landscape) {
-        background: url(../../../images/look/look-576.jpg) no-repeat center 80px fixed;
-        background-size: cover;
+    //     main{
+    // background: url(../../../images/look/look-324.jpg) no-repeat center 80px fixed;
+    // background-size: cover;
 
-        @include media-breakpoint-up(sm) {
-            background: url(../../../images/look/look-768.jpg) no-repeat center 80px fixed;
-            background-size: cover;
-        }
+    // @media screen and (orientation: portrait) {
+    //     @include media-breakpoint-up(sm) {
+    //         background: url(../../../images/look/look-432.jpg) no-repeat center 80px fixed;
+    //         background-size: cover;
+    //     }
 
-        @include media-breakpoint-up(md) {
-            background: url(../../../images/look/look-992.jpg) no-repeat center 80px fixed;
-            background-size: cover;
-        }
+    //     @include media-breakpoint-up(md) {
+    //         background: url(../../../images/look/look-558.jpg) no-repeat center 80px fixed;
+    //         background-size: cover;
+    //     }
 
-        @include media-breakpoint-up(lg) {
-            background: url(../../../images/look/look-1200.jpg) no-repeat center 80px fixed;
-            background-size: cover;
-        }
-        @include media-breakpoint-up(xl) {
-            background: url(../../../images/look/look-2560.jpg) no-repeat center 80px fixed;
-            background-size: cover;
-        }
-    }
-        }
+    //     @include media-breakpoint-up(lg) {
+    //         background: url(../../../images/look/look-665.jpg) no-repeat center 80px fixed;
+    //         background-size: cover;
+    //     }
+    // }
+
+    // @media screen and (orientation: landscape) {
+    //     background: url(../../../images/look/look-576.jpg) no-repeat center 80px fixed;
+    //     background-size: cover;
+
+    //     @include media-breakpoint-up(sm) {
+    //         background: url(../../../images/look/look-768.jpg) no-repeat center 80px fixed;
+    //         background-size: cover;
+    //     }
+
+    //     @include media-breakpoint-up(md) {
+    //         background: url(../../../images/look/look-992.jpg) no-repeat center 80px fixed;
+    //         background-size: cover;
+    //     }
+
+    //     @include media-breakpoint-up(lg) {
+    //         background: url(../../../images/look/look-1200.jpg) no-repeat center 80px fixed;
+    //         background-size: cover;
+    //     }
+    //     @include media-breakpoint-up(xl) {
+    //         background: url(../../../images/look/look-2560.jpg) no-repeat center 80px fixed;
+    //         background-size: cover;
+    //     }
+    // }
+    // }
     main {
         display: flex;
         justify-content: center;
         text-align: center;
+        padding: 0;
+
+        @include media-breakpoint-up(lg) {
+            grid-template-columns: 1fr;
+        }
 
         section {
-            align-self: center;
-                align-self: flex-end;
+            width: 100%;
         }
     }
 }
-section{
-    &.mr{
-        position: absolute;
-        top: 50%;
-        right: 5%;
+
+.item-page {
+    &.mr {
+        a {
+            position: absolute;
+            top: 50%;
+            right: 5%;
+        }
+
     }
-    &.ml{
-        position: absolute;
-        top: 50%;
-        left: 5%;
+
+    &.ml {
+        a {
+            position: absolute;
+            top: 50%;
+            left: 5%;
+        }
     }
 }

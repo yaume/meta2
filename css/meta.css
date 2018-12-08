@@ -8125,7 +8125,6 @@ input[type="checkbox"]:checked + label:before {
 
 .abovefooter {
   display: grid;
-  text-align: center;
 }
 
 .abovefooter .footer_body {
@@ -8134,6 +8133,10 @@ input[type="checkbox"]:checked + label:before {
 
 .fa-ul {
   margin: 40px 0 0 0;
+}
+
+.fa-ul a {
+  color: #000;
 }
 
 .fa-ul li {
@@ -8361,10 +8364,6 @@ header .toggler .navbar-toggler-icon {
   }
 }
 
-.home footer {
-  background: transparent !important;
-}
-
 footer {
   text-align: center;
   display: flex;
@@ -8441,18 +8440,34 @@ body.look h1 {
   font-size: 1.75rem;
 }
 
-body.look p, body.look h1, body.look a {
-  color: #000;
-  text-transform: uppercase;
+body.look img {
+  display: block;
+  width: 100%;
+  min-width: 100%;
 }
 
-body.look .dark p, body.look .dark h1, body.look .dark a {
-  color: #fff;
+body.look picture {
+  z-index: 0;
+}
+
+body.look p,
+body.look h1,
+body.look a {
+  color: #000;
   text-transform: uppercase;
+  z-index: 1;
+}
+
+body.look .dark p,
+body.look .dark h1,
+body.look .dark a {
+  color: #fff;
   margin-bottom: 1rem;
 }
 
-body.look .dark p:hover, body.look .dark h1:hover, body.look .dark a:hover {
+body.look .dark p:hover,
+body.look .dark h1:hover,
+body.look .dark a:hover {
   text-decoration: none;
 }
 
@@ -8475,84 +8490,29 @@ body.look .dark .meta-btn i {
 }
 
 body.look main {
-  background: url(../../../images/look/look-324.jpg) no-repeat center 80px fixed;
-  background-size: cover;
-}
-
-@media screen and (orientation: portrait) and (min-width: 576px) {
-  body.look main {
-    background: url(../../../images/look/look-432.jpg) no-repeat center 80px fixed;
-    background-size: cover;
-  }
-}
-
-@media screen and (orientation: portrait) and (min-width: 768px) {
-  body.look main {
-    background: url(../../../images/look/look-558.jpg) no-repeat center 80px fixed;
-    background-size: cover;
-  }
-}
-
-@media screen and (orientation: portrait) and (min-width: 992px) {
-  body.look main {
-    background: url(../../../images/look/look-665.jpg) no-repeat center 80px fixed;
-    background-size: cover;
-  }
-}
-
-@media screen and (orientation: landscape) {
-  body.look main {
-    background: url(../../../images/look/look-576.jpg) no-repeat center 80px fixed;
-    background-size: cover;
-  }
-}
-
-@media screen and (orientation: landscape) and (min-width: 576px) {
-  body.look main {
-    background: url(../../../images/look/look-768.jpg) no-repeat center 80px fixed;
-    background-size: cover;
-  }
-}
-
-@media screen and (orientation: landscape) and (min-width: 768px) {
-  body.look main {
-    background: url(../../../images/look/look-992.jpg) no-repeat center 80px fixed;
-    background-size: cover;
-  }
-}
-
-@media screen and (orientation: landscape) and (min-width: 992px) {
-  body.look main {
-    background: url(../../../images/look/look-1200.jpg) no-repeat center 80px fixed;
-    background-size: cover;
-  }
-}
-
-@media screen and (orientation: landscape) and (min-width: 1200px) {
-  body.look main {
-    background: url(../../../images/look/look-2560.jpg) no-repeat center 80px fixed;
-    background-size: cover;
-  }
-}
-
-body.look main {
   display: flex;
   justify-content: center;
   text-align: center;
+  padding: 0;
+}
+
+@media (min-width: 992px) {
+  body.look main {
+    grid-template-columns: 1fr;
+  }
 }
 
 body.look main section {
-  align-self: center;
-  align-self: flex-end;
+  width: 100%;
 }
 
-section.mr {
+.item-page.mr a {
   position: absolute;
   top: 50%;
   right: 5%;
 }
 
-section.ml {
+.item-page.ml a {
   position: absolute;
   top: 50%;
   left: 5%;

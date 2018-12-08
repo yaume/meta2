@@ -12,13 +12,16 @@
 }
 .abovefooter{
     display: grid;
-    text-align: center;
+    // text-align: center;
     .footer_body{
         text-align: left;
     }
 }
 .fa-ul {
     margin: 40px 0 0 0;
+    a{
+        color: $black;
+    }
     li {
         margin: 25px 0 25px 46px;
     }
