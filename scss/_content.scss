@@ -48,6 +48,9 @@ figcaption{
         margin-bottom: 1rem;
     }
 }
+.fa-2x{
+    font-size: 2rem;
+}
 @include media-breakpoint-up(lg) {
     html{font-size: 1.125rem;}
     #system-message-container, .item-page, #hikashop_checkout_form{

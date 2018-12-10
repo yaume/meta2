@@ -8060,6 +8060,10 @@ figcaption {
   margin-bottom: 1rem;
 }
 
+.fa-2x {
+  font-size: 2rem;
+}
+
 @media (min-width: 992px) {
   html {
     font-size: 1.125rem;
@@ -8131,6 +8135,23 @@ input[type="checkbox"]:checked + label:before {
   text-align: left;
 }
 
+.form_rapid_contact {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-gap: 1rem;
+}
+
+.form_rapid_contact input, .form_rapid_contact textarea {
+  border: 1px solid #495057;
+  padding: .5rem;
+}
+
+.rapid_contact_form {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1rem;
+}
+
 .fa-ul {
   margin: 40px 0 0 0;
 }
@@ -8159,6 +8180,9 @@ input[type="checkbox"]:checked + label:before {
     grid-column-start: 2;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 1rem;
+  }
+  .rapid_contact_form {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 

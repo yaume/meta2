@@ -17,6 +17,20 @@
         text-align: left;
     }
 }
+.form_rapid_contact{
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-gap: 1rem;
+    input, textarea {
+        border: 1px solid $gray-700;
+        padding: .5rem;
+    }
+}
+.rapid_contact_form {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1rem;
+}
 .fa-ul {
     margin: 40px 0 0 0;
     a{
@@ -42,5 +56,8 @@
         grid-column-start: 2;
         grid-template-columns: repeat(3,1fr);
         grid-gap: 1rem;
+    }
+    .rapid_contact_form {
+        grid-template-columns: repeat(3,1fr);
     }
 }
