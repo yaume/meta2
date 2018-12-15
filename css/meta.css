@@ -7979,6 +7979,7 @@ header {
 
 main {
   grid-area: main;
+  position: relative;
 }
 
 footer {
@@ -8064,11 +8065,43 @@ figcaption {
   font-size: 2rem;
 }
 
+.searchform {
+  margin: 0 auto;
+  grid-column: 2;
+  max-width: 70rem;
+}
+
+.btn-toolbar {
+  margin-bottom: 1rem;
+}
+
+.inputbox {
+  padding: .75rem .5rem;
+}
+
+.btn-toolbar {
+  margin-bottom: 1rem;
+}
+
+.result-title a {
+  color: #495057;
+  font-weight: 100;
+}
+
+.result-text {
+  margin-left: 2rem;
+}
+
+.highlight {
+  font-weight: bold;
+  color: #000;
+}
+
 @media (min-width: 992px) {
   html {
     font-size: 1.125rem;
   }
-  #system-message-container, .item-page, #hikashop_checkout_form {
+  .item-page, #hikashop_checkout_form {
     grid-column-start: 2;
   }
   .columnsblock2 {
@@ -8082,6 +8115,9 @@ figcaption {
   }
   .columnsblock3 h1, .columnsblock3 h2, .columnsblock3 h3, .columnsblock3 h4, .columnsblock3 h5, .columnsblock3 h6 {
     grid-column: 1 / span 3;
+  }
+  .inputbox {
+    margin: -2px 1px;
   }
 }
 
@@ -8135,21 +8171,19 @@ input[type="checkbox"]:checked + label:before {
   text-align: left;
 }
 
-.form_rapid_contact {
-  display: grid;
-  grid-template-rows: 1fr;
-  grid-gap: 1rem;
-}
-
-.form_rapid_contact input, .form_rapid_contact textarea {
-  border: 1px solid #495057;
-  padding: .5rem;
-}
-
 .rapid_contact_form {
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 1rem;
+}
+
+.message {
+  grid-column: 1 /span 3;
+}
+
+.form-control {
+  padding: .5rem 1rem;
+  border: 1px solid #495057;
 }
 
 .fa-ul {
@@ -8207,7 +8241,6 @@ header .header-extra {
   display: flex;
   align-items: center;
   order: 2;
-  margin: 0 1.5rem;
 }
 
 header .header-extra .cart-module {
@@ -8224,6 +8257,7 @@ header .header-extra .cart-module .menu-cart {
 header .header-extra .cart-module .fa-shopping-cart {
   color: #495057;
   position: relative;
+  padding: 1rem;
 }
 
 header .header-extra .cart-module .numcart {
@@ -8231,15 +8265,17 @@ header .header-extra .cart-module .numcart {
   background: #e40000;
   font-size: 0.8rem;
   border-radius: 50%;
-  padding: 0 0.4rem;
+  padding: 0 0.345rem;
   position: absolute;
-  top: -0.25rem;
-  right: -.85rem;
+  top: .45rem;
+  right: .2rem;
 }
 
 header .header-extra .search-button {
   cursor: pointer;
-  margin: 1.5rem 0 1.5rem 1.5rem;
+  margin: 1.5rem 0;
+  color: #495057;
+  padding: 1rem;
 }
 
 header .toggler {
@@ -8260,8 +8296,13 @@ header .toggler .navbar-toggler-icon {
   background-size: 100% 100%;
 }
 
-.navbar-nav .nav-item .nav-link {
+.nav-link {
   text-transform: uppercase;
+  padding: 0;
+}
+
+.nav-item {
+  padding: 0.5rem 1rem;
 }
 
 .search-form {
@@ -8269,9 +8310,13 @@ header .toggler .navbar-toggler-icon {
   position: absolute;
   z-index: 1;
   left: 0;
+  right: 0;
+  margin: -.5rem .5rem;
   top: 0;
   color: #495057;
   background-color: #fff;
+  max-width: 70rem;
+  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.5), 0 0 0px rgba(0, 0, 0, 0.5);
 }
 
 .search-form.show {
@@ -8285,20 +8330,22 @@ header .toggler .navbar-toggler-icon {
 
 .search-form .search-input {
   position: relative;
-  top: 1rem;
   border: 0;
   outline: 0;
   width: 99%;
   height: 70%;
-  padding: 10px;
   font-size: 30px;
   border-radius: 0;
+  background: transparent;
+  padding: 1rem;
 }
 
 .search-form .close {
   position: absolute;
   top: 0;
   right: 0;
+  padding: 1rem;
+  margin: -1rem -.5rem;
 }
 
 @media (max-width: 991.98px) {
@@ -8373,18 +8420,36 @@ header .toggler .navbar-toggler-icon {
   header .navbar .navbar-nav .nav-item a {
     color: #6c757d;
   }
+  header .navbar-nav li a {
+    display: block;
+    position: relative;
+  }
+  header .navbar-nav li a:before, header .navbar-nav li a:after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 1px;
+    background-color: #6c757d;
+    opacity: 0.3;
+    transition: all 0.3s ease-out;
+  }
+  header .navbar-nav li a:after {
+    right: 50%;
+    left: auto;
+  }
+  header .navbar-nav li.current a:before, header .navbar-nav li.current a:after, header .navbar-nav li:hover a:before, header .navbar-nav li:hover a:after {
+    opacity: 1;
+    width: 50%;
+  }
   header .header-extra {
     order: 3;
-    margin-left: 1rem;
     font-size: 1.5rem;
   }
-  header .header-extra .search-form .search-input {
-    width: 80%;
-    margin: auto;
-  }
-  header .header-extra .search-form .close {
-    top: 5%;
-    right: 5%;
+  .search-form {
+    margin: -.5rem auto;
   }
 }
 
@@ -8626,6 +8691,21 @@ body.look main section {
   display: none;
 }
 
+.five {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+}
+
+.five img {
+  height: auto;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+}
+
+.five figcaption {
+  grid-column: 1 /span 3;
+}
+
 @media (min-width: 992px) {
   .category {
     grid-column-start: 2;
@@ -8636,6 +8716,12 @@ body.look main section {
   }
   .deco {
     width: inherit;
+  }
+  .five {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .five figcaption {
+    grid-column: 1 /span 3;
   }
 }
 
@@ -8648,7 +8734,6 @@ body.look main section {
   border: 1px solid #000;
   transition: color 0.4s ease-out;
   color: #000;
-  margin: -2px;
 }
 
 .meta-btn:hover, .meta-btn:active, .meta-btn:focus {
@@ -8694,6 +8779,12 @@ a.shopblack {
   margin-bottom: 1rem;
 }
 
+@media (min-width: 992px) {
+  .meta-btn {
+    margin: -2px;
+  }
+}
+
 .hikashop_view_files_title,
 .hikashop_view_files_wrapper,
 .hikashop_view_files_border {
@@ -8716,6 +8807,11 @@ a.shopblack {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   grid-gap: 1rem;
+}
+
+.meta_monaco_products .meta_monaco_product_left_part img,
+.meta_monaco_product_page form .meta_monaco_product_left_part img {
+  cursor: pointer;
 }
 
 .meta_monaco_products .meta_monaco_product_left_part img:first-child,

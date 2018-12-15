@@ -34,12 +34,13 @@ include_once JPATH_THEMES . '/' . $this->template . '/lib/head.php';
             <jdoc:include type="modules" name="position-1" />
         </section>
 
-        <jdoc:include type="modules" name="position-2" />
+       
     </header>
     <main>
         <?php if ($messageQueue) {?>
         <jdoc:include type="message" />
         <?php }?>
+        <jdoc:include type="modules" name="position-2" />
         <jdoc:include type="component" />
         <?php
 if ($this->countModules('position-11') || $this->countModules('position-12') || $this->countModules('position-13')) {?>

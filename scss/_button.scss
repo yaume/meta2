@@ -14,7 +14,6 @@ $i-margin-right: $i-padding;
     border: 1px solid $black;
     transition: color 0.4s ease-out;
     color: $black;
-    margin:-2px; //Fix for some kind of padding or magin in Bootstrap to avoid double border in button group
 
     &:hover,
     &:active,
@@ -62,5 +61,10 @@ a {
         font-size: 1.5rem;
         margin-bottom: 1rem;
 
+    }
+}
+@include media-breakpoint-up(lg) {
+    .meta-btn{
+        margin:-2px; //Fix for some kind of padding or magin in Bootstrap to avoid double border in button group
     }
 }

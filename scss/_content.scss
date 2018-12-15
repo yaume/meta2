@@ -51,9 +51,35 @@ figcaption{
 .fa-2x{
     font-size: 2rem;
 }
+// Search
+.searchform {
+    margin: 0 auto;
+    grid-column: 2;
+    max-width: 70rem;
+}
+.btn-toolbar {
+    margin-bottom: 1rem;
+}
+.inputbox {
+    padding: .75rem .5rem;
+}
+.btn-toolbar{
+    margin-bottom: 1rem;
+}
+.result-title a {
+    color: $gray-700;
+    font-weight: 100;
+}
+.result-text {
+    margin-left: 2rem;
+}
+.highlight {
+    font-weight: bold;
+    color: $black;
+}
 @include media-breakpoint-up(lg) {
     html{font-size: 1.125rem;}
-    #system-message-container, .item-page, #hikashop_checkout_form{
+    .item-page, #hikashop_checkout_form{
     grid-column-start: 2;
     }
     .columnsblock2{
@@ -67,5 +93,8 @@ figcaption{
         h1,h2,h3,h4,h5,h6{
             grid-column: 1 / span 3;
         }
+    }
+    .inputbox{
+        margin: -2px 1px;
     }
 }

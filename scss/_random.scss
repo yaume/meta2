@@ -79,6 +79,16 @@
         }
     }
     }
+    .five {    
+        display: grid;
+        grid-template-columns:repeat(3,1fr);
+        grid-gap: 1rem;
+        img{height: auto;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);}
+        figcaption {
+            grid-column: 1 /span 3;
+        }
+    }
 @include media-breakpoint-up(lg) {
     .category {
         grid-column-start: 2;
@@ -89,5 +99,11 @@
     }
     .deco {
         width:inherit; 
+    }
+    .five{
+        grid-template-columns:repeat(5,1fr);
+        figcaption {
+            grid-column: 1 /span 3;
+        }
     }
 }

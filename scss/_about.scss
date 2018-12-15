@@ -17,19 +17,18 @@
         text-align: left;
     }
 }
-.form_rapid_contact{
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-gap: 1rem;
-    input, textarea {
-        border: 1px solid $gray-700;
-        padding: .5rem;
-    }
-}
+
 .rapid_contact_form {
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 1rem;
+}
+.message {
+    grid-column: 1 /span 3;
+}
+.form-control{
+    padding: .5rem 1rem;
+    border: 1px solid $gray-700;
 }
 .fa-ul {
     margin: 40px 0 0 0;

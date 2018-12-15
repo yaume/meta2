@@ -17,6 +17,9 @@
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         grid-gap: 1rem;
+        img{
+            cursor: pointer;
+        }
 
         img:first-child {
             grid-column: span 3;
