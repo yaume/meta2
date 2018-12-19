@@ -8174,7 +8174,11 @@ input[type="checkbox"]:checked + label:before {
 .rapid_contact_form {
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: 1rem;
+  grid-gap: 1rem 0;
+}
+
+.rapid_contact .form-control {
+  margin-right: .5rem;
 }
 
 .message {
@@ -8216,7 +8220,7 @@ input[type="checkbox"]:checked + label:before {
     grid-gap: 1rem;
   }
   .rapid_contact_form {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -8780,8 +8784,8 @@ a.shopblack {
 }
 
 @media (min-width: 992px) {
-  .meta-btn {
-    margin: -2px;
+  .meta-btn:before {
+    margin-bottom: -1px;
   }
 }
 
@@ -8933,7 +8937,7 @@ button.close {
 }
 
 .specs .meta_monaco_product_price_full {
-  color: #e40000;
+  color: #495057;
 }
 
 .specs td {

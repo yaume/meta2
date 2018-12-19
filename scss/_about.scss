@@ -21,7 +21,12 @@
 .rapid_contact_form {
     display: grid;
     grid-template-columns: 1fr;
-    grid-gap: 1rem;
+    grid-gap: 1rem 0;
+}
+.rapid_contact{
+    .form-control{
+        margin-right:.5rem;
+    }
 }
 .message {
     grid-column: 1 /span 3;
@@ -57,6 +62,6 @@
         grid-gap: 1rem;
     }
     .rapid_contact_form {
-        grid-template-columns: repeat(3,1fr);
+        grid-template-columns: repeat(2,1fr);
     }
 }

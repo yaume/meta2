@@ -65,6 +65,8 @@ a {
 }
 @include media-breakpoint-up(lg) {
     .meta-btn{
-        margin:-2px; //Fix for some kind of padding or magin in Bootstrap to avoid double border in button group
+        &:before{
+        margin-bottom:-1px; //Fix for some kind of padding or magin in Bootstrap to avoid double border in button group
+    }
     }
 }
