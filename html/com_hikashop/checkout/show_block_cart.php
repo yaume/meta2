@@ -381,7 +381,9 @@ defined('_JEXEC') or die('Restricted access');
 					}
 				}
 				if($shipping_price !== null)
-					echo $this->currencyClass->format($shipping_price, $cart->full_total->prices[0]->price_currency_id);
+				// To change if not Free Shipping
+					echo 'Free Shipping';
+					// echo $this->currencyClass->format($shipping_price, $cart->full_total->prices[0]->price_currency_id);
 			}
 ?>
 				</span>

@@ -15,10 +15,10 @@ var gulp = require('gulp'),
         return gulp.src('scss/meta.scss')
         .pipe($.sourcemaps.init())
         .pipe($.sass(sassOptions).on('error', $.sass.logError))
-        // .pipe($.autoprefixer({
-        //     browsers: ['last 2 versions'],
-        //     grid : true
-        // }))
+        .pipe($.autoprefixer({
+            browsers: ['last 2 versions'],
+            grid : true
+        }))
         .pipe($.sourcemaps.write('css/maps'))
         .pipe(gulp.dest('css'))
     });

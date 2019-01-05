@@ -150,7 +150,15 @@ button.close {
         padding: .5rem 1.125rem .5rem 0;
     }
 }
-
+.hikashop_product_characteristics_table{
+    td{
+        padding: .5rem 2.5rem .5rem 0;
+        select{
+            appearance: none;
+            -webkit-appearance: none;
+        }
+    }
+}
 .meta_monaco_product_quantity_main {
     margin-bottom: 1rem;
 }

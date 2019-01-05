@@ -73,7 +73,7 @@ $document->addScriptDeclaration('','application/ld+json')
 		<div class="items-leading ">
 			<?php foreach ($this->lead_items as &$item) : ?>
 				<div class="leading-<?php echo $leadingcount; ?><?php echo $item->state == 0 ? ' system-unpublished' : null; ?>"
-					itemprop="itemListElement" itemscope itemtype="http://schema.org/Event">
+					itemprop="itemListElement" itemscope itemtype="http://schema.org/Blog">
 					<?php
 					$this->item = &$item;
 					echo $this->loadTemplate('leading');
@@ -97,7 +97,7 @@ $document->addScriptDeclaration('','application/ld+json')
 				
 		<?php endif; ?>
 		<div class="item column-<?php echo $rowcount; ?><?php echo $item->state == 0 ? ' system-unpublished' : null; ?>"
-			itemprop="itemListElement" itemscope itemtype="http://schema.org/Event">
+			itemprop="itemListElement" itemscope itemtype="http://schema.org/Blog">
 			<?php
 			$this->item = &$item;
 			echo $this->loadTemplate('item');

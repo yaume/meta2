@@ -4,6 +4,9 @@ main{
     grid-gap: 1rem;
     padding: 0 1rem;
 }
+#system-message-container{
+    grid-column-start: 2;
+}
 @include media-breakpoint-up(lg){
     main{
         grid-template-columns: 1fr 11fr 1fr;

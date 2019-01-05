@@ -3,15 +3,19 @@ body.look {
         font-size: $font-size-base * 1.75;
     }
 
-    img {
-        display: block;
-        width: 100%;
-        min-width: 100%;
-         
+    main {
+        img {
+            display: block;
+            width: 100%;
+            min-width: 100%;
+
+        }
     }
-    picture{
+
+    picture {
         z-index: 0;
     }
+
     p,
     h1,
     a {
