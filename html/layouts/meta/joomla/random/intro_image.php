@@ -19,11 +19,11 @@ $link = JRoute::_(ContentHelperRoute::getArticleRoute($displayData->slug, $displ
 				 images/random/<?php echo $alias; ?>/<?php echo $alias; ?>-thumbnail-710.jpg 710w,
 				 images/random/<?php echo $alias; ?>/<?php echo $alias; ?>-thumbnail-975.jpg 975w,
 				 images/random/<?php echo $alias; ?>/<?php echo $alias; ?>-thumbnail-2125.jpg 2125w"
-		 sizes="(max-width: 540px) 325px,
-				(max-width:  720px) 710px,
-				(max-width:  960px) 975px,
-				2125px"
-		 src="images/random/<?php echo $alias; ?>/<?php echo $alias; ?>-thumbnail-2125.jpg"
+		 sizes="(max-width: 539px) 325px,
+				(min-width:540px) and (max-width: 719px) 710px,
+				(min-width:720px) and (max-width: 960px) 927px,
+				710px"
+		 src="images/random/<?php echo $alias; ?>/<?php echo $alias; ?>-thumbnail-710.jpg"
 	alt="<?php echo htmlspecialchars($alias, ENT_COMPAT, 'UTF-8'); ?>" class="img-fluid"  itemprop="thumbnailUrl"/>
 	<figcaption>
 	<?php echo $displayData->title; ?>
