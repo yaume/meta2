@@ -23,7 +23,12 @@ body.look {
         text-transform: uppercase;
         z-index: 1;
     }
-
+    h1, .btn{
+        text-shadow:1px 1px 0 rgba(255, 255,255, .5);
+    }
+    .btn{
+        box-shadow: 5px 5px 9px rgba(255, 255, 255, .15);
+    }
     & .dark {
 
         p,
@@ -55,6 +60,12 @@ body.look {
                 color: $black;
                 background-color: $white;
             }
+        }
+        h1, .btn{
+            text-shadow:1px 1px 0 rgba(0, 0,0, .5);
+        }
+        .btn{
+            box-shadow: 5px 5px 9px rgba(0, 0, 0, .15);
         }
     }
 
@@ -128,11 +139,41 @@ body.look {
         }
 
     }
+    &.tr {
+        a {
+            position: absolute;
+            top: 5%;
+            right: 5%;
+        }
+
+    }
+    &.br {
+        a {
+            position: absolute;
+            bottom: 5%;
+            right: 5%;
+        }
+
+    }
 
     &.ml {
         a {
             position: absolute;
             top: 50%;
+            left: 5%;
+        }
+    }
+    &.tl {
+        a {
+            position: absolute;
+            top: 5%;
+            left: 5%;
+        }
+    }
+    &.bl {
+        a {
+            position: absolute;
+            bottom: 5%;
             left: 5%;
         }
     }

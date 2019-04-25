@@ -44,7 +44,8 @@ if(!empty($this->row->extraData->top)) { echo implode("\r\n",$this->row->extraDa
 					<?php echo $this->row->product_name; ?>
 
 				</figcaption>
-				<button class="readmore">
+				<button class="readmore" aria-label="Find out more about <?php echo $this->row->product_name; ?>">
+				<button class="readmore" aria-label="Find out more about " >
 					<?php echo '<i class="fa fa-search" aria-hidden="true"></i>'; ?>
 				</button>
 				<?php if($haveLink) { ?>

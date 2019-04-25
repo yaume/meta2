@@ -4,7 +4,7 @@ var gulp = require('gulp'),
     $ = require('gulp-load-plugins')();
     var sassOptions = {
         errLogToConsole: true,
-        outputStyle: 'expanded'
+        outputStyle: 'compressed'
       };
 
     gulp.task('fonts', function(){

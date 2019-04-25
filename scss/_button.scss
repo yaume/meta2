@@ -4,7 +4,6 @@ $i-margin-y: -1* $padding-y;
 $i-padding :$padding-y;
 $i-margin-left:- $padding-x;
 $i-margin-right: $i-padding;
-
 .meta-btn {
     position: relative;
     padding: $padding-y $padding-x;
@@ -51,7 +50,15 @@ $i-margin-right: $i-padding;
         margin: $i-margin-y $i-margin-left $i-margin-y $i-padding;
     }
 }
-
+.rapid_contact{
+    &.meta-btn{
+        &:hover,
+        &:active,
+        &:focus{
+            background: $black;
+        }
+    }
+}
 a {
     &.shopblack {
         border: 1px solid black;

@@ -171,7 +171,9 @@ button.close {
     font-family: $font-family-sans-serif !important;
     border-radius: 0 !important;
     width: 100% !important;
-
+    iframe{
+        width: 100%;
+    }
     .vex-dialog-button {
         border: 1px solid !important;
         margin: 0 !important;
@@ -229,6 +231,12 @@ button.close {
     .hikashop_checkout_address {
         fieldset {
             flex: 0 0 50%;
+        }
+    }
+    .contentpane main {
+        grid-template-columns: 1fr;
+        #system-message-container{
+            grid-column-start: 1;
         }
     }
 
