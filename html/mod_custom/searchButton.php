@@ -10,6 +10,6 @@
 defined('_JEXEC') or die;
 ?>
 
-<label class="search-button<?php echo $moduleclass_sfx; ?>" data-toggle="collapse" href="#searchForm" role="button" aria-expanded="false" aria-controls="searchForm"data-focus="#mod-search-searchword">
+<label class="search-button<?php echo $moduleclass_sfx; ?>" data-toggle="collapse" href="#searchForm" role="button" aria-expanded="false" aria-label="Search" aria-controls="searchForm"data-focus="#mod-search-searchword">
 	<?php echo $module->content; ?>
 </label>

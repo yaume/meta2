@@ -69,8 +69,8 @@ $doc->setHeadData($head);
 // Output as HTML5
 $doc->setHtml5(true);
 // New meta
-$doc->setMetadata('X-UA-Compatible', 'IE=edge,chrome=1');
-$doc->setMetadata('viewport', 'width=device-width, initial-scale=1.0');
+// $doc->setMetadata('X-UA-Compatible', 'IE=edge,chrome=1');
+$doc->setMetadata('viewport', 'width=device-width, initial-scale=1 ');
 $doc->setMetadata('charset','UTF-8');
 //Pinterest confirmation
 //$doc->setMetadata('p:domain_verify','eadad72d938a4eed06e9685eefbeb0cf');

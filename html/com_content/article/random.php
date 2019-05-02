@@ -47,13 +47,7 @@ JLoader::register('FieldsHelper', JPATH_ADMINISTRATOR . '/components/com_fields/
 // endforeach;
 //script to header
 $document = JFactory::getDocument();
-$document->addScriptDeclaration('
-{"@context": "http://schema.org",
-"@type": "Event",
-"name":,
-}'
-,'application/ld+json');
-?>
+ ?>
 
 <div class="item-page event<?php echo $this->pageclass_sfx; ?>" itemscope itemtype="https://schema.org/Event">
 	<meta itemprop="inLanguage" content="<?php echo ($this->item->language === '*') ? JFactory::getConfig()->get('language') : $this->item->language; ?>" />
