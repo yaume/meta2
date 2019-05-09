@@ -80,7 +80,7 @@ defined('_JEXEC') or die('Restricted access');
 		foreach($this->element->images as $image) {
 			// echo var_dump($image);
 			?>
-      <img src="images/meta_monaco_products/<?php echo $this->row->product_code,'/',$this->row->product_code,'-1064.jpg'; ?>" class="img-fluid" data-toggle="modal" data-target="#<?php echo $image->file_id?>">
+      <img src="images/meta_monaco_products/<?php echo $this->row->product_code.'/'.$this->row->product_code.'-1064.jpg'; ?>" class="img-fluid" data-toggle="modal" data-target="#<?php echo $image->file_id?>">
     <!-- </a> -->
 <?php
 	}
@@ -97,7 +97,7 @@ defined('_JEXEC') or die('Restricted access');
 	  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-        <img src="images/meta_monaco_products/<?php echo $this->row->product_code,'/',$this->row->product_code,'-1064.jpg'; ?>" class="img-fluid">
+        <img src="images/meta_monaco_products/<?php echo $this->row->product_code.'/'.$this->row->product_code.'-1064.jpg'; ?>" class="img-fluid">
       </div>
 	</div>
 	</div>
