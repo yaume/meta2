@@ -70,9 +70,11 @@ $doc->setHeadData($head);
 $doc->setHtml5(true);
 // New meta
 // $doc->setMetadata('X-UA-Compatible', 'IE=edge,chrome=1');
-$doc->setMetadata('viewport', 'width=device-width, initial-scale=1 ');
+$doc->setMetadata('viewport', 'width=device-width, initial-scale=1');
 $doc->setMetadata('charset','UTF-8');
-//Pinterest confirmation
+// Google Verification
+$doc->setMetadata('google-site-verification','C2HsSuR_ap_YclWHwrt5xD3hrl-ASfptQ14DjkNkGIE');
+//Pinterest confirmation  
 //$doc->setMetadata('p:domain_verify','eadad72d938a4eed06e9685eefbeb0cf');
 //<meta name="" content=/>
 // Copyrights

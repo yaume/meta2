@@ -35,7 +35,7 @@ $doc->addCustomTag('
     <meta name="twitter:image" content="' . $timage . '">
     <meta property="og:title" content="' . $doc->title . '"/>
     <meta property="og:type" content="article"/>
-    <meta property="og:email" content="This email address is being protected from spambots. You need JavaScript enabled to view it."";/>
+    <meta property="og:email" content="This email address is being protected from spambots. You need JavaScript enabled to view it."/>
     <meta property="og:url" content="' . JURI::current() . '"/>
     <meta property="og:image" content="' . $fimage . '"/>
     <meta property="og:site_name" content="Meta Monaco"/>

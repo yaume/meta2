@@ -13,7 +13,7 @@ defined('_JEXEC') or die;
 include_once JPATH_THEMES . '/' . $this->template . '/lib/head.php';
 ?>
 <!DOCTYPE html>
-<html lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>>
+<html lang="<?php echo $this->language; ?>">
 
 <head>
     <jdoc:include type="head" />
