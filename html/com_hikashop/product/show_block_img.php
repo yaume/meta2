@@ -80,7 +80,7 @@ defined('_JEXEC') or die('Restricted access');
 		foreach($this->element->images as $image) {
 			// echo var_dump($image);
 			?>
-      <img src="images/meta_monaco_products/<?php echo $this->row->product_code.'/'.$this->row->product_code.'-1064.jpg'; ?>" class="img-fluid" data-toggle="modal" data-target="#<?php echo $image->file_id?>">
+      <img itemprop="image"  src="images/meta_monaco_products/<?php echo $this->row->product_code.'/'.$this->row->product_code.'-1064.jpg'; ?>" class="img-fluid" data-toggle="modal" data-target="#<?php echo $image->file_id?>">
     <!-- </a> -->
 <?php
 	}

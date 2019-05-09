@@ -57,8 +57,8 @@ echo $this->loadTemplate();
 	<?php	}
 	?>
 	<h3>Details</h3>
-	<table class="specs">
-
+	<table class="specs" itemprop="offers" itemtype="http://schema.org/offer" itemscope>
+			<meta itemprop="sku" content="<?php echo $this->element->product_code; ?>" />
             <?php if ($this->config->get('show_code')) { ?>
                 <tr>
                     <td>Product Code:</td>

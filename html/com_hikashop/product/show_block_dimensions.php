@@ -62,6 +62,8 @@ if($this->config->get('manufacturer_display', 0) && !empty($this->element->produ
 			$Itemid = $menuClass->loadAMenuItemId('','');
 		}
 		$categoryClass->addAlias($manufacturer);
-		echo '<a href="'.hikashop_contentLink('category&task=listing&cid='.$manufacturer->category_id.'&name='.$manufacturer->alias.'&Itemid='.$Itemid,$manufacturer).'" itemprop="brand">'.$manufacturer->category_name.'</a> ';
+		echo ' <div itemprop="brand" itemtype="http://schema.org/Thing" itemscope>';
+		echo '<a href="'.hikashop_contentLink('category&task=listing&cid='.$manufacturer->category_id.'&name='.$manufacturer->alias.'&Itemid='.$Itemid,$manufacturer).'" itemprop="name">'.$manufacturer->category_name.'</a> ';
+		echo'</div>';
 	}
 }

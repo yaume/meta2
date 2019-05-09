@@ -8,10 +8,30 @@
  */
 defined('_JEXEC') or die('Restricted access');
 ?><?php
+$doc = JFactory::getDocument();
+$ogimg =htmlspecialchars(JURI::root() . 'images/meta_monaco_products/'.$this->element->product_code.'/'.$this->element->product_code.'-1064.jpg');
+// echo '<pre>',var_dump($this->element),'</pre>';
+$prices = $this->element->prices;
+$price = array_column($prices, 'price_value_with_tax');
+// echo '<pre>',var_dump($price),'</pre>';
+// echo $price[0];
+$categoryClass = hikashop_get('class.category');
+$manufacturer = $categoryClass->get($this->element->product_manufacturer_id);
+$manufacturer = $manufacturer->category_name;
 if(!empty($this->canonical)) {
-	$doc = JFactory::getDocument();
 	$doc->addCustomTag('<link rel="canonical" href="'.hikashop_cleanURL($this->canonical).'" />');
 }
+$doc->setMetadata('og:type','og:product','property');
+$doc->setMetadata('og:title',$this->element->product_name,'property');
+$doc->setMetadata('og:description',$this->element->product_name ." ".strip_tags (substr($this->element->product_description,0,120)
+)."...",'property');
+$doc->setMetadata('og:url',hikashop_cleanURL($this->canonical),'property');
+$doc->setMetadata('og:image',$ogimg,'property');
+$doc->setMetadata('product:brand',$manufacturer,'property');
+$doc->setMetadata('product:availability','in stock','property');
+$doc->setMetadata('product:price:amount',$price[0],'property');
+$doc->setMetadata('product:price:currency','EUR','property');
+$doc->setMetadata('product:retailer_item_id',$this->element->product_code,'property');
 $classes = array();
 if(!empty($this->categories)) {
 	foreach($this->categories as $category) {
