@@ -77,13 +77,20 @@ defined('_JEXEC') or die('Restricted access');
 <?php
 	// if( !empty($this->element->images) && count($this->element->images) > 1) {
 	// 	$firstThunb = true;
+		// echo '<pre>', var_dump($this->element),'</pre>';
 		foreach($this->element->images as $image) {
-			// echo var_dump($image);
+			$img_link=str_replace('-710','',$image->file_name);
 			?>
-      <img itemprop="image"  src="images/meta_monaco_products/<?php echo $this->row->product_code.'/'.$this->row->product_code.'-1064.jpg'; ?>" class="img-fluid" data-toggle="modal" data-target="#<?php echo $image->file_id?>">
+			<img itemprop="image" sizes="(max-width: 991px) 100vw, 50vw"
+			srcset="images/meta_monaco_products/<?php echo $img_link .'/'.$img_link; ?>-400.jpg 400w,
+							images/meta_monaco_products/<?php echo $img_link .'/'.$img_link; ?>-710.jpg 710w,
+							images/meta_monaco_products/<?php echo $img_link .'/'.$img_link; ?>-1064.jpg"
+			src="images/meta_monaco_products/<?php echo $img_link .'/'.$img_link; ?>-1064.jpg"
+			alt="Photo of <?php echo $this->element->product_name;?> by META Monaco Jewelry Designer" Title="META Monaco's <?php echo $this->element->product_name;?> fine jewelry from Monte-Carlo"  class="img-fluid" data-toggle="modal" data-target="#<?php echo $image->file_id?>"/>
+      <!-- <img itemprop="image"  src="images/meta_monaco_products/<?php echo $img_link .'/'.$img_link.'-1064.jpg'; ?>" class="img-fluid" data-toggle="modal" data-target="#<?php echo $image->file_id?>"> -->
     <!-- </a> -->
 <?php
-	}
+	}  
 	foreach($this->element->images as $image) {
 	?>
 	<div class="modal fade" id="<?php echo $image->file_id?>" tabindex="-1" role="dialog" aria-labelledby="<?php echo $image->file_id?>Label" aria-hidden="true">
@@ -97,7 +104,7 @@ defined('_JEXEC') or die('Restricted access');
 	  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-        <img src="images/meta_monaco_products/<?php echo $this->row->product_code.'/'.$this->row->product_code.'-1064.jpg'; ?>" class="img-fluid">
+        <img src="images/meta_monaco_products/<?php echo $img_link.'/'.$img_link.'-1064.jpg'; ?>" class="img-fluid">
       </div>
 	</div>
 	</div>
