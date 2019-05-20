@@ -12,7 +12,11 @@ $doc = JFactory::getDocument();
 $ogimg =htmlspecialchars(JURI::root() . 'images/meta_monaco_products/'.$this->element->product_code.'/'.$this->element->product_code.'-1064.jpg');
 // echo '<pre>',var_dump($this->element),'</pre>';
 $prices = $this->element->prices;
+if (is_array($prices)) {
 $price = array_column($prices, 'price_value_with_tax');
+}else{
+	$price = $prices;
+}
 // echo '<pre>',var_dump($price),'</pre>';
 // echo $price[0];
 $categoryClass = hikashop_get('class.category');

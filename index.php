@@ -16,6 +16,15 @@ include_once JPATH_THEMES . '/' . $this->template . '/lib/head.php';
 <html lang="<?php echo $this->language; ?>">
 
 <head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-45334825-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-45334825-2');
+</script>
     <jdoc:include type="head" />
 
 <!-- Facebook Pixel Code -->

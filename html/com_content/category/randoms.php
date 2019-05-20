@@ -31,7 +31,6 @@ $afterDisplayContent = trim(implode("\n", $results));
 JLoader::register('FieldsHelper', JPATH_ADMINISTRATOR . '/components/com_fields/helpers/fields.php');
 //script to header
 $document = JFactory::getDocument();
-$document->addScriptDeclaration('','application/ld+json')
 ;?>
 <section class="events category <?php echo $this->pageclass_sfx; ?>" itemscope itemtype="https://schema.org/Itemlist">
 	<?php if ($this->params->get('show_page_heading')) : ?>
