@@ -80,13 +80,14 @@ defined('_JEXEC') or die('Restricted access');
 		// echo '<pre>', var_dump($this->element),'</pre>';
 		foreach($this->element->images as $image) {
 			$img_link=str_replace('-710','',$image->file_name);
+			$prod_name = preg_replace('/<span class="hikashop_product_variant_subname">(.*?)<\/span>/','',$this->element->product_name);
 			?>
 			<img itemprop="image" sizes="(max-width: 991px) 100vw, 50vw"
 			srcset="images/meta_monaco_products/<?php echo $img_link .'/'.$img_link; ?>-400.jpg 400w,
 							images/meta_monaco_products/<?php echo $img_link .'/'.$img_link; ?>-710.jpg 710w,
 							images/meta_monaco_products/<?php echo $img_link .'/'.$img_link; ?>-1064.jpg"
 			src="images/meta_monaco_products/<?php echo $img_link .'/'.$img_link; ?>-1064.jpg"
-			alt="Photo of <?php echo $this->element->product_name;?> by META Monaco Jewelry Designer" Title="META Monaco's <?php echo $this->element->product_name;?> fine jewelry from Monte-Carlo"  class="img-fluid" data-toggle="modal" data-target="#<?php echo $image->file_id?>"/>
+			alt="Photo of <?php echo $prod_name;?> by META Monaco Jewelry Designer" Title="META Monaco's <?php echo $prod_name;?> fine jewelry from Monte-Carlo"  class="img-fluid" data-toggle="modal" data-target="#<?php echo $image->file_id?>"/>
       <!-- <img itemprop="image"  src="images/meta_monaco_products/<?php echo $img_link .'/'.$img_link.'-1064.jpg'; ?>" class="img-fluid" data-toggle="modal" data-target="#<?php echo $image->file_id?>"> -->
     <!-- </a> -->
 <?php
