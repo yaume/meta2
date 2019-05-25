@@ -1,6 +1,6 @@
 <?php defined('_JEXEC') or die;
 /* =====================================================================
-Template: Patty saveurs
+Template: Meta
 Author:   guillaume@ordi-service.fr
 Version:  1.0
 Created:  September 2015

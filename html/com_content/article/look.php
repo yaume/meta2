@@ -10,6 +10,19 @@
 defined('_JEXEC') or die;
 
 JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
+// Open Graph for default Article
+$doc = JFactory::getDocument();
+	// Article Title
+	$input = JFactory::getApplication()->input;
+	$id = $input->getInt('id'); //get the article ID
+	$article = JTable::getInstance('content');
+	$article->load($id);
+	// echo '<pre>'. var_dump($article).'</pre>';
+$doc->setMetadata('og:title',$article->get('title') . ' what\'s new at META Monaco','property');
+$doc->setMetadata('og:type','website','property');
+$doc->setMetadata('og:url',JURI::current(),'property');
+$doc->setMetadata('og:description',$article->get('metadesc'),'property');
+$doc->setMetadata('og:image',JUri::base() . 'images/look/facebook.jpg','property');
 
 // Create shortcuts to some parameters.
 $params  = $this->item->params;

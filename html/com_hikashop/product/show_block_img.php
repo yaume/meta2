@@ -77,7 +77,7 @@ defined('_JEXEC') or die('Restricted access');
 <?php
 	// if( !empty($this->element->images) && count($this->element->images) > 1) {
 	// 	$firstThunb = true;
-		// echo '<pre>', var_dump($this->element),'</pre>';
+		// echo '<pre>', var_dump($this->element->images),'</pre>';
 		foreach($this->element->images as $image) {
 			$img_link=str_replace('-710','',$image->file_name);
 			$prod_name = preg_replace('/<span class="hikashop_product_variant_subname">(.*?)<\/span>/','',$this->element->product_name);
@@ -87,7 +87,7 @@ defined('_JEXEC') or die('Restricted access');
 							images/meta_monaco_products/<?php echo $img_link .'/'.$img_link; ?>-710.jpg 710w,
 							images/meta_monaco_products/<?php echo $img_link .'/'.$img_link; ?>-1064.jpg"
 			src="images/meta_monaco_products/<?php echo $img_link .'/'.$img_link; ?>-1064.jpg"
-			alt="Photo of <?php echo $prod_name;?> by META Monaco Jewelry Designer" Title="META Monaco's <?php echo $prod_name;?> fine jewelry from Monte-Carlo"  class="img-fluid" data-toggle="modal" data-target="#<?php echo $image->file_id?>"/>
+			alt="Photo of <?php echo $prod_name;?> by META Monaco Jewelry Designers" Title="META Monaco's <?php echo $prod_name;?> fine jewelry from Monte-Carlo"  class="img-fluid" data-toggle="modal" data-target="#<?php echo $image->file_id?>"/>
       <!-- <img itemprop="image"  src="images/meta_monaco_products/<?php echo $img_link .'/'.$img_link.'-1064.jpg'; ?>" class="img-fluid" data-toggle="modal" data-target="#<?php echo $image->file_id?>"> -->
     <!-- </a> -->
 <?php

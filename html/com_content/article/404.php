@@ -8,7 +8,7 @@
  */
 
 defined('_JEXEC') or die;
-
+header("HTTP/1.0 404 Not Found");
 JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 // Open Graph for default Article
 $doc = JFactory::getDocument();

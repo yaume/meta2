@@ -2,7 +2,7 @@
 
 defined('_JEXEC') or die;
 /* =====================================================================
-  Template: Patty saveurs
+  Template: META
   Author:   guillaume@ordiservice.fr
   Version:  1.0
   Created:  September 2015
@@ -19,12 +19,6 @@ $published = JHtml::_('date', $article->created, JText::_('DATE_FORMAT_LC2'));
 $alias = $article->get('alias');
 $intro = substr(strip_tags(str_replace('&nbsp;', '', $article->get('introtext'))), 0, 97) . '...';
 $metadesc = $article->get('metadesc');
-//echo var_dump($article);
-// echo var_dump($this->row->product_code);
-$timage = htmlspecialchars(JURI::root() . 'images/articles/' . $alias . '/twitter.png');
-//
-$fimage = htmlspecialchars(JURI::root() . 'images/articles/' . $alias . '/facebook.png');
-$gimage = htmlspecialchars(JURI::root() . 'images/articles/' . $alias . '/google.png');
 $doc->setMetadata('fb:app_id','657567274688119','property');
 // $doc->addCustomTag('
 //     <meta name="twitter:title" content="' . $doc->title . '">
