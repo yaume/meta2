@@ -29,14 +29,20 @@ if(!empty($this->canonical)) {
 }
 $doc->setMetadata('og:type','og:product','property');
 $doc->setMetadata('og:title','META Monaco ' . $prod_name,'property');
-$doc->setMetadata('og:description',$prod_name . " ".strip_tags (substr($this->element->product_description,0,120)
+if (empty($this->element->product_meta_description)){
+	$doc->setMetadata('og:description',$prod_name . " ".strip_tags (substr($this->element->product_description,0,120)
 )."...",'property');
-$doc->setMetadata('product:retailer_item_id',$this->element->product_code,'property');
+}else{
+	$doc->setMetadata('og:description',$this->element->product_meta_description,'property');
+}
+
+
+// $doc->setMetadata('product:retailer_item_id',$this->element->product_code,'property');
 $doc->setMetadata('og:url',hikashop_cleanURL($this->canonical),'property');
 $doc->setMetadata('og:image',JURI::base().$ogimg,'property');
 $doc->setMetadata('product:brand',$manufacturer,'property');
 $doc->setMetadata('product:availability','in stock','property');
-$doc->setMetadata('product:price:amount',$price[0],'property');
+$doc->setMetadata('product:price:amount',round($price[0]),'property');
 $doc->setMetadata('product:price:currency','EUR','property');
 $classes = array();
 if(!empty($this->categories)) {
