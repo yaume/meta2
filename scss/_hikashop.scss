@@ -208,7 +208,7 @@ button.close {
 }
 
 @include media-breakpoint-up(lg) {
-    .meta_monaco_product_page {
+    .meta_monaco_product_page,.hikashop_category_information {
         grid-column-start: 2;
 
         form {
