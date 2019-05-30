@@ -217,7 +217,8 @@ echo $html; ?>
 			if(!empty($htmlFilter) && $ctrl == 'category')
 				echo $htmlFilter;
 ?>
-	<h2><?php echo $category['category']->category_name; ?></h2>
+	<!-- Remove category title -->
+	<!-- <h2><?php echo $category['category']->category_name; ?></h2> -->
 	
 <?php
 		if(hikaInput::get()->getVar('hikashop_front_end_main',0) && hikaInput::get()->getVar('task') == 'listing' && $this->params->get('show_compare')) {
@@ -257,7 +258,7 @@ echo $html; ?>
 	$html = ob_get_clean();
 	if(!empty($html)) {
 ?>
-		<div id="<?php echo $this->params->get('main_div_name');?>" class="hikashop_category_information meta_monaco_products_listing_main hikashop_product_listing_<?php echo $this->element->category_id; ?>"><?php echo '<pre>',var_dump($this->params->get('main_div_name')),'</pre>';  echo $html; ?></div>
+		<div id="<?php echo $this->params->get('main_div_name');?>" class="hikashop_category_information meta_monaco_products_listing_main hikashop_product_listing_<?php echo $this->element->category_id; ?>"><?php echo $html; ?></div>
 <?php
 	}
 }
