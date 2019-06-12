@@ -43,7 +43,12 @@ footer {
     font-size: 75%;
 }
 
-
+button{
+    // Remove unpleasant blue border on click in chrome
+    &:focus{
+        outline:none;
+    }
+}
 @include media-breakpoint-up(lg) {
     body {
        /*  grid-template-columns: repeat(15, 1fr);
