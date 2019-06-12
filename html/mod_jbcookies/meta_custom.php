@@ -15,32 +15,26 @@ defined('_JEXEC') or die;
 <style type="text/css">  
 	.jb.cookie.color p a {
 		color: <?php echo $color_links; ?>;
-		padding: 0 .5rem;
-		text-transform: none;
 	} 
-    .jb.cookie p,.jb.cookie button{
-        display: inline-block;
-		text-transform:none;
-    }
 
 	.jb.bgcolor {
 		background: <?php echo $color_background; ?>;
 	}
 	
-	/*.jb.cookie.top {
+	.jb.cookie.top {
 		border-bottom: 1px solid <?php echo $btn_border_color; ?>;
 	}
 
 	.jb.cookie.bottom {
 		border-top: 1px solid <?php echo $color_links; ?>;
-	}*/
+	}
 	
 	.jb.color {
 		color: <?php echo $color_text; ?>;
 	}
 	
 	.jb.accept {
-		/*color: <?php echo $btn_text_color; ?>;
+		color: <?php echo $btn_text_color; ?>;
 		background-image: -webkit-linear-gradient(<?php echo $btn_start_color; ?> 0%, <?php echo $btn_end_color; ?> 100%);
 		background-image: -moz-linear-gradient(<?php echo $btn_start_color; ?> 0%, <?php echo $btn_end_color; ?> 100%);
 		background-image: -o-linear-gradient(<?php echo $btn_start_color; ?> 0%, <?php echo $btn_end_color; ?> 100%);
@@ -49,13 +43,7 @@ defined('_JEXEC') or die;
 		max-width: <?php echo $btn_width . 'px'; ?>;
 		line-height: <?php echo $btn_height . 'px'; ?>;
 		padding: 0;
-		border: 1px solid <?php echo $btn_border_color; ?>;*/
-
-        font-size: inherit;
-        margin: inherit;
-        min-width: inherit; 
-        border-radius: 0;
-        float: none!important;
+		border: 1px solid <?php echo $btn_border_color; ?>;
 	}
 	
 	.jb.decline.link {
@@ -79,7 +67,7 @@ defined('_JEXEC') or die;
 		<!-- BG color -->
 		<div class="jb cookie-bg bgcolor"></div>
 	    
-		
+		<h2><?php echo $title; ?></h2>
 	     
 		<p class="jb color"><?php echo $text; ?>
 			<?php if($show_info) : ?>
@@ -138,6 +126,7 @@ defined('_JEXEC') or die;
 		<!-- BG color -->
 		<div class="jb cookie-bg bgcolor"></div>
 	    
+		<h2><?php echo $title; ?></h2>
 	     
 		<p><?php echo $text; ?>
 			<?php if($show_info) : ?>
@@ -150,7 +139,7 @@ defined('_JEXEC') or die;
 			<?php endif; ?>
 		</p>
 	    
-		<button class="jb accept btn  oe-btn oe-btn-grey"><span><?php echo $aliasButton; ?></span></button>
+		<div class="jb accept btn oe-btn oe-btn-grey"><?php echo $aliasButton; ?></div>
 	</div>
 	
 	<?php if($show_info and !$aLink) : ?>
@@ -159,7 +148,7 @@ defined('_JEXEC') or die;
 			<div class="uk-modal-dialog uk-modal-dialog-large">
 				<button class="uk-modal-close uk-close" type="button"></button>
 				<div class="uk-modal-header">
-				
+					<h2><?php echo $header; ?></h2>
 				</div>
 				<?php echo $body; ?>
 				<div class="uk-modal-footer uk-text-right">
