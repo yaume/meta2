@@ -18,7 +18,7 @@ if ($tagId = $params->get('tag_id', ''))
 
 // The menu class is deprecated. Use nav instead
 ?>
-<a class="btn btn-light toggler close" href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
+<a class="btn btn-light toggler close" href="#" aria-label="Close"><i class="fa fa-times" aria-hidden="true"></i></a>
 <ul class="navbar-nav <?php echo $class_sfx; ?>"<?php echo $id; ?>>
 <?php foreach ($list as $i => &$item)
 {
