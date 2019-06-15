@@ -16,6 +16,6 @@ $link = $displayData['link'];
 <a href="<?php echo $link; ?>" itemprop="url" aria-label="<?php echo JText::_('COM_CONTENT_READ_MORE'); ?> <?php echo htmlspecialchars($item->title, ENT_QUOTES, 'UTF-8'); ?>">
 <button class="readmore">
 		
-			<i class="fa fa-search" aria-hidden="true"></i>
+			<i class="fa fa-2x fa-search" aria-hidden="true"></i>
 		
 </button></a>

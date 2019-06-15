@@ -22,6 +22,12 @@ body.look {
         color: $black;
         text-transform: uppercase;
         z-index: 1;
+        &:hover{
+            text-decoration: none;
+        }
+    }
+    h1{
+        margin-bottom: 1rem;
     }
     h1, .btn{
         text-shadow:1px 1px 0 rgba(255, 255,255, .5);
@@ -35,11 +41,6 @@ body.look {
         h1,
         a {
             color: $white;
-            margin-bottom: 1rem;
-
-            &:hover {
-                text-decoration: none;
-            }
         }
 
         .meta-btn {

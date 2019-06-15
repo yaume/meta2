@@ -31,9 +31,9 @@ header {
                 margin-left: 10px;
             }
             .fa-shopping-cart {
-                color: $gray-700;
                 position: relative;
                 padding: 1rem;
+                color: $navbar-light-color;
             }
             .numcart{
                 color: $white;
@@ -50,7 +50,7 @@ header {
         .search-button {
             cursor: pointer;
             margin:  1.5rem 0;
-            color: $gray-700;
+            color: $navbar-light-color;
             padding: 1rem;
         }
     }
@@ -185,7 +185,7 @@ header {
         justify-content: flex-end;
         align-content: center;
 
-        .logo,
+        .logo
             {
             order: 0;
             margin-right: auto;

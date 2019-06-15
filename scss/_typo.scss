@@ -47,6 +47,9 @@ $meta-facebook: "\ea90";
 $meta-instagram: "\ea92";
 $meta-skype: "\eac5";
 $meta-pinterest: "\ead2";
+$fa-close: "\e5cd";
+$fa-bars: "\e3c7";
+$fa-spinner: "\e982";
 /*EOF Icomoon Variables*/
 @font-face {
   font-family: '#{$icomoon-font-family}';
@@ -59,7 +62,7 @@ $meta-pinterest: "\ead2";
   font-style: normal;
 }
 
-[class^="meta-"]:before, [class*=" meta-"]:before {
+[class^="fa-"]:before, [class*=" fa-"]:before {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: '#{$icomoon-font-family}' !important;
   speak: none;
@@ -77,79 +80,289 @@ $meta-pinterest: "\ead2";
   -moz-osx-font-smoothing: grayscale;
 }
 
-.meta-map-marker-alt {
+.fa-map-marker-alt {
   &:before {
     content: $meta-map-marker-alt; 
   }
 }
-.meta-add_cart {
+.fa-add_cart {
   &:before {
     content: $meta-add_cart; 
   }
 }
-.meta-arrow-right {
+.fa-arrow-right {
   &:before {
     content: $meta-arrow-right; 
   }
 }
-.meta-refresh {
+.fa-refresh {
   &:before {
     content: $meta-refresh; 
   }
 }
-.meta-phone {
+.fa-phone {
   &:before {
     content: $meta-phone; 
   }
 }
-.meta-check {
+.fa-check {
   &:before {
     content: $meta-check; 
   }
 }
-.meta-trash {
+.fa-trash {
   &:before {
     content: $meta-trash; 
   }
 }
-.meta-heart {
+.fa-heart {
   &:before {
     content: $meta-heart; 
   }
 }
-.meta-shopping-cart {
+.fa-shopping-cart {
   &:before {
     content: $meta-shopping-cart; 
   }
 }
-.meta-envelope {
+.fa-envelope {
   &:before {
     content: $meta-envelope; 
   }
 }
-.meta-search {
+.fa-search {
   &:before {
     content: $meta-search; 
   }
 }
-.meta-facebook {
+.fa-facebook {
   &:before {
     content: $meta-facebook; 
   }
 }
-.meta-instagram {
+.fa-instagram{
   &:before {
     content: $meta-instagram; 
   }
 }
-.meta-skype {
+.fa-skype {
   &:before {
     content: $meta-skype; 
   }
 }
-.meta-pinterest {
+.fa-pinterest {
   &:before {
     content: $meta-pinterest; 
   }
 }
+.fa-close,.fa-times {
+  &:before {
+    content: $fa-close; 
+  }
+}
+.fa-bars {
+  &:before {
+    content: $fa-bars; 
+  }
+}
+.fa-spinner {
+  &:before {
+    content: $fa-spinner; 
+  }
+}
+// Recup from hikashop font awesome
+.fa, .fab, .fal, .far, .fas {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+}
 
+.fa-lg {
+  font-size: 1.33333rem;
+  line-height: .75rem;
+  vertical-align: -.0667rem;
+}
+
+.fa-xs {
+  font-size: .75rem;
+}
+
+.fa-sm {
+  font-size: .875rem;
+}
+
+.fa-1x {
+  font-size: 1rem;
+}
+
+.fa-2x {
+  font-size: 2rem;
+}
+
+.fa-3x {
+  font-size: 3rem;
+}
+
+.fa-4x {
+  font-size: 4rem;
+}
+
+.fa-5x {
+  font-size: 5rem;
+}
+
+.fa-6x {
+  font-size: 6rem;
+}
+
+.fa-7x {
+  font-size: 7rem;
+}
+
+.fa-8x {
+  font-size: 8rem;
+}
+
+.fa-9x {
+  font-size: 9rem;
+}
+
+.fa-10x {
+  font-size: 10rem;
+}
+
+.fa-fw {
+  text-align: center;
+  width: 1.25rem;
+}
+
+.fa-ul {
+  list-style-type: none;
+  margin-left: 3rem;
+  padding-left: 0;
+  > li {
+    position: relative;
+  }
+}
+
+.fa-li {
+  left: -2rem;
+  position: absolute;
+  text-align: center;
+  width: 2rem;
+  line-height: inherit;
+}
+
+.fa-border {
+  border: .08rem solid #eee;
+  border-radius: .1rem;
+  padding: .2rem .25rem .15rem;
+}
+
+.fa-pull-left {
+  float: left;
+}
+
+.fa-pull-right {
+  float: right;
+}
+
+.fa.fa-pull-left, .fab.fa-pull-left, .fal.fa-pull-left, .far.fa-pull-left, .fas.fa-pull-left {
+  margin-right: .3rem;
+}
+
+.fa.fa-pull-right, .fab.fa-pull-right, .fal.fa-pull-right, .far.fa-pull-right, .fas.fa-pull-right {
+  margin-left: .3rem;
+}
+
+.fa-spin {
+  animation: a 2s infinite linear;
+}
+
+.fa-pulse {
+  animation: a 1s infinite steps(8);
+}
+i.fa-2x {
+  margin-top: -.5rem;
+}
+@keyframes a {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+
+.fa-rotate-90 {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";
+  transform: rotate(90deg);
+}
+
+.fa-rotate-180 {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
+  transform: rotate(180deg);
+}
+
+.fa-rotate-270 {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=3)";
+  transform: rotate(270deg);
+}
+
+.fa-flip-horizontal {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";
+  transform: scaleX(-1);
+}
+
+.fa-flip-vertical {
+  transform: scaleY(-1);
+}
+
+.fa-flip-horizontal.fa-flip-vertical, .fa-flip-vertical {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
+}
+
+.fa-flip-horizontal.fa-flip-vertical {
+  transform: scale(-1);
+}
+
+:root {
+  .fa-flip-horizontal, .fa-flip-vertical, .fa-rotate-90, .fa-rotate-180, .fa-rotate-270 {
+    -webkit-filter: none;
+    filter: none;
+  }
+}
+
+.fa-stack {
+  display: inline-block;
+  height: 2rem;
+  line-height: 2rem;
+  position: relative;
+  vertical-align: middle;
+  width: 2rem;
+}
+
+.fa-stack-1x, .fa-stack-2x {
+  left: 0;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
+
+.fa-stack-1x {
+  line-height: inherit;
+}
+
+.fa-stack-2x {
+  font-size: 2rem;
+}
+
+.fa-inverse {
+  color: #fff;
+}
