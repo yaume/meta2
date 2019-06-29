@@ -12,6 +12,7 @@
     display: grid;
     grid-gap: 1rem 1rem;
     align-items: start;
+    margin-bottom: 1rem;
 
     .meta_monaco_product_left_part {
         display: grid;
@@ -209,7 +210,92 @@ button.close {
     flex-wrap: wrap;
     margin-bottom: 1rem;
 }
+// listing
+.meta_monaco_listing{
+    position: relative;
+    transition: all 1s ease-in-out 1s;
+    overflow: hidden;
+    background: $black;
+    a {
+        color: $white;
+    }
 
+    img{
+        width: 100%;
+    }
+
+    .readmore, .buynow {
+        color:$white;
+        margin: 0 0 1rem;
+        opacity: 0;
+        text-align: center;
+        line-height: 3;
+        border: 0;
+        background: transparent;
+        cursor: pointer;
+        i{
+  
+            color: $white;
+            background: transparent;
+            z-index: 10;
+            line-height: 1.5;  
+            float: right;
+        }
+        &:hover,
+        &:active,
+        &:focus {
+            color: $black;
+            background: rgba(255, 255, 255, 0.66);
+            i{
+                color: $black;
+            }
+        }
+
+    }
+
+    figure {
+        position: relative;
+        margin: 0;
+    }
+
+    figcaption {
+        position: absolute;
+        top: 1.25rem;
+        left: 1.875rem;
+        opacity: 0;
+    }
+    .buttons {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        text-align: center;
+        width: 100%;
+        a {
+            display: block;
+            width: 50%;
+            margin: 0 auto;
+        }
+    }
+    .buynow {
+        width: 50%;
+        margin: 0 auto;
+    }
+    .readmore{
+        width: 100%;
+    }
+    &:hover {
+
+        figcaption{
+            opacity: 1;
+        }
+        .readmore, .buynow {
+            opacity: 1;
+        }
+        img {
+            opacity: 0.5;
+        }
+    }
+}
 @include media-breakpoint-up(lg) {
     .meta_monaco_product_page,.hikashop_category_information {
         grid-column-start: 2;
