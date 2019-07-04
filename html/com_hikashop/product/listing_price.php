@@ -53,7 +53,7 @@ if(!empty($show_msrp)) {
 <?php
 }
 ?>
-	<span class="hikashop_product_price_full<?php echo $class; ?>"><?php
+	<span class="price<?php echo $class; ?>"><?php
 
 	if(empty($this->row->prices)) {
 		echo JText::_('FREE_PRICE');

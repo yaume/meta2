@@ -43,6 +43,7 @@ $has_options = !empty($this->row->has_options) || (!$display_fields && $has_requ
 $css_button = $this->config->get('css_button', 'hikabtn');
 $css_button_cart = $this->config->get('css_button_cart', 'hikacart');
 $css_button_wishlist = $this->config->get('css_button_wishlist', 'hikawishlist');
+$css_button="btn buynow";
 
 $now = time();
 $start_date = (int)(@$this->row->product_sale_start || empty($this->element->main)) ? @$this->row->product_sale_start : $this->element->main->product_sale_start;

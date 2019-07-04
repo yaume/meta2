@@ -7,6 +7,8 @@
  * @license	GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
  */
 defined('_JEXEC') or die('Restricted access');
+$document = JFactory::getDocument();
+$document->addScriptDeclaration('document.addEventListener("touchstart", function(){}, true);');
 ?><?php
 if( (empty($this->rows) && $this->module && !hikaInput::get()->getVar('hikashop_front_end_main', 0)) || empty($this->pageInfo->elements->total) )
 	return;

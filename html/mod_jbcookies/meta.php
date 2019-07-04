@@ -79,7 +79,7 @@ defined('_JEXEC') or die;
 		<!-- BG color -->
 		<div class="jb cookie-bg bgcolor"></div>
 	    
-		
+		git checkout meta
 	     
 		<p class="jb color"><?php echo $text; ?>
 			<?php if($show_info) : ?>
@@ -92,7 +92,7 @@ defined('_JEXEC') or die;
 			<?php endif; ?>
 		</p>
 	    
-		<button class="jb accept btn oe-btn oe-btn-grey"><?php echo $aliasButton; ?></button>
+		<button class="btn jb accept" style="background:#fff;"><?php echo $aliasButton; ?></button>
 	    
 	</div>
 	

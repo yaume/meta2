@@ -44,41 +44,6 @@
     .meta_monaco_listing_img_title {
         position: relative;
         transition: all 0.75s ease-in-out;
-
-        .meta_monaco_product_name {
-            position: absolute;
-            top: 1.25rem;
-            left: 1.875rem;
-            opacity: 0;
-            color: $black;
-        }
-
-        .readmore {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            opacity: 0;
-            background: transparent;
-            border: 0;
-            color: $black;
-            font-size: 2rem;
-            transform: translate(-2rem, -2rem);
-
-        }
-
-        &:hover {
-            img {
-                opacity: 0.5;
-            }
-
-            .meta_monaco_product_name {
-                opacity: 1;
-            }
-
-            .readmore {
-                opacity: 1;
-            }
-        }
     }
 }
 
@@ -195,12 +160,9 @@ button.close {
             color: $black !important;
         }
 
-        &.vex-first {
-            float: left !important;
-        }
-
-        &.vex-last {
-            float: right !important;
+        &.vex-first,&.vex-last {
+            width: 100%;
+            margin-bottom: 1rem !important;
         }
     }
 }
@@ -208,7 +170,7 @@ button.close {
 .hikashop_checkout_address {
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: 1rem;
+    margin-bottom: 1rem !important;
 }
 // listing
 .meta_monaco_listing{
@@ -224,7 +186,7 @@ button.close {
         width: 100%;
     }
 
-    .readmore, .buynow {
+    .readmore, .buynow,.price{
         color:$white;
         margin: 0 0 1rem;
         opacity: 0;
@@ -241,6 +203,8 @@ button.close {
             line-height: 1.5;  
             float: right;
         }
+    }
+    .readmore, .buynow{
         &:hover,
         &:active,
         &:focus {
@@ -250,7 +214,6 @@ button.close {
                 color: $black;
             }
         }
-
     }
 
     figure {
@@ -258,11 +221,12 @@ button.close {
         margin: 0;
     }
 
-    figcaption {
+    .meta_monaco_product_name {
         position: absolute;
         top: 1.25rem;
         left: 1.875rem;
         opacity: 0;
+        color: #fff;
     }
     .buttons {
         position: absolute;
@@ -283,12 +247,19 @@ button.close {
     .readmore{
         width: 100%;
     }
-    &:hover {
-
-        figcaption{
-            opacity: 1;
-        }
-        .readmore, .buynow {
+    .price{
+        width: 50%;
+        color: $white;
+        position: absolute;
+        text-align: center;
+        background: transparent;
+        bottom: 1%;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity:0;
+    }
+    &:hover,&:active,&.hover {
+        .readmore, .buynow, .price,.meta_monaco_product_name {
             opacity: 1;
         }
         img {
@@ -316,6 +287,16 @@ button.close {
 
     .vex-content {
         width: 50% !important;
+        .vex-dialog-button{
+            &.vex-first, &.vex-last{
+                width: auto;
+                margin-bottom:0;
+            }
+            &.vex-first{ 
+                float: left !important;
+            }
+        }
+
     }
     .hikashop_checkout_address {
         fieldset {
