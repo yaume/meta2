@@ -55,28 +55,31 @@ if(!empty($this->row->extraData->top)) { echo implode("\r\n",$this->row->extraDa
 		<?php }	?>
 		<meta itemprop="url" content="<?php echo $link; ?>">
 		<!-- EO PRODUCT DETAILS BUTTON AREA -->
-		<!-- ADD TO CART BUTTON AREA -->
-		<?php
-			if($this->params->get('add_to_cart') || $this->params->get('add_to_wishlist')) {
-				$this->setLayout('add_to_cart_listing');
-				echo $this->loadTemplate();
-			}
-		?>
 	</div>
 		<!-- EO BUTTONS AREA -->
-
-		<!-- PRODUCT PRICE -->
-		<?php
-	if($this->params->get('show_price','-1')=='-1'){
-		$config =& hikashop_config();
-		$this->params->set('show_price',$config->get('show_price'));
-	}
-	if($this->params->get('show_price')){
-		$this->setLayout('listing_price');
-		echo $this->loadTemplate();
-	}
-?>
-		<!-- EO PRODUCT PRICE -->
+<div class="add">
+	
+			<!-- PRODUCT PRICE -->
+			<?php
+		if($this->params->get('show_price','-1')=='-1'){
+			$config =& hikashop_config();
+			$this->params->set('show_price',$config->get('show_price'));
+		}
+		if($this->params->get('show_price')){
+			$this->setLayout('listing_price');
+			echo $this->loadTemplate();
+		}
+	?>
+			<!-- EO PRODUCT PRICE -->
+			<!-- ADD TO CART BUTTON AREA -->
+			<?php
+				if($this->params->get('add_to_cart') || $this->params->get('add_to_wishlist')) {
+					$this->setLayout('add_to_cart_listing');
+					echo $this->loadTemplate();
+				}
+			?>
+			<!-- EOF ADD TO CART BUTTON AREA -->
+</div>
 		<!-- PRODUCT CODE -->
 		<span class='hikashop_product_code_list'>
 			<?php if ($this->config->get('show_code')) { ?>

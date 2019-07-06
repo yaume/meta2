@@ -25,13 +25,61 @@
         img:first-child {
             grid-column: span 3;
         }
-
-        .meta_monaco_product_right_part {
-            display: grid;
-            grid-gap: 1rem;
-        }
     }
-
+    .meta_monaco_product_right_part {
+        h1{
+            text-align: center;
+        }
+        h2 {
+            font-size: 1rem;
+            font-style: italic;
+            text-align: center;
+            background: black;
+            color: white;
+            padding: .5rem 0;
+        }
+        .price {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            margin: 2rem 0;
+            padding: 0 1rem;
+            font-size: 18px;
+            &:after{
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 5%;
+                right: 5%;
+                border-top: solid 1px rgba(0,0,0,0.125);
+                z-index: -1;
+            }
+            span {
+                background: white;
+            }
+        }
+        .tags {
+            margin-left: 1rem;
+            li {
+                color: rgba(0,0,0,.7);
+                font-style: italic;
+                font-family: "Bodoni MT",Didot,"Didot LT STD","Hoefler Text",Garamond,"Times New Roman",serif;
+                &:before {
+                    content: '# ';
+                }
+            }
+        }
+        .meta_monaco_product_quantity_main {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .meta_monaco_product_quantity_div {
+            margin-bottom: .5rem;
+            display: inline-block;
+        }
+        
+    }
     .meta_monaco_product_quantity_field {
         width: 1.875rem;
         text-align: center;
@@ -45,6 +93,10 @@
         position: relative;
         transition: all 0.75s ease-in-out;
     }
+    .card {
+        text-align: justify;
+        word-break: break-word;
+    }
 }
 
 .table {
@@ -55,7 +107,28 @@
 .material{
     vertical-align: top;
 }
-
+// Product detail
+.accordion{
+    border: solid rgba(0,0,0,0.125);
+    border-width: 1px 0;
+}
+.meta_description {
+    color: black;
+    display: block;
+    i{
+        float: right;
+        transform: rotate(180deg)
+    }
+    &:hover{
+        color: inherit;
+        text-decoration: none;
+    }
+}
+.collapsed{
+    i{
+        transform: none;
+    }
+}
 //Badges
 .badge {
     position: absolute;
@@ -128,14 +201,6 @@ button.close {
         }
     }
 }
-.meta_monaco_product_quantity_main {
-    margin-bottom: 1rem;
-}
-
-.meta_monaco_product_quantity_div {
-    margin-bottom: .5rem;
-}
-
 .vex-content {
     font-family: $font-family-sans-serif !important;
     border-radius: 0 !important;
@@ -186,8 +251,7 @@ button.close {
         width: 100%;
     }
 
-    .readmore, .buynow,.price{
-        color:$white;
+    .readmore, .buynow{
         margin: 0 0 1rem;
         opacity: 0;
         text-align: center;
@@ -228,7 +292,7 @@ button.close {
         opacity: 0;
         color: #fff;
     }
-    .buttons {
+    .buttons{
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
@@ -240,23 +304,15 @@ button.close {
             margin: 0 auto;
         }
     }
-    .buynow {
-        width: 50%;
-        margin: 0 auto;
-    }
     .readmore{
         width: 100%;
     }
     .price{
-        width: 50%;
         color: $white;
-        position: absolute;
         text-align: center;
         background: transparent;
-        bottom: 1%;
-        left: 50%;
-        transform: translateX(-50%);
         opacity:0;
+        display: block;
     }
     &:hover,&:active,&.hover {
         .readmore, .buynow, .price,.meta_monaco_product_name {
@@ -265,6 +321,17 @@ button.close {
         img {
             opacity: 0.5;
         }
+    }
+    .add{
+        position: absolute;
+        bottom: 5%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50%;
+    } 
+    .buynow {
+        width: 100%;
+        font-size: 1.2rem;
     }
 }
 @include media-breakpoint-up(lg) {
@@ -308,6 +375,11 @@ button.close {
         #system-message-container{
             grid-column-start: 1;
         }
+    }
+    .meta_monaco_product_right_part {
+        margin-left: auto;
+        margin-right: auto;
+        width: 75%;
     }
 
 }

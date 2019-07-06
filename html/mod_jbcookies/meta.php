@@ -78,8 +78,6 @@ defined('_JEXEC') or die;
 	   
 		<!-- BG color -->
 		<div class="jb cookie-bg bgcolor"></div>
-	    
-		git checkout meta
 	     
 		<p class="jb color"><?php echo $text; ?>
 			<?php if($show_info) : ?>

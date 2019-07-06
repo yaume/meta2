@@ -63,7 +63,7 @@ if($this->config->get('manufacturer_display', 0) && !empty($this->element->produ
 		}
 		$categoryClass->addAlias($manufacturer);
 		echo ' <div itemprop="brand" itemtype="http://schema.org/Thing" itemscope>';
-		echo '<a href="'.hikashop_contentLink('category&task=listing&cid='.$manufacturer->category_id.'&name='.$manufacturer->alias.'&Itemid='.$Itemid,$manufacturer).'" itemprop="name">'.$manufacturer->category_name.'</a> ';
+		echo 'by '. $manufacturer->category_name;
 		echo'</div>';
 	}
 }

@@ -50,6 +50,7 @@ $meta-pinterest: "\ead2";
 $fa-close: "\e5cd";
 $fa-bars: "\e3c7";
 $fa-spinner: "\e982";
+$fa-caret: "\e313";
 /*EOF Icomoon Variables*/
 @font-face {
   font-family: '#{$icomoon-font-family}';
@@ -168,6 +169,11 @@ $fa-spinner: "\e982";
 .fa-spinner {
   &:before {
     content: $fa-spinner; 
+  }
+}
+.fa-caret {
+  &:before {
+    content: $fa-caret; 
   }
 }
 // Recup from hikashop font awesome
