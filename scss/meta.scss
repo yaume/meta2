@@ -1,5 +1,4 @@
 // @import url('https://fonts.googleapis.com/css?family=Muli:300,300i');
-@import "typo";
 @import "node_modules/bootstrap/scss/functions";
 @import "variables.scss";
 @import "node_modules/bootstrap/scss/mixins";
@@ -13,6 +12,7 @@
 @import "node_modules/bootstrap/scss/nav";
 // @import "node_modules/bootstrap/scss/navbar";
 // @import "node_modules/bootstrap/scss/button-group";
+@import "node_modules/bootstrap/scss/alert";
 @import "node_modules/bootstrap/scss/buttons";
 // @import "node_modules/bootstrap/scss/forms";
 @import "node_modules/bootstrap/scss/input-group";
@@ -29,6 +29,7 @@
 
 //Ajout
 @import "general";
+@import "typo";
 @import "content";
 @import "forms";
 @import "about";

@@ -99,6 +99,11 @@
             grid-column: 1 /span 3;
         }
     }
+    .embed-responsive {
+        figcaption {
+        margin-top: 1rem;
+    }
+}
 @include media-breakpoint-up(lg) {
     .category {
         grid-column-start: 2;

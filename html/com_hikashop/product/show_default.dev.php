@@ -1,7 +1,7 @@
 <?php
 /**
  * @package	HikaShop for Joomla!
- * @version	4.1.0
+ * @version	4.0.3
  * @author	hikashop.com
  * @copyright	(C) 2010-2019 HIKARI SOFTWARE. All rights reserved.
  * @license	GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
@@ -12,93 +12,90 @@ defined('_JEXEC') or die('Restricted access');
 
 </div>
 <div id="meta_monaco_product_left_part" class="meta_monaco_product_left_part">
-<?php if(!empty($this->element->extraData->leftBegin)) { echo implode("\r\n",$this->element->extraData->leftBegin); } ?>
-<?php
-$this->row =& $this->element;
-$this->setLayout('show_block_img');
-echo $this->loadTemplate();
-?>
-<?php if(!empty($this->element->extraData->leftEnd)) { echo implode("\r\n",$this->element->extraData->leftEnd); } ?>
+	<?php if(!empty($this->element->extraData->leftBegin)) { echo implode("\r\n",$this->element->extraData->leftBegin); } ?>
+	<?php
+	$this->row =& $this->element;
+	$this->setLayout('show_block_img');
+	echo $this->loadTemplate();
+	?>
+	<?php if(!empty($this->element->extraData->leftEnd)) { echo implode("\r\n",$this->element->extraData->leftEnd); } ?>
 </div>
 <div id="meta_monaco_product_right_part" class="meta_monaco_product_right_part">
-<?php if(!empty($this->element->extraData->topBegin)) { echo implode("\r\n",$this->element->extraData->topBegin); } ?>
+	<?php if(!empty($this->element->extraData->topBegin)) { echo implode("\r\n",$this->element->extraData->topBegin); } ?>
 	<h1>
 		<span id="meta_monaco_product_name_main" class="meta_monaco_product_name_main" itemprop="name">
-		<?php
-			if(hikashop_getCID('product_id') != $this->element->product_id && isset($this->element->main->product_name))
-				echo $this->element->main->product_name;
-			else
-				echo $this->element->product_name;
-		?></span><meta itemprop="productID" content="<?php echo $this->element->product_code?>">
+			<?php
+				if(hikashop_getCID('product_id') != $this->element->product_id && isset($this->element->main->product_name))
+					echo $this->element->main->product_name;
+				else
+					echo $this->element->product_name;
+			?></span>
+		<?php if ($this->config->get('show_code')) { ?>
+		<span id="meta_monaco_product_code_main" class="meta_monaco_product_code_main" itemprop="sku">
+			<?php
+				echo $this->element->product_code;
+			?></span>
+		<?php } ?>
 	</h1>
-<?php if(!empty($this->element->extraData->topEnd)) { echo implode("\r\n", $this->element->extraData->topEnd); } ?>		
-<h2><?php $this->setLayout('show_block_dimensions');
+	<?php if(!empty($this->element->extraData->topEnd)) { echo implode("\r\n", $this->element->extraData->topEnd); } ?>
+				
+	<h2><?php $this->setLayout('show_block_dimensions');
             echo $this->loadTemplate();
             ?>
 	</h2>
 	<?php
-	$this->setLayout('show_block_social');
-	echo $this->loadTemplate();
-?>
-<?php if(!empty($this->element->extraData->rightBegin)) { echo implode("\r\n",$this->element->extraData->rightBegin); } ?>
-<?php if($this->params->get('show_vote_product')) { ?>
+		$this->setLayout('show_block_social');
+		echo $this->loadTemplate();
+	?>
+	<?php if(!empty($this->element->extraData->rightBegin)) { echo implode("\r\n",$this->element->extraData->rightBegin); } ?>
+	<?php if($this->params->get('show_vote_product')) { ?>
 	<div id="meta_monaco_product_vote_mini" class="meta_monaco_product_vote_mini">
-	<?php
-	$js = '';
-	$this->params->set('vote_type', 'product');
-	$this->params->set('vote_ref_id', isset($this->element->main) ? (int)$this->element->main->product_id : (int)$this->element->product_id );
-	echo hikashop_getLayout('vote', 'mini', $this->params, $js);
+		<?php
+		$js = '';
+		$this->params->set('vote_type', 'product');
+		$this->params->set('vote_ref_id', isset($this->element->main) ? (int)$this->element->main->product_id : (int)$this->element->product_id );
+		echo hikashop_getLayout('vote', 'mini', $this->params, $js);
 	?>
 	</div>
-	<?php }?>
-	<?php if ($this->config->get('show_code')) { ?>
-	<meta itemprop="sku" content="<?php echo $this->element->product_code; ?>" />
+	<?php	}?>
 	
-	<span id="meta_monaco_product_code_main" class="meta_monaco_product_code_main">
+	<meta itemprop="sku" content="<?php echo $this->element->product_code; ?>" />
+	<?php if ($this->config->get('show_code')) { ?>
+	<span id="hikashop_product_code_main" class="hikashop_product_code_main">
 		<?php echo $this->element->product_code; ?>
 	</span>
+
+
 	<?php } ?>
-<?php
-$itemprop_offer = '';
-if (!empty($this->element->prices))
-	$itemprop_offer = 'itemprop="offers" itemscope itemtype="https://schema.org/Offer"';
-?>
-	<h3 class="price" <?php echo $itemprop_offer; ?>>
-<?php
-$main =& $this->element;
-if(!empty($this->element->main))
-	$main =& $this->element->main;
-if(!empty($main->product_condition) && !empty($this->element->prices)) {
-?>
-		<meta itemprop="itemCondition" itemtype="https://schema.org/OfferItemCondition" content="<?php echo $main->product_condition; ?>" />
-<?php
-}
-if($this->params->get('show_price') && (empty($this->displayVariants['prices']) || $this->params->get('characteristic_display') != 'list')) {
-	$this->row =& $this->element;
-	$this->setLayout('listing_price');
-	echo $this->loadTemplate();
-	if (!empty($this->element->prices)) {
-?>			<meta itemprop="availability" content="<?php echo ($this->row->product_quantity != 0) ? 'InStock' : 'OutOfstock' ;?>" />
-		<meta itemprop="priceCurrency" content="<?php echo $this->currency->currency_code; ?>" />
-<?php	}
-} 
-?>		</h3>
+	<?php if ($this->params->get('show_price')) { ?>
+	<h3 itemprop="offers" itemtype="http://schema.org/offer" itemscope class="price">
+		<span id="hikashop_product_price_main" class="hikashop_product_price_main">
+			<?php
+                if ($this->params->get('show_price')) {
+                    $this->row = &$this->element;
+                    $this->setLayout('listing_price');
+                    echo $this->loadTemplate();
+                }
+                ?>
+		</span>
+	
+	</h3>
+	<?php } ?>
+	<?php if (HIKASHOP_J30) {
+            $this->setLayout('show_block_tags');
+            echo $this->loadTemplate();
+        } ?>
 
-<?php if(!empty($this->element->extraData->rightMiddle)) { echo implode("\r\n",$this->element->extraData->rightMiddle); } ?>
 
-<?php if(HIKASHOP_J30) {
-	$this->setLayout('show_block_tags');
-	echo $this->loadTemplate();
-}
-?>
-
-<?php
+	<?php
 if($this->params->get('characteristic_display') != 'list') {
 	$this->setLayout('show_block_characteristic');
 	echo $this->loadTemplate();
-} ?>
+?>
 
-<?php
+	<?php } ?>
+
+	<?php
 $form = ',0';
 if(!$this->config->get('ajax_add_to_cart', 1)) {
 	$form = ',\'hikashop_product_form\'';
@@ -106,17 +103,19 @@ if(!$this->config->get('ajax_add_to_cart', 1)) {
 
 if(hikashop_level(1) && !empty ($this->element->options)) {
 ?>
-	<div id="meta_monaco_product_options" class="meta_monaco_product_options"><?php
+	<div id="meta_monaco_product_options" class="meta_monaco_product_options">
+		<?php
 		$this->setLayout('option');
 		echo $this->loadTemplate();
 	?>
 	</div>
-<?php
+
+	<?php
 	$form = ',\'hikashop_product_form\'';
 	if($this->config->get('redirect_url_after_add_cart', 'stay_if_cart') == 'ask_user') {
 ?>
 	<input type="hidden" name="popup" value="1"/>
-<?php
+	<?php
 	}
 }
 
@@ -127,7 +126,7 @@ if(!$this->params->get('catalogue') && ($this->config->get('display_add_to_cart_
 		if ($this->config->get('redirect_url_after_add_cart', 'stay_if_cart') == 'ask_user') {
 ?>
 	<input type="hidden" name="popup" value="1"/>
-<?php
+	<?php
 		}
 
 		$this->setLayout('show_block_custom_item');
@@ -140,18 +139,20 @@ if($this->params->get('show_price')) {
 ?>
 	<span id="meta_monaco_product_price_with_options_main" class="meta_monaco_product_price_with_options_main">
 	</span>
-<?php
+	<?php
 }
 
 if(empty($this->element->characteristics) || $this->params->get('characteristic_display') != 'list') {
 ?>
-	<div id="meta_monaco_product_quantity_main" class="meta_monaco_product_quantity_main"><?php
+	<div id="meta_monaco_product_quantity_main" class="meta_monaco_product_quantity_main">
+		<?php
 		$this->row =& $this->element;
 		$this->ajax = 'if(hikashopCheckChangeForm(\'item\',\'hikashop_product_form\')){ return hikashopModifyQuantity(\'' . (int)$this->element->product_id . '\',field,1' . $form . ',\'cart\'); } else { return false; }';
 		$this->setLayout('quantity');
 		echo $this->loadTemplate();
-	?></div>
-<?php
+	?>
+	</div>
+	<?php
 }
 ?>
 
@@ -160,28 +161,29 @@ $contact = (int)$this->config->get('product_contact', 0);
 if(hikashop_level(1) && ($contact == 2 || ($contact == 1 && !empty($this->element->product_contact)))) {
 	$css_button = $this->config->get('css_button', 'hikabtn');
 ?>
-		<a href="<?php echo hikashop_completeLink('product&task=contact&cid=' . (int)$this->element->product_id . $this->url_itemid); ?>" class="<?php echo $css_button; ?>"><?php
+		<a href="<?php echo hikashop_completeLink('product&task=contact&cid=' . (int)$this->element->product_id . $this->url_itemid); ?>"
+			class="<?php echo $css_button; ?>">
+			<?php
 			echo JText::_('CONTACT_US_FOR_INFO');
 		?></a>
-<?php
+		<?php
 }
 ?>
 	</div>
 
-<?php
+	<?php
 if(!empty($this->fields)) {
 	$this->setLayout('show_block_custom_main');
 	echo $this->loadTemplate();
 }
 
 ?>
-<span id="hikashop_product_id_main" class="hikashop_product_id_main">
-	<input type="hidden" name="product_id" value="<?php echo (int)$this->element->product_id; ?>" />
-</span>
+	<span id="meta_monaco_product_id_main" class="meta_monaco_product_id_main">
+		<input type="hidden" name="product_id" value="<?php echo (int)$this->element->product_id; ?>" />
+	</span>
 
-<?php if(!empty($this->element->extraData->rightEnd)) { echo implode("\r\n",$this->element->extraData->rightEnd); } ?>
-
-<div class="accordion" id="description">
+	<?php if(!empty($this->element->extraData->rightEnd)) { echo implode("\r\n",$this->element->extraData->rightEnd); } ?>
+	<div class="accordion" id="description">
 		<div class="card">
 			<div class="card-header" id="description-header">
 				<h3 class="mb-0"><a data-toggle="collapse" href="#meta_monaco_product_description_main" role="button"
@@ -197,24 +199,26 @@ if(!empty($this->fields)) {
 			</div>
 		</div>
 	</div>
-	</div>
+</div>
 
 
 <div id="meta_monaco_product_bottom_part" class="meta_monaco_product_bottom_part">
 
-<?php if(!empty($this->element->extraData->bottomBegin)) { echo implode("\r\n",$this->element->extraData->bottomBegin); } ?>
+	<?php if(!empty($this->element->extraData->bottomBegin)) { echo implode("\r\n",$this->element->extraData->bottomBegin); } ?>
 
-	<span id="meta_monaco_product_url_main" class="meta_monaco_product_url_main"><?php
+
+	<span id="meta_monaco_product_url_main" class="meta_monaco_product_url_main">
+		<?php
 		if(!empty($this->element->product_url)) {
 			echo JText::sprintf('MANUFACTURER_URL', '<a href="' . $this->element->product_url . '" target="_blank">' . $this->element->product_url . '</a>');
 		}
 	?></span>
 
-<?php
+	<?php
 	$this->setLayout('show_block_product_files');
 	echo $this->loadTemplate();
 ?>
 
-<?php if(!empty($this->element->extraData->bottomMiddle)) { echo implode("\r\n",$this->element->extraData->bottomMiddle); } ?>
-<?php if(!empty($this->element->extraData->bottomEnd)) { echo implode("\r\n",$this->element->extraData->bottomEnd); } ?>
+	<?php if(!empty($this->element->extraData->bottomMiddle)) { echo implode("\r\n",$this->element->extraData->bottomMiddle); } ?>
+	<?php if(!empty($this->element->extraData->bottomEnd)) { echo implode("\r\n",$this->element->extraData->bottomEnd); } ?>
 </div>

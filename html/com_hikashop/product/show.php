@@ -11,15 +11,12 @@ defined('_JEXEC') or die('Restricted access');
 $doc = JFactory::getDocument();
 $img_link=str_replace('-710','',$this->element->images[0]->file_name);
 $ogimg ='images/meta_monaco_products/'. $img_link .'/'.$img_link.'-1064.jpg';
-// echo '<pre>',var_dump($this->element),'</pre>';
 $prices = $this->element->prices;
 if (is_array($prices)) {
 $price = array_column($prices, 'price_value_with_tax');
 }else{
 	$price = $prices;
 }
-// echo '<pre>',var_dump($price),'</pre>';
-// echo $price[0];
 $prod_name = preg_replace('/<span class="hikashop_product_variant_subname">(.*?)<\/span>/','',$this->element->product_name);
 $categoryClass = hikashop_get('class.category');
 $manufacturer = $categoryClass->get($this->element->product_manufacturer_id);
@@ -36,8 +33,6 @@ if (empty($this->element->product_meta_description)){
 	$doc->setMetadata('og:description',$this->element->product_meta_description,'property');
 }
 
-
-// $doc->setMetadata('product:retailer_item_id',$this->element->product_code,'property');
 $doc->setMetadata('og:url',hikashop_cleanURL($this->canonical),'property');
 $doc->setMetadata('og:image',JURI::base().$ogimg,'property');
 $doc->setMetadata('product:brand',$manufacturer,'property');
@@ -216,8 +211,8 @@ if(empty($this->element->variants) || $this->params->get('characteristic_display
 			$this->element->images =& $variant->images;
 		$this->element->badges =& $variant->badges;
 
-		// $variant_name = implode('_', $variant_name);
-		// $this->variant_name = '_' . $variant_name;
+		$variant_name = implode('_', $variant_name);
+		$this->variant_name = '_' . $variant_name;
 		// $this->setLayout('show_block_img');
 		// echo $this->loadTemplate();
 

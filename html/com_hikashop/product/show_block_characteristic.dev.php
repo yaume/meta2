@@ -1,7 +1,7 @@
 <?php
 /**
  * @package	HikaShop for Joomla!
- * @version	3.5.1
+ * @version	4.0.0
  * @author	hikashop.com
  * @copyright	(C) 2010-2018 HIKARI SOFTWARE. All rights reserved.
  * @license	GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
@@ -11,7 +11,7 @@ defined('_JEXEC') or die('Restricted access');
 if(empty($this->element->characteristics))
 	return;
 
-?><div id="hikashop_product_characteristics" class="hikashop_product_characteristics"><?php
+?><div id="meta_monaco_product_characteristics" class="meta_monaco_product_characteristics"><?php
 
 if($this->params->get('characteristic_display') != 'list') {
 	echo $this->characteristic->displayFE($this->element, $this->params) . '</div>';

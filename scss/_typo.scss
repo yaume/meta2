@@ -372,3 +372,11 @@ i.fa-li {
 .fa-inverse {
   color: #fff;
 }
+.blockquote{
+  margin-left: 1rem;
+}
+@include media-breakpoint-up(lg) {
+  .blockquote{
+  margin-left: 3rem;
+  }
+}

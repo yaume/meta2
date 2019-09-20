@@ -77,10 +77,21 @@ figcaption{
     font-weight: bold;
     color: $black;
 }
+.thank {
+    margin-bottom: 6rem;
+    margin-top: 3rem;
+}
 @include media-breakpoint-up(lg) {
     html{font-size: 1.125rem;}
     .item-page, #hikashop_checkout_form{
     grid-column-start: 2;
+    }
+    .chekout {
+        grid-column-start: 2;
+        span{
+            display: block;
+            margin-bottom: 1rem;
+        }
     }
     .columnsblock2{
         grid-template-columns: repeat(2,1fr);
