@@ -13,28 +13,46 @@ $mainDivName = $this->params->get('main_div_name', '');
 $link = hikashop_contentLink('product&task=show&cid=' . (int)$this->row->product_id . '&name=' . $this->row->alias . $this->itemid . $this->category_pathway, $this->row);
 $haveLink = (int)$this->params->get('link_to_product_page', 1);
 if(!empty($this->row->extraData->top)) { echo implode("\r\n",$this->row->extraData->top); }
-
+$img = 'images/meta_monaco_products/'.$this->row->product_code.'/'.$this->row->product_code;
 ?>
 <div class="meta_monaco_listing">
 		<figure>
-			<?php
-				$img = 'images/meta_monaco_products/'.$this->row->product_code.'/'.$this->row->product_code.'-1064.jpg';
-				echo '<img class="meta_monaco_product_listing_image img-fluid" title="'.$this->escape(@$this->row->file_description).'" alt="'.$this->escape(@$this->row->file_name).'" src="'.$img.'"/>';
-				//Display product badge
-
-					if($this->params->get('display_badges', 1)) {
-						$badge = $this->row->badges[0];
-						if($badge){
-							?>
-							<div class="badge">
-								<p>
-									<?php echo $badge->badge_name;?>
-								</p>
-							</div>
-							<?php 
+			<picture>
+			<source
+				sizes="(max-width: 991px) 90vw, 26vw"
+				srcset="
+				 <?php echo $img .'-150.webp';?> 150w,
+				 <?php echo $img .'-400.webp';?> 400w,
+				 <?php echo $img .'-710.webp';?> 710w,
+				 <?php echo $img .'-1064.webp';?> 1064w"
+				 type="image/webp">
+				<source
+				sizes="(max-width: 991px) 90vw, 26vw"
+				srcset="
+				 <?php echo $img .'-150.jpg';?> 150w,
+				 <?php echo $img .'-400.jpg';?> 400w,
+				 <?php echo $img .'-710.jpg';?> 710w,
+				 <?php echo $img .'-1064.jpg';?> 1064w"
+				 >
+				<?php
+					$img = 'images/meta_monaco_products/'.$this->row->product_code.'/'.$this->row->product_code.'-1064.jpg';
+					echo '<img class="meta_monaco_product_listing_image img-fluid" title="'.$this->escape(@$this->row->file_description).'" alt="'.$this->escape(@$this->row->file_name).'" src="'.$img.'"/>';
+					//Display product badge
+	
+						if($this->params->get('display_badges', 1)) {
+							$badge = $this->row->badges[0];
+							if($badge){
+								?>
+								<div class="badge">
+									<p>
+										<?php echo $badge->badge_name;?>
+									</p>
+								</div>
+								<?php 
+							}
 						}
-					}
-			?>		
+				?>		
+			</picture>
 			<figcaption class="meta_monaco_product_name">
 				<!-- PRODUCT NAME -->
 				<?php echo $this->row->product_name; ?>

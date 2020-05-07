@@ -122,9 +122,9 @@ if(hikashop_level(2) && hikaInput::get()->getVar('hikashop_front_end_main', 0) &
 $task = hikaInput::get()->getCmd('task', '');
 $ctrl = hikaInput::get()->getCmd('ctrl', '');
 
-if(!empty($htmlFilter) && $ctrl != 'category')
+if(!empty($htmlFilter) && $ctrl != 'category'){
 	echo $htmlFilter;
-
+}
 $filter_type = (int)$this->params->get('filter_type');
 $layout_type = $this->params->get('layout_type');
 if(empty($layout_type))

@@ -19,17 +19,15 @@
 }
 
 .rapid_contact_form {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: 1rem 0;
-}
-.rapid_contact{
-    .form-control{
-        margin-right:.5rem;
+    .input-group{
+        &:empty{
+            display: none;
+        }
+        .rapid_contact{
+            max-width: 100%;
+            margin-bottom: 1rem;
+        }
     }
-}
-.message {
-    grid-column: 1 /span 3;
 }
 .form-control{
     padding: .5rem 1rem;
@@ -63,8 +61,5 @@
         grid-column-start: 2;
         grid-template-columns: repeat(3,1fr);
         grid-gap: 1rem;
-    }
-    .rapid_contact_form {
-        grid-template-columns: repeat(2,1fr);
     }
 }

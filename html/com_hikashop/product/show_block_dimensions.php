@@ -62,7 +62,7 @@ if($this->config->get('manufacturer_display', 0) && !empty($this->element->produ
 			$Itemid = $menuClass->loadAMenuItemId('','');
 		}
 		$categoryClass->addAlias($manufacturer);
-		echo ' <span itemprop="brand" itemtype="http://schema.org/Thing" itemscope>';
+		echo ' <span itemprop="brand" content="'. $manufacturer->category_name.'">';
 		echo 'by '. $manufacturer->category_name;
 		echo'</span>';
 	}

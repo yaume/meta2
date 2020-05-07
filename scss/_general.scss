@@ -24,6 +24,7 @@ body {
     grid-template-rows: 80px auto minmax(120px, 150px);
     grid-template-areas:"header"
                         "main"
+                        "aside"
                         "footer";
     grid-gap: 1rem;
     
@@ -36,6 +37,9 @@ header {
 main {
     grid-area: main;
     position: relative;
+}
+aside {
+    grid-area: aside;
 }
 
 footer {
@@ -54,16 +58,7 @@ button{
 }
 @include media-breakpoint-up(lg) {
     body {
-       /*  grid-template-columns: repeat(15, 1fr);
-    grid-template-rows: 81px auto 129px;
-    grid-template-areas: ". header header header header header header header header header header header header header ."
-        ". main main main main main main main main main main main main main ."
-        ". footer footer footer footer footer footer footer footer footer footer footer footer footer ."; */
-        /* &.home{
-            grid-template-areas: ". header header header header header header header header header header header header header ."
-        "main main main main main main main main main main main main main main main"
-        ". footer footer footer footer footer footer footer footer footer footer footer footer footer .";
-        } */
+   
         grid-template-rows: 80px auto 50px;
     }
 }

@@ -354,7 +354,7 @@ print '</div>';
 
 // print message input
 
-print '<div class="input-group">';
+print '<div class="input-group textarea">';
 
 $message_placeholder = ($label_pos == '2') ? ' placeholder="'.$myMessageLabel.'"' : '';
 

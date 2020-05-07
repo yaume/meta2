@@ -49,7 +49,7 @@ include_once JPATH_THEMES . '/' . $this->template . '/lib/head.php';
 <body class="<?php echo $active->alias,' ',$pageclass; ?>">
     <header>
         <section class="logo">
-            <a href="http://www.meta.mc/">
+            <a href="https://www.meta.mc/">
                 <img src="<?php echo $template?>/img/meta.png" alt="META MONACO - ART GALLERY" class="img-fluid">
             </a>
         </section>
@@ -68,6 +68,7 @@ include_once JPATH_THEMES . '/' . $this->template . '/lib/head.php';
         <jdoc:include type="modules" name="position-2" />
         <jdoc:include type="component" />
         <?php
+
 if ($this->countModules('position-11') || $this->countModules('position-12') || $this->countModules('position-13')) {?>
         <section class="abovefooter">
             <section class="footer-left">
@@ -82,13 +83,20 @@ if ($this->countModules('position-11') || $this->countModules('position-12') || 
         </section>
 <?php }?>
     </main>
-
+    <?php
+        
+        if ($this->countModules('position-9') ){?>
+        
+    <jdoc:include type="modules" name="position-9" />
+    
+        <?php }?>
     <footer>
 
             <jdoc:include type="modules" name="position-14" />
             <jdoc:include type="modules" name="position-15" />
 
     </footer>
+    <jdoc:include type="modules" name="debug" />
     <script
   src="https://code.jquery.com/jquery-3.4.1.min.js"
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="

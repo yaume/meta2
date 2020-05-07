@@ -9,9 +9,15 @@
 defined('_JEXEC') or die('Restricted access');
 ?><?php
 $doc = JFactory::getDocument();
-$img_link=str_replace('-710','',$this->element->images[0]->file_name);
+$img_link= $this->element->alias;
+$img_link = str_replace("-","_",$img_link);
+$img_link=rtrim (preg_replace('/[0-9]+/', '',$this->element->product_code),'_');
 $ogimg ='images/meta_monaco_products/'. $img_link .'/'.$img_link.'-1064.jpg';
 $prices = $this->element->prices;
+$google_product_category = $this->element->google_product_category;
+$array = $this->categories;
+$array = array_values($array);
+$type = $array[0]->category_name;
 if (is_array($prices)) {
 $price = array_column($prices, 'price_value_with_tax');
 }else{
@@ -19,8 +25,15 @@ $price = array_column($prices, 'price_value_with_tax');
 }
 $prod_name = preg_replace('/<span class="hikashop_product_variant_subname">(.*?)<\/span>/','',$this->element->product_name);
 $categoryClass = hikashop_get('class.category');
+if(isset($this->element->variants)){
+$array = $this->element->variants;
+$array = array_values($array);
+$manufacturer = $categoryClass->get($array[0]->main->product_manufacturer_id);
+$manufacturer = $manufacturer->category_name;
+}else{
 $manufacturer = $categoryClass->get($this->element->product_manufacturer_id);
 $manufacturer = $manufacturer->category_name;
+}
 if(!empty($this->canonical)) {
 	$doc->addCustomTag('<link rel="canonical" href="'.hikashop_cleanURL($this->canonical).'" />');
 }
@@ -39,6 +52,8 @@ $doc->setMetadata('product:brand',$manufacturer,'property');
 $doc->setMetadata('product:availability','in stock','property');
 $doc->setMetadata('product:price:amount',round($price[0]),'property');
 $doc->setMetadata('product:price:currency','EUR','property');
+$doc->setMetadata('product:category',$google_product_category,'property');
+$doc->setMetadata('og:type',$type,'property');
 $classes = array();
 if(!empty($this->categories)) {
 	foreach($this->categories as $category) {

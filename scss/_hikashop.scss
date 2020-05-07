@@ -25,7 +25,7 @@
             cursor: pointer;
         }
 
-        img:first-child {
+        picture:first-child {
             grid-column: span 3;
         }
     }
@@ -415,7 +415,8 @@ button.close {
 
     .meta_monaco_listing {
         .buttons {
-            top: 35%
+            top: 35%;
+            transform: translateY(-35%);
         }
     }
     .meta_monaco_products {
@@ -462,6 +463,11 @@ button.close {
         max-width: 35rem;
     }
 
+}
+@media (min-width: 992px) and (max-width: 1199.98px) { 
+    .meta_monaco_listing .btn {
+        padding: .125rem;
+    }
 }
 @include media-breakpoint-up(xl){
     .meta_monaco_listing {

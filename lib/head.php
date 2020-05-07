@@ -56,7 +56,29 @@ $this->setGenerator('');
     unset($doc->_scripts[$this->baseurl.'/media/system/js/modal.js']);
     unset($doc->_scripts[$this->baseurl.'/media/system/js/mootools.js']);
     unset($doc->_scripts[$this->baseurl.'/plugins/system/mtupgrade/mootools.js']);
-
+    unset($doc->_scripts[$this->baseurl.'/media/jui/js/jquery.min.js']);
+    unset($doc->_scripts[$this->baseurl.'/media/jui/js/jquery-noconflict.js']);
+    unset($doc->_scripts[$this->baseurl.'/media/jui/js/bootstrap.min.js']);
+    unset($doc->_scripts[$this->baseurl.'/media/jui/js/jquery-migrate.min.js']);
+    // $dontInclude = array(
+    //     '/media/jui/js/jquery.js',
+    //     '/media/jui/js/jquery.min.js',
+    //     '/media/jui/js/jquery-noconflict.js',
+    //     '/media/jui/js/jquery-migrate.js',
+    //     '/media/jui/js/jquery-migrate.min.js',
+    //     '/media/jui/js/bootstrap.js',
+    //     '/media/system/js/core-uncompressed.js',
+    //     '/media/system/js/tabs-state.js',
+    //     '/media/system/js/core.js',
+    //     '/media/system/js/mootools-core.js',
+    //     '/media/system/js/mootools-core-uncompressed.js',
+    //     );
+        
+    //     foreach($doc->_scripts as $key => $script){
+    //         if(in_array($key, $dontInclude)){
+    //             unset($doc->_scripts[JUri::root(true).$key]);
+    //         }
+    //     }
 #-------------End Construct Code--------------------------------------#
 // get html head data
 $head = $doc->getHeadData();
@@ -79,8 +101,6 @@ $doc->setMetadata('google-site-verification','C2HsSuR_ap_YclWHwrt5xD3hrl-ASfptQ1
 //<meta name="" content=/>
 // Copyrights
 $doc->setMetadata('copyright', htmlspecialchars($app->getCfg('sitename')));
-//humans.txt
-$doc->addHeadLink( $template . '/humans.txt', 'author', 'rel','');
 include_once JPATH_THEMES . '/' . $this->template . '/lib/favicon.php';
 include_once JPATH_THEMES . '/' . $this->template . '/lib/opengraph.php';
 //Add your styles

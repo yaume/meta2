@@ -11,20 +11,26 @@ defined('JPATH_BASE') or die;
 $params  = $displayData->params;
 $alias = $displayData->alias;
 $link = JRoute::_(ContentHelperRoute::getArticleRoute($displayData->slug, $displayData->catid, $displayData->language));
+$imgl='images/random/'.$alias.'/'.$alias;
 ?>
 <?php $images = json_decode($displayData->images); ?>
 	<a href="<?php echo $link; ?>" alt="<?php echo $displayData->title;?>">
 	<figure class="item-image">
-	<img srcset="images/random/<?php echo $alias; ?>/<?php echo $alias; ?>-thumbnail-325.jpg 325w,
-				 images/random/<?php echo $alias; ?>/<?php echo $alias; ?>-thumbnail-710.jpg 710w,
-				 images/random/<?php echo $alias; ?>/<?php echo $alias; ?>-thumbnail-975.jpg 975w,
-				 images/random/<?php echo $alias; ?>/<?php echo $alias; ?>-thumbnail-2125.jpg 2125w"
-		 sizes="(max-width: 539px) 325px,
-				(min-width:540px) and (max-width: 719px) 710px,
-				(min-width:720px) and (max-width: 960px) 927px,
-				710px"
-		 src="images/random/<?php echo $alias; ?>/<?php echo $alias; ?>-thumbnail-710.jpg"
-	alt="<?php echo htmlspecialchars($alias, ENT_COMPAT, 'UTF-8'); ?>" class="img-fluid"  itemprop="thumbnailUrl"/>
+	<picture>
+			<source sizes="(max-width: 991px) 90vw, 26vw" srcset="
+			<?php echo $imgl.'-thumbnail-325.webp'; ?> 325w,
+			<?php echo $imgl.'-thumbnail-710.webp'; ?> 710w,
+			<?php echo $imgl.'-thumbnail-975.webp'; ?> 975w,
+			<?php echo $imgl.'-thumbnail-2125.webp'; ?> 2125w" type="image/webp">
+			<source sizes="(max-width: 991px) 90vw, 26vw" srcset="
+			<?php echo $imgl.'-thumbnail-325.jpg'; ?> 325w,
+			<?php echo $imgl.'-thumbnail-710.jpg'; ?> 710w,
+			<?php echo $imgl.'-thumbnail-975.jpg'; ?> 975w,
+			<?php echo $imgl.'-thumbnail-2125.jpg'; ?> 2125w">
+			<img src="<?php echo $imgl; ?>-thumbnail-2125.jpg"
+				alt="<?php echo htmlspecialchars($alias, ENT_COMPAT, 'UTF-8'); ?>" class="img-fluid"
+				itemprop="thumbnailUrl" />
+		</picture>
 	<figcaption>
 	<?php echo $displayData->title; ?>
 	</figcaption>

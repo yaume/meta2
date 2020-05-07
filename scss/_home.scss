@@ -1,4 +1,5 @@
 body.look {
+    grid-template-rows: 80px repeat(2,auto) minmax(120px, 150px);
     h1 {
         font-size: $font-size-base * 1.75;
     }
@@ -11,7 +12,56 @@ body.look {
 
         }
     }
-
+    figure{
+        position:relative;
+        margin:0;
+        &.mr {
+            a {
+                position: absolute;
+                top: 50%;
+                right: 5%;
+            }
+    
+        }
+        &.tr {
+            a {
+                position: absolute;
+                top: 5%;
+                right: 5%;
+            }
+    
+        }
+        &.br {
+            a {
+                position: absolute;
+                bottom: 5%;
+                right: 5%;
+            }
+    
+        }
+    
+        &.ml {
+            a {
+                position: absolute;
+                top: 50%;
+                left: 5%;
+            }
+        }
+        &.tl {
+            a {
+                position: absolute;
+                top: 5%;
+                left: 5%;
+            }
+        }
+        &.bl {
+            a {
+                position: absolute;
+                bottom: 5%;
+                left: 5%;
+            }
+        }
+    }
     picture {
         z-index: 0;
     }
@@ -69,53 +119,7 @@ body.look {
             box-shadow: 5px 5px 9px rgba(0, 0, 0, .15);
         }
     }
-
-    //     main{
-    // background: url(../../../images/look/look-324.jpg) no-repeat center 80px fixed;
-    // background-size: cover;
-
-    // @media screen and (orientation: portrait) {
-    //     @include media-breakpoint-up(sm) {
-    //         background: url(../../../images/look/look-432.jpg) no-repeat center 80px fixed;
-    //         background-size: cover;
-    //     }
-
-    //     @include media-breakpoint-up(md) {
-    //         background: url(../../../images/look/look-558.jpg) no-repeat center 80px fixed;
-    //         background-size: cover;
-    //     }
-
-    //     @include media-breakpoint-up(lg) {
-    //         background: url(../../../images/look/look-665.jpg) no-repeat center 80px fixed;
-    //         background-size: cover;
-    //     }
-    // }
-
-    // @media screen and (orientation: landscape) {
-    //     background: url(../../../images/look/look-576.jpg) no-repeat center 80px fixed;
-    //     background-size: cover;
-
-    //     @include media-breakpoint-up(sm) {
-    //         background: url(../../../images/look/look-768.jpg) no-repeat center 80px fixed;
-    //         background-size: cover;
-    //     }
-
-    //     @include media-breakpoint-up(md) {
-    //         background: url(../../../images/look/look-992.jpg) no-repeat center 80px fixed;
-    //         background-size: cover;
-    //     }
-
-    //     @include media-breakpoint-up(lg) {
-    //         background: url(../../../images/look/look-1200.jpg) no-repeat center 80px fixed;
-    //         background-size: cover;
-    //     }
-    //     @include media-breakpoint-up(xl) {
-    //         background: url(../../../images/look/look-2560.jpg) no-repeat center 80px fixed;
-    //         background-size: cover;
-    //     }
-    // }
-    // }
-    main {
+   main {
         display: flex;
         justify-content: center;
         text-align: center;
@@ -129,53 +133,36 @@ body.look {
             width: 100%;
         }
     }
-}
-
-.item-page {
-    &.mr {
-        a {
+    aside{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 1px;
+        padding: 0;
+        @include media-breakpoint-up(lg) {
+            grid-template-columns: repeat(4,1fr);
+        }
+        picture{
+            border: 1px solid white;
+        }
+        a{
             position: absolute;
             top: 50%;
-            right: 5%;
+            font-size: 3rem;
+            transform: translateY(-3rem);
+            width: 100%;
+            text-align: center;
+            i{
+             color:transparentize($gray-300, 1);
+             transition: color .5s linear .5s;             
+            }
         }
-
-    }
-    &.tr {
-        a {
-            position: absolute;
-            top: 5%;
-            right: 5%;
-        }
-
-    }
-    &.br {
-        a {
-            position: absolute;
-            bottom: 5%;
-            right: 5%;
-        }
-
-    }
-
-    &.ml {
-        a {
-            position: absolute;
-            top: 50%;
-            left: 5%;
-        }
-    }
-    &.tl {
-        a {
-            position: absolute;
-            top: 5%;
-            left: 5%;
-        }
-    }
-    &.bl {
-        a {
-            position: absolute;
-            bottom: 5%;
-            left: 5%;
+        &:hover{
+            a{
+                i{
+                    color:transparentize($gray-300, 0.5);
+                    transition: color .7s linear .2s;
+                }
+            }
         }
     }
 }

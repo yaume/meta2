@@ -1,4 +1,4 @@
-main, footer{
+main, footer, aside{
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 1rem;
@@ -8,7 +8,10 @@ main, footer{
     grid-column-start: 2;
 }
 @include media-breakpoint-up(lg){
-    main, footer{
+    main, aside{
         grid-template-columns: 1fr 11fr 1fr;
+    }
+    footer{
+        grid-template-columns:auto 9fr auto;
     }
 }

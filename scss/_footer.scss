@@ -1,51 +1,79 @@
-footer{
+footer {
     text-align: center;
-    display:flex;
-    flex-flow:column;
+    display: flex;
+    flex-flow: column;
     background: $white;
-    font-size: 75%!important;
-    p{
-        margin: 0;
-        padding:0;
-    }
-    .footer-navbar{
-        order: 2;
-        .navbar-nav {
-        display: flex;
-        flex-flow: row;
-        list-style: none;
-        padding: $input-btn-padding-y $input-btn-padding-x ;
-        justify-content: center;
-        margin-bottom: 0;
+    font-size: 75% !important;
 
-        .nav-link{
-            color:$gray-600;
-        }
+    p {
+        margin: 0;
+        padding: 0;
+    }
+
+    .footer-navbar {
+        order: 2;
+
+        .navbar-nav {
+            display: flex;
+            flex-flow: row;
+            list-style: none;
+            padding: $input-btn-padding-y $input-btn-padding-x;
+            justify-content: center;
+            margin-bottom: 0;
+
+            .nav-link {
+                color: $gray-600;
+            }
         }
     }
-    .copyright{
-        padding: $input-btn-padding-y $input-btn-padding-x ;
+
+    .copyright {
+        padding: $input-btn-padding-y $input-btn-padding-x;
         order: 1;
     }
-    .social{
+
+    .social {
         order: o;
-        a{
-            color:$body-color;
+
+        .nav-item {
+            &:hover{
+                a{
+                    color:$white;
+                }
+                i{
+                    border-color:$body-color;
+                    background:$black;
+                }
+            }
+            i {
+                font-size: 1rem;
+                padding: .5rem;
+                border: 1px solid $gray-500;
+                border-radius: 50%;
+            }
+        }
+
+        a {
+            color: $body-color;
         }
     }
 }
+
 @include media-breakpoint-up(lg) {
-    footer{
+    footer {
         flex-flow: row;
         justify-content: center;
         align-items: center;
-        .footer-navbar{
+
+        .footer-navbar {
             order: 1;
         }
-        .copyright{
+
+        .copyright {
             order: 0;
         }
-        .social{
+
+        .social {
             order: 2;
         }
     }
