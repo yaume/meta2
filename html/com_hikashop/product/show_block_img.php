@@ -14,7 +14,7 @@ $alt=$first_img->file_name;
 $title=$first_img->file_description;
 $prod_name = preg_replace('/<span class="hikashop_product_variant_subname">(.*?)<\/span>/','',$this->element->product_name);
 ?>
-<picture  itemprop="image" >
+<picture  itemprop="image" id="main">
 	<?php
 	$img='images/meta_monaco_products/'.$img_link .'/'.$img_link
 	?>
@@ -39,10 +39,10 @@ $prod_name = preg_replace('/<span class="hikashop_product_variant_subname">(.*?)
 		if (isset($this->element->images[1])){
 		foreach( $this->element->images as $image) {
 			$img_link=$this->element->product_code;
-			$img=str_replace('-710.jpg','',$image->file_path);
+			$imgl=str_replace('-710.jpg','',$image->file_path);
 			$alt=$image->file_name;
 			$title=$image->file_description;
-			$imgl='images/meta_monaco_products/'.$img_link .'/'.$img;
+			$imgl='images/meta_monaco_products/'.$img_link .'/'.$imgl;
 			?>
 <picture itemprop="thumbnail">
 	<source sizes="(max-width: 991px) 32vw, 14vw"
@@ -68,14 +68,12 @@ $prod_name = preg_replace('/<span class="hikashop_product_variant_subname">(.*?)
 <script>
 	jQuery(document).ready(function ($) {
 		$('.thumbs').click(function () {
-			var $src = $(this).attr('src-full');
-			var $srcset = $(this).attr('srcset-full');
-			var $alt = $(this).attr('alt');
-			var $title = $(this).attr('title');
-			$('#photo-full').attr('src', $src);
-			$('#photo-full').attr('srcset', $srcset);
-			$('#photo-full').attr('alt', $alt);
-			$('#photo-full').attr('title', $title);
+			var $src = $(this).attr('src');
+			$src = $src.replace('710.jpg','');
+			var $main = document.querySelector("#main");
+			var $image = $main.querySelectorAll("source");
+			$image[0].srcset=$src + '150.webp 150w,' + $src + '400.webp 400w,'+ $src +'710.webp 710w,'+ $src +'1064.webp 1064w';
+			$image[1].srcset=$src + '150.jpg 150w,' + $src + '400.jpg 400w,'+ $src +'710.jpg 710w,'+ $src +'1064.jpg 1064w';
 		});
 	});
 </script>

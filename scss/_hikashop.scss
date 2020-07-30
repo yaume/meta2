@@ -18,7 +18,7 @@
 
     .meta_monaco_product_left_part {
         display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(5, minmax(0, 1fr));
         grid-gap: 1rem;
 
         img {
@@ -26,7 +26,11 @@
         }
 
         picture:first-child {
-            grid-column: span 3;
+            grid-column: span 5;
+            min-width: 100%;
+        }
+        #main *{
+            min-width: 100%;
         }
     }
 
